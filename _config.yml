@@ -9,17 +9,17 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: chanhyuk's blog
-subtitle: "Even if you regret it, do it and then regret it."
-email: dlcksgur3434@gmail.com
-name: Chanhyuk Lee
+title: Centrarium
+subtitle: "A simple yet classy theme for your Jekyll website or blog"
+email: blcentra@gmail.com
+name: Ben Centra
 description: >
   A simple yet classy theme for your Jekyll website or blog.
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://leechanhyuk.github.io" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 
@@ -76,11 +76,24 @@ descriptions:
 #     desc: Follow me on Twitter            # Description to display as link title, etc
 #     share: true                           # Include in the "Share" section of posts
 social:
+  - name: Twitter
+    icon: twitter
+    username: TheBenCentra
+    url: https://twitter.com/TheBenCentra
+    desc: Follow me on Twitter
+    share: true
+
+  - name: Facebook
+    icon: facebook
+    username: thebencentra
+    url: ""
+    desc: Friend me on Facebook
+    share: true
 
   - name: GitHub
     icon: github
-    username: leechanhyuk
-    url: https://github.com/leechanhyuk
+    username: bencentra
+    url: https://github.com/bencentra
     desc: Fork me on GitHub
     share: false
 
@@ -91,7 +104,7 @@ social:
     desc: Connect with me on LinkedIn
     share: true
 
-"""  - name: Google+
+  - name: Google+
     icon: google-plus
     username: ""
     url: ""
@@ -173,7 +186,7 @@ social:
     username: ""
     url: ""
     desc: Share to Hacker News
-    share: false"""
+    share: false
 
 # Social sharing protocols
 # These are for automatically generating sharing metadata for FB and Twitter
