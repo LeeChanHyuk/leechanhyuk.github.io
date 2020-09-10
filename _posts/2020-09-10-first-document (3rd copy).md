@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First posting"
+title:  "First posting2"
 date:   2020-09-10 08:43:59
 author: leechanhyuk
 categories: daily1
