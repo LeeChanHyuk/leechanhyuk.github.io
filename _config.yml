@@ -20,7 +20,7 @@ description: >
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://leechanhyuk.github.io/" # the base hostname & protocol for your site
-cover: "/assets/doors.jpg"
+cover: "/assets/aa.png"
 logo: "/assets/logo.png"
 
 # Build settings
@@ -54,11 +54,14 @@ jekyll-archives:
 
 # Category descriptions (for archive pages)
 descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
+  - cat: Algorithm
+    desc: "Algorithm study"
 
-  - cat: dummy
-    desc: "Just some placeholder posts, lorem ipsum and the rest."
+  - cat: Paper
+    desc: "paper read"
+
+  - cat: Daily life
+    desc: "MY daily life"
 
 # Social icons and sharing options
 #

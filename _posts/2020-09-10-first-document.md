@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Welcome to Jekyll123123!"
-date:   2015-04-20 08:43:59
-author: Ben Centra
-categories: Jekyll
-tags:	jekyll welcome
+title:  "First posting"
+date:   2020-09-10 08:43:59
+author: leechanhyuk
+categories: Daily life
+tags:	first_posting
 cover:  "/assets/instacode.png"
 ---
 
