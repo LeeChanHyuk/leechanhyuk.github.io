@@ -10,7 +10,7 @@ exclude:
 
 # Site settings
 title: chanhyuk's space
-subtitle: "Even if you regret it, do it and then regret it."
+subtitle: "1 day 1 commit"
 email: dlcksgur3434@gmail.com
 name: ChanHyuk Lee
 description: >
@@ -79,7 +79,7 @@ social:
 
   - name: GitHub
     icon: github
-    username: bencentra
+    username: My Git
     url: https://github.com/leechanhyuk
     desc: 
     share: false
