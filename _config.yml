@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 gem "github-pages"group: :jekyll_plugins
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "ko"
 title                    : "chanhyuk's space"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -94,30 +94,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "LeeChanHyuk"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "**Computer scientist**"
+  location         : "KIST, Seong-buk ku, Seoul, South Korea"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "dlcksgur3434@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/LeeChanHyuk"
+
 
 # Site Footer
 footer:
