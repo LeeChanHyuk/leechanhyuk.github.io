@@ -4,6 +4,8 @@ main:
     url: "/posts/algorithm" # 클릭시 이동할 URL
   - title: "Category"
     url: /categories/
+  - title: "About me"
+    url: /about/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
