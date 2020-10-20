@@ -4,6 +4,10 @@ permalink: /about/
 layout: single
 ---
 
-## leechanhyuk.github.io 블로그
+## About me
 
-블로그 시작했습니다.
+Master Course in KIST / Korea University
+
+Research area : Computer Vision
+                Deep Learning
+                3D
