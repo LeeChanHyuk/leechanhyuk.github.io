@@ -17,7 +17,7 @@ gem "github-pages"group: :jekyll_plugins
 
 # Site Settings
 locale                   : "ko"
-title                    : "chanhyuk's space"
+title                    : "My Record"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "LeeChanHyuk"
