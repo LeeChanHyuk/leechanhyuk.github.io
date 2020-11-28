@@ -8,6 +8,4 @@ layout: single
 
 Master Course in KIST / Korea University
 
-Research area : Computer Vision
-                Deep Learning
-                3D
+Research area : Computer Vision / Machine Learning / 3D Vision
