@@ -1,11 +1,18 @@
 ---
-title: "About me"
-permalink: /about/
-layout: single
+layout: default
 ---
-
-## About me
-
-Master Course in KIST / Korea University
-
-Research area : Computer Vision / Machine Learning / 3D Vision
+<ul class="posts-list">
+  
+  {% assign category = page.category | default: page.title %}
+  {% for post in site.categories[category] %}
+    <li>
+      <h3>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+        <small>{{ post.date | date_to_string }}</small>
+      </h3>
+    </li>
+  {% endfor %}
+  
+</ul>
