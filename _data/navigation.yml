@@ -1,10 +1,12 @@
 # main links
 main:
-  - title: "A1" # 네비게이션 바에 표시 되는 이름
-    url: "/posts/algorithm" # 클릭시 이동할 URL
-  - title: "Category"
-    url: /categories/
-  - title: "About me"
+  - title: "paper_Review" # 네비게이션 바에 표시 되는 이름
+    url: "/posts/paper_review" # 클릭시 이동할 URL
+  - title: "Mathmatics_with_AI"
+    url: "/posts/mathmatics"
+  - title: "Algorithm"
+    url: /algorithm/
+  - title: "Who i am"
     url: /about/
   # - title: "Sample Collections"
   #   url: /collection-archive/
