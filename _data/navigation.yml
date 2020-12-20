@@ -1,11 +1,7 @@
 # main links
 main:
-  - title: "paper_Review" # 네비게이션 바에 표시 되는 이름
-    url: "/_posts/paper_review" # 클릭시 이동할 URL
-  - title: "Mathmatics_with_AI"
-    url: "/_posts/mathmatics"
-  - title: "Algorithm"
-    url: /_posts/algorithm/
+  - title: "Categories" # 네비게이션 바에 표시 되는 이름
+    url: "/categories/" # 클릭시 이동할 URL
   - title: "Who i am"
     url: /about/
   # - title: "Sample Collections"
