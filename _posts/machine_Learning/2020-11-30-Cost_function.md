@@ -49,7 +49,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 1. MAE (Mean Absolute Error)
 
 <img src="/assets/image/cost_function/mae.png" width="450px" height="300px" title="MAE" alt="MAE">
-
+<img src="/assets/image/cost_function/mae_graph.png" width="450px" height="300px" title="MAE" alt="MAE">
 ![alt text](/assets/image/cost_function/mae_graph.png)
 
 - 데이터와 모델 Prediction의 절대적인 차이 값의 평균
@@ -61,10 +61,8 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 --------------------------------
 
 2. MSE (Mean Squared Error)
-
-![alt text](/assets/image/cost_function/mse.png)
-
-![alt text](/assets/image/cost_function/mse_graph.png)
+<img src="/assets/image/cost_function/mse.png" width="450px" height="300px" title="MAE" alt="MAE">
+<img src="/assets/image/cost_function/mse_graph.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - (데이터와 모델 Prediction의 차이)의 제곱의 평균
 
@@ -77,8 +75,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 ------------------------------------
 
 3. RMSE (Root Mean Squared Error)
-
-![alt text](/assets/image/cost_function/RMSE.png)
+<img src="/assets/image/cost_function/RMSE.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - MSE와 매우 유사
 
@@ -91,8 +88,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 -----------------------------------------------------
 
 4. MSLE (Mean Squared Log Error)
-
-![alt text](/assets/image/cost_function/msle.png)
+<img src="/assets/image/cost_function/msle.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - MAE에서 Prediction과 Label에 자연로그를 취한 형태
 
@@ -102,8 +98,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 ---------------------------------------------------------
 
 5. MAD (Median Absolute Deviation)
-
-![alt text](/assets/image/cost_function/medae.png)
+<img src="/assets/image/cost_function/medae.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - 각 값에서 중앙값을 빼고, 그 차이에 절대값을 취한 값들의 중앙값을 구합니다.
 
@@ -112,8 +107,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 ## Cost function의 종류 - 2. for Classification
 
 1. CE(Cross-Entropy)
-
-![alt text](/assets/image/cost_function/cross_entropy_loss.png)
+<img src="/assets/image/cost_function/cross_entropy_loss.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - 두 식중 윗 식이 Cross-entropy의 식입니다.
 
@@ -152,8 +146,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 이해가 잘 안되신다면 바로 위의 링크를 타고 가셔서 한번 읽으시면 이해가 되실 듯 싶습니다.
 
 2. KL-Divergence
-
-![alt text](/assets/image/cost_function/kl_divergence.png)
+<img src="/assets/image/cost_function/kl_divergence.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 - KL-Divergence는 Cross-entropy에서 원래 이상적인 로직 대신에 si의 로직을 사용했을 때의 차이를 의미합니다.
 
