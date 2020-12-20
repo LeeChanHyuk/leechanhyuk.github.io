@@ -1,5 +1,5 @@
 ---
-title: "Cost(Loss) function 선정"
+title: "Cost(Loss) function의 종류 및 특징"
 date: 2020-11-25 18:13:00
 author: Leechanhyuk
 categories: Machine_Learning
@@ -50,7 +50,6 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 
 <img src="/assets/image/cost_function/mae.png" width="450px" height="300px" title="MAE" alt="MAE">
 <img src="/assets/image/cost_function/mae_graph.png" width="450px" height="300px" title="MAE" alt="MAE">
-![alt text](/assets/image/cost_function/mae_graph.png)
 
 - 데이터와 모델 Prediction의 절대적인 차이 값의 평균
 
