@@ -48,7 +48,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 
 1. MAE (Mean Absolute Error)
 
-<img src="/assets/image/cost_function/mae.png" width="450px" height="300px" title="MAE" alt="MAE"></img><br/>
+<img src="/assets/image/cost_function/mae.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 ![alt text](/assets/image/cost_function/mae_graph.png)
 
