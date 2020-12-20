@@ -48,7 +48,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 
 1. MAE (Mean Absolute Error)
 
-![alt text](/assets/image/cost_function/mae.png)
+<img src="/assets/image/cost_function/mae.png" width="450px" height="300px" title="MAE" alt="MAE"></img><br/>
 
 ![alt text](/assets/image/cost_function/mae_graph.png)
 
@@ -78,7 +78,7 @@ Prediction을 label 값에 가깝게 만들어 모델을 완성하는 그런 cos
 
 3. RMSE (Root Mean Squared Error)
 
-![alt text](/assets/image/cost_function/rmse.png)
+![alt text](/assets/image/cost_function/RMSE.png)
 
 - MSE와 매우 유사
 
