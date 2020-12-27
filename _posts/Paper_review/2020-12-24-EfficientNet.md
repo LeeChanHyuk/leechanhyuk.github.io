@@ -8,7 +8,7 @@ cover: "/assets/instacode.png"
 toc: true
 ---
 
-<img src="/assets/images/efficientnet/efficientnet_title.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/efficientnet_title.png" width="450px" height="300px" title="title" alt="title">
 
 <img src="/assets/image/efficientnet/top1.png" width="450px" height="300px" title="MAE" alt="MAE">
 
@@ -37,7 +37,7 @@ ILSVRC(ImageNet competetion)의 영향인지 지금 껏 본 바로는 **Accuracy
 
 경량화에 중점을 둔 모델은 그와 별개로, 혹은 특수 목적에 맞춰서 소개되곤 했습니다.
 
-<img src="/assets/images/efficientnet/imagenet.png" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/efficientnet/imagenet.png" width="450px" height="300px" title="imagenet" alt="imagenet">
 
 왜 그런걸까요? 왜 Accuracy와 speed는 분리되어야 했을까요?
 
@@ -61,7 +61,7 @@ Speed도 같이 가져갈 수 있는 가장 이상적인 factor value를 찾는 
 
 ## Proposed Approach - What is the Compound scaling?
 
-<img src="/assets/images/efficientnet/scale.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/scale.png" width="450px" height="300px" title="title" alt="title">
 
 Introduction에서 말했듯이, Model의 Accuracy를 향상시키기 위해선 Model의 알고리즘적인 측면 뿐만 아니라
 
@@ -77,7 +77,7 @@ Layer의 수(Depth), Channel의 수(Width), 입력 영상 해상도(Resolution)�
 
 ## Proposed Approach - Problem Formulation
 
-<img src="/assets/images/efficientnet/problem.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/problem.png" width="450px" height="300px" title="title" alt="title">
 
 사진은 Efficient Network의 Problem formulation을 나타냅니다.
 
@@ -112,7 +112,7 @@ Memory와 Flops(초당 부동소숫점 연산)이 허용하는 범위 이내에�
 
 동일한 baseline Network를 factor들을 각각 사용해서 scaling 한 후 결과를 분석합니다.
 
-<img src="/assets/images/efficientnet/each.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/each.png" width="450px" height="300px" title="title" alt="title">
 
 각각의 결과는 연산속도 대비 Accuracy를 나타내고 있고, 
 
@@ -122,7 +122,7 @@ Memory와 Flops(초당 부동소숫점 연산)이 허용하는 범위 이내에�
 
 * * *
 
-<img src="/assets/images/efficientnet/all.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/all.png" width="450px" height="300px" title="title" alt="title">
 
 위 그래프는 색깔에 따라서 d와 r을 설정한 후, w값에 따른 Accuracy 상승을 나타냅니다.
 
@@ -136,7 +136,7 @@ Memory와 Flops(초당 부동소숫점 연산)이 허용하는 범위 이내에�
 
 해당 공식은 아래와 같습니다.
 
-<img src="/assets/images/efficientnet/formula.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/formula.png" width="450px" height="300px" title="title" alt="title">
 
 공식은 3가지 factor를 scalar value로 정해두지 않고, a, b, r의 파이의 제곱승을 통해 표현했는데
 
@@ -168,7 +168,7 @@ Small network에 Compound scaling을 적용하여 upscaling 하는 방식으로 
 
 mobile 기기에 해당하는 변수 하나만 빼고 그대로 차용하였습니다.
 
-<img src="/assets/images/efficientnet/fun.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/fun.png" width="450px" height="300px" title="title" alt="title">
 (w = -0.07)
 
 해당 공식을 적용함에 따라서 Accuracy는 향상시키고, FLOPS는 저하시키는 방향으로 학습하였으며
@@ -177,7 +177,7 @@ mobile 기기에 해당하는 변수 하나만 빼고 그대로 차용하였습�
 
 Baseline Network는 아래와 같습니다.
 
-<img src="/assets/images/efficientnet/architecture.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/architecture.png" width="450px" height="300px" title="title" alt="title">
 
 Compound scaling은 Resource의 여유를 두기위해 파이는 1로 고정시켜두고
 
@@ -209,13 +209,13 @@ Compound scaling 후의 학습 parameter들은 아래와 같습니다.
 
 아래 figure는 B0 - B7의 값과 이름있는 네트워크들을 비교한 결과입니다.
 
-<img src="/assets/images/efficientnet/result1.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/result1.png" width="450px" height="300px" title="title" alt="title">
 
 ## Experiments
 
 Compound scaling의 효용성을 검증하기 위해, 저자는 ResNet과 MobileNet에 Compound scaling을 적용했습니다.
 
-<img src="/assets/images/efficientnet/result2.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/result2.png" width="450px" height="300px" title="title" alt="title">
 
 Network를 Upscaling한 만큼 FLOPS는 증가하였지만, 확실하게 Accuracy는 원래 네트워크는 물론이고
 
@@ -225,7 +225,7 @@ Network를 Upscaling한 만큼 FLOPS는 증가하였지만, 확실하게 Accurac
 
 또한 ImageNet의 모델들과의 비교 또한 진행하였고, 결과 Table은 아래와 같습니다.
 
-<img src="/assets/images/efficientnet/transfer_learning.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/transfer_learning.png" width="450px" height="300px" title="title" alt="title">
 
 테이블의 좌측은 Public하게 공개된 모델들과의 비교이고, 우측은 report된 모델들과의 비교입니다.
 
