@@ -10,7 +10,6 @@ toc: true
 
 <img src="/assets/image/efficientnet/efficientnet_title.png" width="450px" height="300px" title="title" alt="title">
 
-<img src="/assets/image/efficientnet/top1.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 * * *
 **본 논문리뷰는 논문 구성을 따르고 있지만, 단지 제 생각을 구성에 맞춰서 적은 것이지**
@@ -26,6 +25,8 @@ toc: true
 1. 네트워크의 최적화와 Accuracy를 동시에 신경 쓴 모델
 2. 네트워크 최적화 방식을 formulize하여 많은 모델에 도입이 쉬움
 3. 논문 publish 당시 Top-1 Accuracy를 달성, 동시에 매우 적은 파라미터로 속도 역시 빠름
+
+<img src="/assets/image/efficientnet/top1.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Introduction
 
@@ -61,7 +62,7 @@ Speed도 같이 가져갈 수 있는 가장 이상적인 factor value를 찾는 
 
 ## Proposed Approach - What is the Compound scaling?
 
-<img src="/assets/image/efficientnet/scale.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/scale.png" width="600px" height="450px" title="title" alt="title">
 
 Introduction에서 말했듯이, Model의 Accuracy를 향상시키기 위해선 Model의 알고리즘적인 측면 뿐만 아니라
 
@@ -122,7 +123,7 @@ Memory와 Flops(초당 부동소숫점 연산)이 허용하는 범위 이내에�
 
 * * *
 
-<img src="/assets/image/efficientnet/all.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/all.png" width="600px" height="450px" title="title" alt="title">
 
 위 그래프는 색깔에 따라서 d와 r을 설정한 후, w값에 따른 Accuracy 상승을 나타냅니다.
 
@@ -177,7 +178,7 @@ mobile 기기에 해당하는 변수 하나만 빼고 그대로 차용하였습�
 
 Baseline Network는 아래와 같습니다.
 
-<img src="/assets/image/efficientnet/architecture.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/architecture.png" width="400px" height="250px" title="title" alt="title">
 
 Compound scaling은 Resource의 여유를 두기위해 파이는 1로 고정시켜두고
 
@@ -209,7 +210,7 @@ Compound scaling 후의 학습 parameter들은 아래와 같습니다.
 
 아래 figure는 B0 - B7의 값과 이름있는 네트워크들을 비교한 결과입니다.
 
-<img src="/assets/image/efficientnet/result1.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/result1.png" width="600px" height="450px" title="title" alt="title">
 
 ## Experiments
 
@@ -225,7 +226,7 @@ Network를 Upscaling한 만큼 FLOPS는 증가하였지만, 확실하게 Accurac
 
 또한 ImageNet의 모델들과의 비교 또한 진행하였고, 결과 Table은 아래와 같습니다.
 
-<img src="/assets/image/efficientnet/transfer_learning.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/transfer_learning.png" width="600px" height="450px" title="title" alt="title">
 
 테이블의 좌측은 Public하게 공개된 모델들과의 비교이고, 우측은 report된 모델들과의 비교입니다.
 
@@ -233,7 +234,7 @@ Network를 Upscaling한 만큼 FLOPS는 증가하였지만, 확실하게 Accurac
 
 특히 Birdsnap Dataset에서는 Top-1 Accuracy를 달성했으며, G-Pipe와 비교해 8.4배나 적은 파라미터수를 보여줍니다.
 
-<img src="/assets/images/efficientnet/cam.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/efficientnet/cam.png" width="450px" height="300px" title="title" alt="title">
 
 또한 CAM을 사용한 결과에서는 Feature map의 분석을 통해서 객체의 특징을 좀 더 잘 잡아주는 것을 보여줍니다.
 
