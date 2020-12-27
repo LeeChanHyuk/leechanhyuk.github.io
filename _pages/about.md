@@ -1,10 +1,10 @@
 ---
-title: "About me."
+title: "About me"
 permalink: /about/
 layout: single
 ---
 
-## About me
+## 소개
 
 Master Course in KIST / Korea University
 
