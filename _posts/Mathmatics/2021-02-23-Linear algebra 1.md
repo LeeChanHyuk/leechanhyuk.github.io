@@ -12,7 +12,7 @@ toc: true
 
 **본 포스팅은 김영길 교수님의 유튜브 강의를 보고 개인적인 공부 목적으로 적은 것 임을 밝힙니다. 문제가 될 시 삭제하겠습니다.**
 
-===
+* * *
 
 ## 목차
 
@@ -23,9 +23,9 @@ toc: true
 5. Diagonalization
 6. Inner product space
 
-===
+* * *
 
-**Algebra**
+## Algebra
 
 > 의미 : 대수학 / 목적 : 방정식을 어떻게 풀건가
 
@@ -37,13 +37,13 @@ toc: true
 
 0이 존재해야 한다.
 
-**Vector**
+## Vector
 
 > 크기와 방향이 있는 것. [1 2 3 4] 따위로 표기.
 
 Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정의가 선제되어야 한다.
 
-**Field**
+## Field
 
 덧셈과 곱셈, 두 개의 연산을 가지고 있음.
 
@@ -55,13 +55,13 @@ Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정�
 
 0 외에 다른 수에 대해서는 역원 (곱해서 1이 되는 수) 을 가져야 한다.
 
-상단의 성질을 모두 만족시키는 집합을 **Field**라고 한다.
+상단의 성질을 모두 만족시키는 집합을 **Field** 라고 한다.
 
 {a + b(root)2 | a, b (- Q} 일 때 이 집합 역시 하나의 Field가 된다.
 
 반대로, 자연수나 정수같은 경우, 곱셈에 대한 역원이 존재할 수 없기 때문에, 이는 Field가 아니다.
 
-**Vector space**
+## Vector space
 
 벡터 Space는 Field를 포함한다.
 
