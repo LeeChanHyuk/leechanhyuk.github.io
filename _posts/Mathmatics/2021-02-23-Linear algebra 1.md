@@ -4,6 +4,7 @@ date: 2021-02-23 15:13:00
 author: Leechanhyuk
 categories: Mathmatics
 tags: Mathmatics Linear_argebra
+use_math: true
 cover: "/assets/instacode.png"
 toc: true
 ---
@@ -57,7 +58,7 @@ Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정�
 
 상단의 성질을 모두 만족시키는 집합을 **Field** 라고 한다.
 
-{a + b(root)2 | a, b (- Q} 일 때 이 집합 역시 하나의 Field가 된다.
+${a + \sqrt{b} | a, b \in Q}$ 일 때 이 집합 역시 하나의 Field가 된다.
 
 반대로, 자연수나 정수같은 경우, 곱셈에 대한 역원이 존재할 수 없기 때문에, 이는 Field가 아니다.
 
