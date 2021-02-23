@@ -1,9 +1,9 @@
 ---
-title: "[CV] Resnet Review"
-date: 2020-11-28 15:13:00
+title: "[Math] Linear algebra 1"
+date: 2021-02-23 15:13:00
 author: Leechanhyuk
-categories: paper_Review
-tags: computer_Vision machine_Learning backbone
+categories: Mathmatics
+tags: Mathmatics Linear_argebra
 cover: "/assets/instacode.png"
 toc: true
 ---
