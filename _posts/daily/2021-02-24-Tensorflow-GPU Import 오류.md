@@ -30,7 +30,7 @@ Pytorch만 사용하다 오래간만에 Tensorflow를 사용할 일이 생겼다
 
 ## 오류
 
-![Alt text](/_posts/daily/20210224/error.png)
+<img src="/_posts/daily/20210224/error.png" width="450px" height="300px" title="title" alt="title">
 
 ## 해결 방법
 
