@@ -66,7 +66,7 @@ $$a + b\sqrt{2} | a, b \in Q$$ 일 때 이 집합 역시 하나의 Field가 된�
 
 벡터 Space는 Field를 포함한다.
 
-또한 연산은 총 두개, 벡터끼리의 덧셈, 벡터와 스칼라의 곱셈이 존재한다. (덧셈이 존재하고 Function이 존재하는데 어떻게 뺄셈이 없지?)
+또한 연산은 총 두개, 벡터끼리의 덧셈, 벡터와 스칼라의 곱셈이 존재한다.
 
 Zero_Vector가 있어야한다.
 
@@ -132,19 +132,141 @@ Subspace라는 건 Subset + Vector space이다.
 
 하지만, 교환 법칙 및 결합 법칙 등은 당연히 존재한다. 왜냐하면 이미 Vector space내에 있었으니까
 
-예를 들자면, Vector space가 Zero-vector 하나로만 이루어져 있을 때
+또한 닫혀있어야 한다는 의미는 subspace 내부의 벡터들의 선형 결합으로 도출된 결과 값 역시 해당 공간에 포함되어야 한다는걸 의미한다.
 
-여기서는 Vector space = subspace가 된다.
+따라서 해당 subspace에 속한 벡터의 span이 해당 subspace를 이룬다고 생각하면 될 듯 하다.
 
-여기에서 반례는 오직 덧셈이나 곱셈을 했을 때, 규정된 공간보다 더 밖에 있는 것이 될 경우밖에 존재하지 않는다.
+이렇게 생각을 했을 때는, 왜 subspace에 대한 설명이 선형결합 및 span보다 앞쪽에 있는지 알 순 없지만 아무튼..
 
-여기서 드는 의문점은, 해당 Vector space가 Vector의 Polynomial으로 구성되어 있다고 할 때
+결론적으로 R^3 공간의 Subspace를 나타내보면
 
-그러면 덧셈을 무한히 하는 Polynomial이라고 가정을 하면, 언젠가는 당연히 해당 Vector space를 초과하지 않나?
+- R^3 Space
 
-정리하자면, 애초부터 Vector space가 R^3과 같이 특정 범위가 아니라 차원 단위일 때는 가능하지만
+- plane on the origin (원점을 지나는 면)
 
-그게 아니라면, 아.. 애초부터 차원단위가 될 수 밖에 없겠구나 Zero-vector로 구성된 Vector space가 아니면.
+- line on the origin (원점을 지나는 선)
+
+- Zero-Vector
+
+가 된다.
+
+또한 , Vector space가 Zero-vector 하나로만 이루어져 있을 때
+
+Subspace는 
+
+- Zero-vector
+
+가 되므로 이 경우의 Vector space == Subspace가 된다.
 
 
+* * *
+
+Example 5)
+
+M_m*n(R) (여기서 R은 행렬의 Entry가 전부 실수에서 왔다는 의미)
+
+여기서 Entry들이 모두 양수이면 이건 Subspace가 되는가?
+
+이 공간이 Subspace가 되려면 원소들이 모두 양수라도, 곱하는 수가 음수이면
+
+연산의 결과가 음수가 나오기 때문에 닫혀있지 않아서 Subspace가 될 수 없다.
+
+* * *
+
+Thm 1.4
+
+두 개의 Subspace의 교집합은 Subspace인가?
+
+Subspace 내에 원소들은 덧셈 및 스칼라 곱에 닫혀있어서 이 집합 역시 Subspace이다. (조사 필요)
+
+## Linear combination
+
+Def : v = a1u1 + a2u2 + ... + anun 일 대 v는 u1, u2, ..., un의 Linear combination이다.
+
+어떤 방정식을 여러 방정식의 Linear combination으로 나타내고, Linear combination의 계수를 찾기위해 행렬식을 푼다고 할 때
+
+[1 3]         [2]
+[-2 -5] [a] = [-2]
+[-5 -4] [b]   [12]
+[-3 -9]       [-6] 
+
+는 어떻게 풀 수 있을까?
+
+맨 먼저 생각이든건 Inverse matrix였는데, 여기서는 정방행렬이 아니므로 그는 사용할 수 없다.
+
+또 determinant 역시 정방행렬이 아니어서 불가.
+
+정답은 Gaussian elemination이다. (가우스 소거법)
+
+푸는 방법은 제일 앞의 행렬을 Pivot으로 잡고, 각 행의 원소들을 서로 더해주거나 빼주어서
+
+많은 원소들이 0이 되게 만들면, a 및 b를 구할 수 있다.
+
+이 때 제일 아래부터 원소를 0으로 채워주는데 성공해서 계단형태가 되면 이것을 Echelon form이라고 부른다.
+
+## Span
+
+Span은 어떤 Vector space의 vector들의 모든 선형 결합 (Linear combination) 을 포함하는 집합이다.
+
+예를 들어, Span{(1,0,0), (0,1,0)}은 모든 x, y집합을 표현할 수 있으므로 x-y plain 전체를 의미한다.
+
+* * *
+
+Thm 1.5
+
+Span은 항상 subspace이다.
+
+여기서 다시 복습하자면, Subspace는 항상 닫혀있어야한다.
+
+어떤 집합이 있다고 가정했을 때, 
+
+x = a1u1 + ... + anun
+Y = b1u1 + ... + bnun
+일 때, 이 두 식을 더하거나, 스칼라 곱을 하더라도
+
+Span은 모든 선형 결합을 포함하는 집합이므로, 무한히 더하거나 뺄 수 있으므로 더하거나 곱하는 연산에 있어서 닫혀있다.
+
+따라서 Span을 통해 형성된 공간은 그 벡터를 포함하는 공간의 Subspace가 된다.
+
+## Linear dependence & independence
+
+Vector u1, u2, ..., un이 있을 때
+
+a1u1 + a2u2 + ... + anun 일 때
+
+적어도 하나 이상의 an이 0이 아니면
+
+u1, u2 ... un은 Linearly dependent하다고 말한다.
+
+즉, un까지의 벡터로 선형 결합 혹은 곱으로 다른 un까지의 벡터를 만들 수 있다면 이는 Linearly dependent 하다는 것이다.
+
+만약 어떤 벡터 집합에서 Zero-vector가 포함되어 있다면
+
+그 집합은 항상 Linearly-dependent하다. 왜냐하면 다른 벡터로 Zero-vector를 만들어낼 수 있으니까
+
+따라서 어떠한 Subspace는 항상 Zero-vector를 포함하므로 항상 Linearly-dependent하다고 말할 수 있다.
+
+* * *
+
+Property
+
+- 공집합은 Linearly-independent
+
+- 원소가 하나인 집합이 있을 때 그게 Zero-vector가 아니면 그 집합은 Linearly-independent하다.
+
+* * *
+
+## 정리
+
+Vector space는 해당 공간 내에서 닫혀있어야 한다.
+
+Span은 span 하고자 하는 원소(들)의 선형 결합으로 이루어진 공간을 뜻한다.
+
+이렇게 생성된 공간은 반드시 그 역원 및 항등원을 포함하므로 원점을 지날 수 밖에 없다.
+
+예를 들어, 한 벡터가 있다고 치면 그 벡터의 span은 그 벡터의 진행 방향 및 그 역방향을 포함하는 선이 되겠지
+
+또, 두 벡터가 있다고 치면, 그 두 벡터의 span은 두 벡터를 감싸는 평면이 되겠지 (물론 원점도 반드시 포함)
+
+또 어떠한 원소를 포함하는 Vector space가 있을 대, 그 원소(들)의 span은 원래 Vector space의 subspace가 되겠지.
 
