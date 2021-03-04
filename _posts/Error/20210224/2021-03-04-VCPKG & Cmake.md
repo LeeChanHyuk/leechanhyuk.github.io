@@ -48,19 +48,19 @@ toc: true
 
  4. Source code 경로 설정 / Binaries 경로 설정
 
- <img src="/assets/image/20210304/cmake.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/cmake.png" width="450px" height="300px" title="MAE" alt="MAE"> 
  
  5. Configure -> Yes 클릭
 
- <img src="/assets/image/20210304/configure.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/configure.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
  6. Generator 설정 (visual_Studio version 및 운영체제에 따라 설정)
 
- <img src="/assets/image/20210304/generater.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/generater.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
  7. Installation 설정 (Dynamic library 방식 사용 예정이라 Build_STATIC 옵션 제거한 상태)
 
- <img src="/assets/image/20210304/done.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/done.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
  8. Generate 버튼 클릭
 

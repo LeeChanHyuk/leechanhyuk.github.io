@@ -38,41 +38,41 @@ toc: true
 
 1. 해당 코드에 필요한 헤더 파일이나 코드 파일경로를 추가 (C/C++ - Additional Include Directories)
 
- <img src="/assets/image/20210304/Additional.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Additional.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 2. Runtime Library 방식 수정 (C/C++ - Code Generation - MT(Release) / MTd(Debug))
 
- <img src="/assets/image/20210304/Runtime.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Runtime.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 3. 라이브러리 링킹을 위한 경로 설정 (VC++ Directories / Linker-General - Library Directories / Additional Library Directories)
 
- <img src="/assets/image/20210304/linker.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/linker.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 4. 라이브러리 종속성 파일 설정 (Linker - Input - Additional Dependencies)
 
- <img src="/assets/image/20210304/input.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/input.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 ## dynamic_Library - visual_Studio_Settings
 
 1. 해당 코드에 필요한 헤더 파일이나 코드 파일경로를 추가 (C/C++ - Additional Include Directories)
 
- <img src="/assets/image/20210304/Additional.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Additional.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 2. Runtime Library 방식 수정 (C/C++ - Code Generation - MD(Release) / MDd(Debug))
 
- <img src="/assets/image/20210304/Runtime_MD.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Runtime_MD.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 3. 라이브러리 링킹을 위한 경로 설정 (VC++ Directories / Linker-General - Library Directories / Additional Library Directories)
  
- <img src="/assets/image/20210304/Linker.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Linker.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 4. 라이브러리 종속성 파일 설정 (Linker - Input - Additional Dependencies)
 
- <img src="/assets/image/20210304/input.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/input.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 5. 환경 변수 설정 (중요) (내 PC - 속성 - 고급 시스템 설정 - 환경변수 - PATH 수정 - 해당 라이브러리 DLL 경로 추가) or (구성 속성 - 일반 - 디버깅 내에서 프로젝트 마다의 환경 설정을 해줘도 무방)
 
- <img src="/assets/image/20210304/Environment.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/20210304/Environment.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 
 
