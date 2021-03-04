@@ -29,6 +29,7 @@ Pytorch만 사용하다 오래간만에 Tensorflow를 사용할 일이 생겼다
 실행 환경 : Windows 10 / Tensorflow==1.12.0 / Keras==2.1.6 / 외 몇 개 / 프로젝트 가상환경을 따로 만들어서 돌림.
 
 ## 오류
+
 <img src="/assets/image/20210224/error.png" width="450px" height="300px" title="title" alt="title">
 
 ## 해결 방법
