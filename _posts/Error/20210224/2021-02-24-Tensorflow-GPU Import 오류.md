@@ -8,7 +8,7 @@ cover: "/assets/instacode.png"
 toc: true
 ---
 
-## 오류 발생 상황
+## 오류 발생 상황 
 
 Pytorch만 사용하다 오래간만에 Tensorflow를 사용할 일이 생겼다.
 

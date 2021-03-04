@@ -38,7 +38,7 @@ toc: true
 
  8. 32 bit -> vcpkg install package_name / 64 bit -> vcpkg install package_Name:x64-windows
 
-## CMake (GUI)
+## CMake (GUI) 
 
  1. CMake 설치 (https://cmake.org/)
 
