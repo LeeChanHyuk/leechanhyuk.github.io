@@ -1,9 +1,9 @@
 ---
-title: "Internal error"
+title: "[Error]Internal error"
 date: 2021-02-24 22:10:00
 author: Leechanhyuk
-categories: Error
-tags:	Error
+categories: Tip
+tags:	Tip
 cover: "/assets/instacode.png"
 toc: true
 ---
