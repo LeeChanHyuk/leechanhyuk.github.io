@@ -246,6 +246,10 @@ u1, u2 ... un은 Linearly dependent하다고 말한다.
 
 따라서 어떠한 Subspace는 항상 Zero-vector를 포함하므로 항상 Linearly-dependent하다고 말할 수 있다.
 
+Linear independence는 a1u1 + ... + anun = 일 때, 이 식을 만족하는 a1, a2, ... , an이 모두 0일 때 u1, ... , un은 Linearly independent하다고 말 할수 있다.
+
+직관적으로도 알 수 있겠지만, 집합이 커지면 커질수록 집합의 원소가 서로 Dependent할 확률은 높아진다.
+
 * * *
 
 Property
@@ -256,7 +260,7 @@ Property
 
 * * *
 
-## 정리
+## Linear dependence 까지의 정리
 
 Vector space는 해당 공간 내에서 닫혀있어야 한다.
 
@@ -266,7 +270,40 @@ Span은 span 하고자 하는 원소(들)의 선형 결합으로 이루어진 �
 
 예를 들어, 한 벡터가 있다고 치면 그 벡터의 span은 그 벡터의 진행 방향 및 그 역방향을 포함하는 선이 되겠지
 
-또, 두 벡터가 있다고 치면, 그 두 벡터의 span은 두 벡터를 감싸는 평면이 되겠지 (물론 원점도 반드시 포함)
+또, Independent한 두 벡터가 있다고 치면, 그 두 벡터의 span은 두 벡터를 감싸는 평면이 되겠지 (물론 원점도 반드시 포함)
 
 또 어떠한 원소를 포함하는 Vector space가 있을 대, 그 원소(들)의 span은 원래 Vector space의 subspace가 되겠지.
 
+마지막으로, Independent한 세 개의 백터가 있다고 치면, 그 때 부터는 3차원 공간에 있는 모든 좌표를 나타낼 수 있는 것이다.
+
+## Basis
+
+Basis는 V의 Linearly independent한 Subset인 동시에 Span했을 때 V를 Generate하는 벡터이다.
+
+Zero-vector는 basis가 될 수 없는데, 이는 당연히 span했을 때 V를 Generate할 수 없을 뿐더러
+
+Zero-vector를 Basis로 삼는 순간, 그 집합은 바로 Linearly dependent해지기 때문에 Basis가 어떠한 경우에도 될 수 없다.
+
+* * *
+
+Ex. 6) S = {(2, -3, 5), ... (7,2,0)}이 있을 때 얘들이 R^3을 Generate 할 수 있는가?
+
+-> 가감법 하다보면 Independent한 Vector가 3개 있다. 따라서 R^3을 Generate 할 수 있다.
+
+* * *
+
+## Dimension
+
+Dimension 은 Basis라는 집합안에 들어있는 원소들의 개수이다.
+
+즉, Basis 들로 Span 했을 때 나오는 차원의 수를 뜻한다고 보여진다.
+
+V = {0} -> dim(V) = 0
+V = F^4 -> dim(V) = 4
+V = M_2x3(F) -> dim(V) = 6
+
+마지막 예제가 이해가 잘 안갈 수도 있는데, 이는 이 행렬이 표현 가능한 자리의 수를 대략적으로 따져보면 이해가 쉽다.
+[1,0,0    [0,1,0   [0,0,1    [0,0,0    [0,0,0    [0,0,0
+ 0,0,0] ,  0,0,0] , 0,0,0] ,  1,0,0] ,  0,1,0] ,  0,0,1] 과 같이 표현 할 수 있는 자리의 수가 6개지?
+
+ 각 행렬은 서로서로 Independent 하기 때문에, 6차원을 표현할 수 있는 것이다.

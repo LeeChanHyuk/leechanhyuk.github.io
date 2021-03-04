@@ -1,6 +1,6 @@
 ---
 title: "[CV] Efficient Net Review"
-date: 2020-12-05 18:13:00
+date: 2020-11-25 18:13:00
 author: Leechanhyuk
 categories: paper_Review
 tags: Computer_Vision Machine_Learning
@@ -18,7 +18,7 @@ toc: true
 
 **Efficient Net 논문 리뷰**
 
-===
+* * *
 
 ## Efficient Net에 관한 정보
 
