@@ -1,6 +1,6 @@
 ---
-title: "[Math] Linear algebra 1"
-date: 2021-02-23 15:13:00
+title: "[Math] Linear algebra 2"
+date: 2021-03-03 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
 tags: Mathmatics Linear_argebra
@@ -9,7 +9,7 @@ cover: "/assets/instacode.png"
 toc: true
 ---
 
-**Linear algebra 1강**
+**Linear algebra 2강**
 
 **본 포스팅은 김영길 교수님의 유튜브 강의를 보고 개인적인 공부 목적으로 적은 것 임을 밝힙니다. 문제가 될 시 삭제하겠습니다.**
 

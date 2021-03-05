@@ -3,7 +3,9 @@ title: "[Math] Linear algebra 1"
 date: 2021-02-23 15:13:00
 author: Leechanhyuk
 categories: Mathmatics
-tags: Mathmatics Linear_argebra
+tags: 
+    - Mathmatics 
+    - Linear_argebra
 use_math: true
 cover: "/assets/instacode.png"
 toc: true
@@ -25,7 +27,7 @@ toc: true
 6. Inner product space
 
 * * *
-
+This formula $f(x) = x^2$ is an example.
 ## Algebra
 
 > 의미 : 대수학 / 목적 : 방정식을 어떻게 풀건가
@@ -326,3 +328,4 @@ div(V) = 2, basis = {1, i}가 된다. 왜냐하면 Field가 실수 차원이므�
 
 Ex 17. W = {(a1, a2, ..., a5)} |a1 + a3+ a5 = 0, a2 = a4| 일 때 차원은 3개이다. 왜냐하면 Constraint가 2개이니까 (이해 필요)
 
+Free variable과 dimension간의 정리 필요.
