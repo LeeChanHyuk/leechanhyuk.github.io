@@ -26,6 +26,7 @@ toc: true
 
 * * *
 
+This formula $f(x) = x^2$ is an example.
 ## 2.1 Linear transformation
 
  T: V -> W (여기서 V는 Domain(정의역), W는 Codomain(공역)) T는 Linear transformation을 뜻하고
