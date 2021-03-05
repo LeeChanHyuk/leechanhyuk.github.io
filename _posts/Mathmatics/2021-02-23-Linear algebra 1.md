@@ -142,9 +142,9 @@ Subspace라는 건 Subset + Vector space이다.
 
 - R^3 Space
 
-- plane on the origin (원점을 지나는 면)
+- plane on the origin (원점을 지나는 면) - 닫혀 있기 때문에 반드시 원점을 지나겠지?
 
-- line on the origin (원점을 지나는 선)
+- line on the origin (원점을 지나는 선) - 선도 마찬가지로 닫혀있는 집합이기 때문에 당연히 원점을 지나겠지?
 
 - Zero-Vector
 
@@ -307,3 +307,22 @@ V = M_2x3(F) -> dim(V) = 6
  0,0,0] ,  0,0,0] , 0,0,0] ,  1,0,0] ,  0,1,0] ,  0,0,1] 과 같이 표현 할 수 있는 자리의 수가 6개지?
 
  각 행렬은 서로서로 Independent 하기 때문에, 6차원을 표현할 수 있는 것이다.
+
+ 만약에 basis가 P_n(F) = {1,x,...,x^n} 일 때 몇차원이 될까?
+
+ basis들은 서로 Independent하므로 n+1 차원이 된다.
+
+ 그럼 Field = Complex number , V = Complex number 일 때 차원은 ?
+
+ dim(V) = 1, basis = {1}이 된다. 왜냐하면 Field가 복소수 차원이므로, 기저인 1에다가 Field에 속하는 스칼라값을 곱해주면 되기 때문
+
+ (이게 햇갈린다면 벡터 공간이 스칼라 * 벡터 및 벡터 + 벡터로 구성된다는 사실을 떠올려보기)
+
+ 만약 Field = Real number, V = Complex number일 때는?
+
+div(V) = 2, basis = {1, i}가 된다. 왜냐하면 Field가 실수 차원이므로, 벡터 공간의 모든 수를 표현하기 위해서는 기저로 i를 가지고 있어야 하기 때문
+
+* * *
+
+Ex 17. W = {(a1, a2, ..., a5)} |a1 + a3+ a5 = 0, a2 = a4| 일 때 차원은 3개이다. 왜냐하면 Constraint가 2개이니까 (이해 필요)
+
