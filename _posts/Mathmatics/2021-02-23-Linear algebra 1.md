@@ -3,9 +3,7 @@ title: "[Math] Linear algebra 1"
 date: 2021-02-23 15:13:00
 author: Leechanhyuk
 categories: Mathmatics
-tags: 
-    - Mathmatics 
-    - Linear_argebra
+tags: Mathmatics Linear_argebra
 use_math: true
 cover: "/assets/instacode.png"
 toc: true
@@ -27,7 +25,6 @@ toc: true
 6. Inner product space
 
 * * *
-This formula $f(x) = x^2$ is an example.
 ## Algebra
 
 > 의미 : 대수학 / 목적 : 방정식을 어떻게 풀건가
