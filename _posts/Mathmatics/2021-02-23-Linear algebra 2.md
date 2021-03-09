@@ -26,7 +26,6 @@ toc: true
 
 * * *
 
-This formula $f(x) = x^2$ is an example.
 ## 2.1 Linear transformation
 
  T: V -> W (여기서 V는 Domain(정의역), W는 Codomain(공역)) T는 Linear transformation을 뜻하고
@@ -94,4 +93,73 @@ T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
 
 미분, 및 정적분도 LT이다. (부정적분은 상수 C가 튀어나와버리니까 LT가 아니게되어 버릴 수 있다.)
 
+## Linear transformation some cases
+
+1. Identity transformation
+  
+ - V -> V 공간에서 x -> x
+
+2. Zero transformation
+
+ - V -> W 공간에서 x -> 0
+
+## Nullspace
+
+ - V -> W LT할 때 W에서 0가 되는 V내 벡터들의 집합을 Nullspace라고 한다.
+
+ - Identity transformation에서는 x -> x 여야 하므로, Nullspace가 되는 집합은 x=0으로만 구성된다.
+
+ - Zero transformation에서는 x -> 0 이어야 하므로, Nullspace가 되는 집합은 V 내 속한 벡터 전체이다.
+
+## image / preimage / Range
+
+- image : X->Y로 LT했을 때 x->y가 된다고 하면, y가 image가 된다.
+
+- pre-image : X->Y로 LT했을 때 x->y가 된다고 하면, x가 pre-image가 된다.
+
+- Range : 치역의 부분집합을 의미한다. 즉 image들의 집합을 의미한다고 생각하면 될 듯.
+
+## Ex 8.
+ - I: V -> V 에서, x -> x일 때
+
+ N(I) = {0}이고, R(I)는 그 자체가 된다.
+
+## EX 9.
+ - T0 : V -> V 에서, x -> 0 일 때
+
+ N(T0) = V, R(T0) = {0}가 된다. 설명은 필요없겠지?
+
+## Ex 9-1
+ 
+ - T: $R^3 to R^2$
+
+ $(a1, a2, a3) -> (a1 - a2, 2*a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
+
+ Span(1,1,0)이 T의 Null space가 된다.
+
+여기서 Range는 전체 집합이 된다. 왜냐하면 a1, a2, a3의 조절로 모든 R^2를 만들어낼 수 있으므로
+
+## Thm 2.2
+
+ T: P2(R) -> M_2*2(R) 이 선형적일 때, 
+
+ V의 basis의 집합이 b일 때, R(T) = span(T(B))를 증명.
+
+ 증명을 위해서는 서로 속한다는 걸 증명해야 함.
+
+ Span(T(b)) in R(T) 증명
+
+ basis의 image는 R(T) 내에 포함되어 있다. 이는 W의 Subspace이므로 그 부분집합의 (basis의) span 또한 반드시 포함해야하므로 증명된다.
+
+ ## Ex. 10
+ T: P_2(R) -> M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 -> [f(1) - f(2)      0         ] 
+                                                                  [     0          f(0)       ]
+ basis = {1, x, x^2} 일 때 P_2(R).
+
+ T(f(X)) = T(1) = a2=0, a2=0 이라는 뜻.                                                              
+
+## Nullity and Rank
+ - Nullity = Nullspace의 dimension
+
+ - Rank = Range의 dimension
 
