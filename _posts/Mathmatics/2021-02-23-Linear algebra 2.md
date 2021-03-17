@@ -133,7 +133,7 @@ T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
  
  - T: $R^3 to R^2$
 
- $(a1, a2, a3) -> (a1 - a2, 2*a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
+ $(a1, a2, a3) -> (a1 - a2, 2a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
 
  Span(1,1,0)이 T의 Null space가 된다.
 
@@ -162,4 +162,12 @@ T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
  - Nullity = Nullspace의 dimension
 
  - Rank = Range의 dimension
+
+## one-to-one(단사함수), onto(전사함수)
+
+ - One-to-one mapping => x != y => T(x) != T(y)
+
+ - Onto mapping T(V) = W
+
+ 
 

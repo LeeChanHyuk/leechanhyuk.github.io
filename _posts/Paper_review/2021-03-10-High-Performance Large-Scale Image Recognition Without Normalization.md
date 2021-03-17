@@ -63,11 +63,24 @@ toc: true
 
  - BN은 한계가 있다.
 
- - 지금껏 BN을 대체할만한 논문들은 나왔었지만, Test accuracy가 낮거나, Computing cost가 높거나 하는 단점들이 있었다.
+ - 지금껏 BN을 대체할만한 논문들은 나왔었지만, Test accuracy가 낮거나, Computing cost가 높거나 하는 단점들이 있었다. && Batch size가 너무 크면 unstable 했다.
 
- - 매우 deep한 resnet은 hidden activation(*?*)을 억제하는 방법으로 Normalize 없이도 성공하였다.
+ - 매우 deep한 resnet은 residual branch의 hidden activation(*?*)을 억제하는 방법으로 Normalize 없이도 성공하였다. 이는 learnable scalar로 구현 가능하다.
 
- - 
+## Contribution
+
+ - AGC(Adaptive Gradient Clipping)을 사용해 큰 batch size 및 stronger data augmentations를 가능하게 했다.
+
+ - Normalizer-Free-ResNets(NFNets), sets new state-of-the-art validatijon accuracies on ImageNet competition (86.5%)
+
+ - Through the fine-tuning, the model achieves 89.2%, top-1 accuracy after fine-tuning
+
+## Understanding of batch normalization
+
+ - Batch normalization downscales hidden activation on the residual branch. -> biases the signal towards the skip path (For efficient optimization)
+
+ - Batch normalization eliminates mean-shift
+   - 
 
 
 
