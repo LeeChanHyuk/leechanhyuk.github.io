@@ -39,7 +39,7 @@ toc: true
 
 ## Vector
 
-> 크기와 방향이 있는 것. [1 2 3 4] 따위로 표기.
+> 크기와 방향이 있는 것. $$ \begin{matrix} 1 2 3 4 \end{matrix} $$ 따위로 표기.
 
 Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정의가 선제되어야 한다.
 
@@ -57,7 +57,7 @@ Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정�
 
 상단의 성질을 모두 만족시키는 집합을 **Field** 라고 한다.
 
-$$a + b\sqrt{2} | a, b \in Q$$ 일 때 이 집합 역시 하나의 Field가 된다.
+$$ a + b\sqrt{2} | a, b \in Q $$ 일 때 이 집합 역시 하나의 Field가 된다.
 
 반대로, 자연수나 정수같은 경우, 곱셈에 대한 역원이 존재할 수 없기 때문에, 이는 Field가 아니다.
 
