@@ -71,7 +71,7 @@ Zero_Vector가 있어야한다.
 
 Ex ) Vector F가 있을 때, Vector space는 F^n으로 나타낸다. 이는 F를 여러번 곱한게 아니라, n은 차원을 나타내는 수이고, 2차원이면 F^2, 3차원이면 F^3이 되겠지.
 
-이 때 F^n은 교환 법칙 및 결합 법칙이 모두 성립한다.
+이 때 F^n은 교환 법칙 및 결합 법칙이 모두 성립한다.:w
 
 Vector space는 항상 Zero-Vector를 포함해야 한다.
 
@@ -87,25 +87,25 @@ Vector space는 항상 Zero-Vector를 포함해야 한다.
 
 * * *
 
-Example 6 ) $$S = {(a1,a2) | a1,a2 \in R }$$ 일 때
+Example 6 ) $$ S = {(a1,a2) | a1,a2 \in R} $$ 일 때
 
-(a1, a2) + (b1, b2) = (a1+b1, a2-b2)로 정의하고
+$$ (a1, a2) + (b1, b2) = (a1+b1, a2-b2) $$로 정의하고
 
-c(a1, a2) = (ca1, ca2)로 정의했을 때 이 공간은 Vector space가 맞는가?
+$$ c(a1, a2) = (ca1, ca2) $$로 정의했을 때 이 공간은 Vector space가 맞는가?
 
 여기서는 Vector에 대한 교환 법칙이 성립되지 않기 때문에
 
-이 공간은 Vector space가 아니다.(5-3 != 3-5)
+이 공간은 Vector space가 아니다.$$ (5-3 != 3-5) $$
 
 * * *
 
-Example 7 ) $$S = {(a1, a2 | a1, a2 \in R)}$$ 일 때
+Example 7 ) $$ S = {(a1, a2 | a1, a2 \in R)} $$ 일 때
 
-(a1, a2) + (b1, b2) = (a1 + b1, 0) 이고
+$$ (a1, a2) + (b1, b2) = (a1 + b1, 0) $$ 이고
 
-c(a1, a2) = (ca1, 0) 일 때 이는 Vector space가 맞는가?
+$$ c(a1, a2) = (ca1, 0) $$ 일 때 이는 Vector space가 맞는가?
 
-여기서는 a2 + b2가 0이 되므로, a2=1 b2=0일 때 1+0=0이 되므로 0이 덧셈에 대한 항등원이 되지 않으므로 Vector space가 아니고
+여기서는 $$ a2 + b2 $$가 0이 되므로, a2=1 b2=0일 때 1+0=0이 되므로 0이 덧셈에 대한 항등원이 되지 않으므로 Vector space가 아니고
 
 ca2 = 0이므로, c=1, a2=2일 때, 1*2=0일 때도 역시 1이 곱셈에 대한 항등원이 되지 못하므로 Vector space가 아니다.
 
