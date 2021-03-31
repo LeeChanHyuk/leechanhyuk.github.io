@@ -47,9 +47,9 @@ toc: true
 
  - ResNet은 Batch normalization을 사용하여 높은 성능을 달성했다.
 
- - Batch normalization은 메모리를 많이 소모하고, 학습에 오랜시간이 걸리게 한다.
+ - 단점 1 : Batch normalization은 메모리를 많이 소모하고, 학습에 오랜시간이 걸리게 한다.
 
- - BN을 사용했을 경우 Training 및 Inference시에 성능 차이가 난다.
+ - 단점 2 : BN을 사용했을 경우 Training 및 Inference시에 성능 차이가 난다.
 
  - Mini batch상에서 training example 사이의 independence를 없앤다.
 

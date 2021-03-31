@@ -39,7 +39,7 @@ toc: true
 
 ## Vector
 
-> 크기와 방향이 있는 것. $$ \begin{matrix} 1 2 3 4 \end{matrix} $$ 따위로 표기.
+> 크기와 방향이 있는 것. $\begin{matrix} 1 2 3 4 \end{matrix}$ 따위로 표기.
 
 Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정의가 선제되어야 한다.
 
@@ -57,7 +57,7 @@ Vector space의 정의를 위해선 우선 Scalar들의 공간인 Field의 정�
 
 상단의 성질을 모두 만족시키는 집합을 **Field** 라고 한다.
 
-$$ a + b\sqrt{2} | a, b \in Q $$ 일 때 이 집합 역시 하나의 Field가 된다.
+$a + b\sqrt{2} | a, b \in Q$ 일 때 이 집합 역시 하나의 Field가 된다.
 
 반대로, 자연수나 정수같은 경우, 곱셈에 대한 역원이 존재할 수 없기 때문에, 이는 Field가 아니다.
 
@@ -87,25 +87,25 @@ Vector space는 항상 Zero-Vector를 포함해야 한다.
 
 * * *
 
-Example 6 ) $$ S = {(a1,a2) | a1,a2 \in R} $$ 일 때
+Example 6 ) $S = {(a1,a2) | a1,a2 \in R}$ 일 때
 
-$$ (a1, a2) + (b1, b2) = (a1+b1, a2-b2) $$로 정의하고
+$(a1, a2) + (b1, b2) = (a1+b1, a2-b2)$로 정의하고
 
-$$ c(a1, a2) = (ca1, ca2) $$로 정의했을 때 이 공간은 Vector space가 맞는가?
+$c(a1, a2) = (ca1, ca2)$로 정의했을 때 이 공간은 Vector space가 맞는가?
 
 여기서는 Vector에 대한 교환 법칙이 성립되지 않기 때문에
 
-이 공간은 Vector space가 아니다.$$ (5-3 != 3-5) $$
+이 공간은 Vector space가 아니다.$(5-3 != 3-5)$
 
 * * *
 
-Example 7 ) $$ S = {(a1, a2 | a1, a2 \in R)} $$ 일 때
+Example 7 ) $S = {(a1, a2 | a1, a2 \in R)}$ 일 때
 
-$$ (a1, a2) + (b1, b2) = (a1 + b1, 0) $$ 이고
+$(a1, a2) + (b1, b2) = (a1 + b1, 0)$ 이고
 
-$$ c(a1, a2) = (ca1, 0) $$ 일 때 이는 Vector space가 맞는가?
+$c(a1, a2) = (ca1, 0)$ 일 때 이는 Vector space가 맞는가?
 
-여기서는 $$ a2 + b2 $$가 0이 되므로, a2=1 b2=0일 때 1+0=0이 되므로 0이 덧셈에 대한 항등원이 되지 않으므로 Vector space가 아니고
+여기서는 $a2 + b2$가 0이 되므로, a2=1 b2=0일 때 1+0=0이 되므로 0이 덧셈에 대한 항등원이 되지 않으므로 Vector space가 아니고
 
 ca2 = 0이므로, c=1, a2=2일 때, 1*2=0일 때도 역시 1이 곱셈에 대한 항등원이 되지 못하므로 Vector space가 아니다.
 
@@ -162,7 +162,7 @@ Subspace는
 
 Example 5)
 
-M_m*n(R) (여기서 R은 행렬의 Entry가 전부 실수에서 왔다는 의미)
+$M_m*n(R)$ (여기서 R은 행렬의 Entry가 전부 실수에서 왔다는 의미)
 
 여기서 Entry들이 모두 양수이면 이건 Subspace가 되는가?
 
@@ -180,14 +180,11 @@ Subspace 내에 원소들은 덧셈 및 스칼라 곱에 닫혀있어서 이 집
 
 ## Linear combination
 
-Def : v = a1u1 + a2u2 + ... + anun 일 대 v는 u1, u2, ..., un의 Linear combination이다.
+Def : $v = a1u1 + a2u2 + ... + anun$ 일 대 v는 u1, u2, ..., un의 Linear combination이다.
 
 어떤 방정식을 여러 방정식의 Linear combination으로 나타내고, Linear combination의 계수를 찾기위해 행렬식을 푼다고 할 때
 
-[1 3]         [2]
-[-2 -5] [a] = [-2]
-[-5 -4] [b]   [12]
-[-3 -9]       [-6] 
+$\begin{matrix} 1 & 3 \\\ -2 & -5 \\\ -5 & -4 \\\ -3 & -9 \end{matrix} x \begin{matrix} a \\\ b \end{matrix} = \begin{matrix} 2 \\\ -2 \\\ 12 \\\ -6 \end{matrix}$ 
 
 는 어떻게 풀 수 있을까?
 
@@ -207,7 +204,7 @@ Def : v = a1u1 + a2u2 + ... + anun 일 대 v는 u1, u2, ..., un의 Linear combin
 
 Span은 어떤 Vector space의 vector들의 모든 선형 결합 (Linear combination) 을 포함하는 집합이다.
 
-예를 들어, Span{(1,0,0), (0,1,0)}은 모든 x, y집합을 표현할 수 있으므로 x-y plain 전체를 의미한다.
+예를 들어, $Span{(1,0,0), (0,1,0)}$은 모든 x, y집합을 표현할 수 있으므로 x-y plain 전체를 의미한다.
 
 * * *
 
@@ -219,8 +216,9 @@ Span은 항상 subspace이다.
 
 어떤 집합이 있다고 가정했을 때, 
 
-x = a1u1 + ... + anun
-Y = b1u1 + ... + bnun
+$x = a1u1 + ... + anun$
+$Y = b1u1 + ... + bnun$
+
 일 때, 이 두 식을 더하거나, 스칼라 곱을 하더라도
 
 Span은 모든 선형 결합을 포함하는 집합이므로, 무한히 더하거나 뺄 수 있으므로 더하거나 곱하는 연산에 있어서 닫혀있다.
@@ -231,7 +229,7 @@ Span은 모든 선형 결합을 포함하는 집합이므로, 무한히 더하�
 
 Vector u1, u2, ..., un이 있을 때
 
-a1u1 + a2u2 + ... + anun = 0 일 때
+$a1u1 + a2u2 + ... + anun = 0$ 일 때
 
 적어도 하나 이상의 an이 0이 아니면
 
@@ -285,7 +283,7 @@ Zero-vector를 Basis로 삼는 순간, 그 집합은 바로 Linearly dependent�
 
 * * *
 
-Ex. 6) S = {(2, -3, 5), ... (7,2,0)}이 있을 때 얘들이 R^3을 Generate 할 수 있는가?
+Ex. 6) $S = {(2, -3, 5), ... (7,2,0)}$이 있을 때 얘들이 R^3을 Generate 할 수 있는가?
 
 -> 가감법 하다보면 Independent한 Vector가 3개 있다. 따라서 R^3을 Generate 할 수 있다.
 
@@ -297,13 +295,15 @@ Dimension 은 Basis라는 집합안에 들어있는 원소들의 개수이다.
 
 즉, Basis 들로 Span 했을 때 나오는 차원의 수를 뜻한다고 보여진다.
 
-V = {0} -> dim(V) = 0
-V = F^4 -> dim(V) = 4
-V = M_2x3(F) -> dim(V) = 6
+$V = {0} -> dim(V) = 0$
+$V = F^4 -> dim(V) = 4$
+$V = M_2x3(F) -> dim(V) = 6$
 
 마지막 예제가 이해가 잘 안갈 수도 있는데, 이는 이 행렬이 표현 가능한 자리의 수를 대략적으로 따져보면 이해가 쉽다.
-[1,0,0    [0,1,0   [0,0,1    [0,0,0    [0,0,0    [0,0,0
- 0,0,0] ,  0,0,0] , 0,0,0] ,  1,0,0] ,  0,1,0] ,  0,0,1] 과 같이 표현 할 수 있는 자리의 수가 6개지?
+
+$\begin{matrix} 1 & 0 & 0 \\\ 0 & 0 & 0 \end{matrix} , \begin{matrix} 0 & 1 & 0 \\\ 0 & 0 & 0 \end{matrix} , \begin{matrix} 0 & 0 & 1 \\\ 1 & 0 & 0 \end{matrix} , \begin{matrix} 0 & 0 & 0 \\\ 0 & 1 & 0 \end{martix} , \begin{matrix} 0 & 0 & 0 \\\ 0 & 0 & 1 \end{matrix}
+
+ 과 같이 표현할 수 있는 자리의 수가 6개지?
 
  각 행렬은 서로서로 Independent 하기 때문에, 6차원을 표현할 수 있는 것이다.
 
@@ -323,6 +323,6 @@ div(V) = 2, basis = {1, i}가 된다. 왜냐하면 Field가 실수 차원이므�
 
 * * *
 
-Ex 17. W = {(a1, a2, ..., a5)} |a1 + a3+ a5 = 0, a2 = a4| 일 때 차원은 3개이다. 왜냐하면 Constraint가 2개이니까 (이해 필요)
+Ex 17. $W = {(a1, a2, ..., a5)} |a1 + a3+ a5 = 0, a2 = a4|$ 일 때 차원은 3개이다. 왜냐하면 Constraint가 2개이니까 (이해 필요)
 
 Free variable과 dimension간의 정리 필요.
