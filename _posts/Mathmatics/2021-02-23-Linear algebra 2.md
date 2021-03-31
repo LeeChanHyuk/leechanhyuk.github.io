@@ -169,9 +169,51 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## one-to-one(단사함수), onto(전사함수)
 
- - One-to-one mapping => x != y => T(x) != T(y)
+ - One-to-one mapping => x != y => T(x) != T(y) (정의역이 서로 다를 때, 치역 역시 서로 다른 것)
 
- - Onto mapping T(V) = W
-
+ - Onto mapping T(V) = W (치역과 공역이 같을 때)
  
+ ## Ex. 11
 
+ - $T: P_2(R) -> P_3(R)$
+
+ - T(f(x)) = 2/prime{f}(x) + \integral{0}^{x} 3f(t)dt
+
+ - 일 때 rank(T), nullity(T), one-to-one, onto를 구하라
+
+ - 즉 2차식 -> 3차식으로 갈 때 저 4가지를 구하라~ 이 문제이다.
+
+ - $R(T) = Span({T(1), T(X), T(X^2)}) = Span({3x, 2+ \frac{3}{2}x^2, 4x + x^3})$ 이 된다.
+   이 때, 세 원소는 서로 Linearly-independent하므로 rank(T) = dim(R(T)) = 3이다.
+   이 때, 공역의 Dimension은 $dim(P_3(R)) = 4$이므로, 공역과 치역은 달라진다. 따라서 T는 전사함수가 아니다.
+
+ - nullity(T) + 치역 demension = 정의역 demension -> 0 + 3 = 3 = rank(T)
+ - Nullity는 0. Zero-vector 하나만을 원소로 가진다.
+ 따라서 T는 one-to-one이다.
+
+ - 또한 one-to-one 함수는 image당 하나의 pre-image만 대응해야 하므로, nullity가 0라는 말은(Only Zero-vector) one-to-one이 되고
+ one-to-one이면 nullity가 0라고 할 수 있다.
+
+ ## S가 linearly independnt할 때, one-to-one이면 T(S)도 linearly independent하다.
+
+ - T가 일반적으로 linear 하기만 하면, 이건 성립하지 않는다.
+
+ - one-to-one(단사함수) 일 때는 가능하다.
+
+ - $\sum\limits{i=1}^{n} a_i*T(v_i) = 0$ 일 때, T는 linear하니까 밖으로 빼줄 때, 이게 성립하려면 one-to-one이므로 nullspace일 때 밖에 없다.
+   따라서 $a_i = 0$여야 하므로, T(S)는 Linearly independent하다. 다시 말하자면, 이 식이 linearly dependent하다면, 좌측변에 $a_n$이 0이 아닌 애가 있어야 할텐데
+   그런애가 없으므로, Linearly independent하다고 할 수 있다.
+
+ ## Ex 13. $T: P_2(R) -> R^3 | a_0 + a_1x + a_2x^2 -> (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
+
+ ## Basis를 LT했을 때 같은 곳으로 mapping 된다면, 그 공간에 속하는 나머지 원소들도 같은 곳으로 mapping된다. 너무 자명해서 설명은 생략.
+
+ ## Matrix representation
+
+  - LT는 항상 행렬로 나타낼 수 있다.
+
+  ## Ex.1 
+    - In $F^3, \beta = {e_1, e_2, e_3}, e_1 = \begin{matrix} 1 \\\ 0 \\\ 0 \end{matrix} e_2 = \begin{matrix} 0 \\\ 1 \\\ 0 \end{matrix} e_3 = \begin{matrix} 0 \\\ 0 \\\ 1 \end{matrix}$
+    - $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
+
+    - 집합으로 보면 $\beta = \gamma$인데, oredered bases로 보면 서로 다르다.
