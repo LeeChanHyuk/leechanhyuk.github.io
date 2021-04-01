@@ -32,38 +32,41 @@ toc: true
 
  T가 V -> W의 Linear transformation이 되려면 
 
- T(x + y) = T(x) + T(y) (Additivity)
- T(cx)    = cT(x)       (homogeneity) 를 모든 x,y in v, c in F에서 성립해야한다. 두 조건을 만족시키는 것을 Super position principle이 성립한다. 고 표현한다.
+ $T(x + y) = T(x) + T(y)$ - (Additivity)
 
- 즉, addition 및 scalar multiplication을 preserve하는 것을 Linear map(=Linear transformation) 이라고 한다.
+ $T(cx)    = cT(x)$       - (homogeneity) 
+ 
+ 를 모든 x,y in v, c in F에서 성립해야한다. 두 조건을 만족시키는 것을 Super position principle이 성립한다. 고 표현한다.
+
+ 즉, addition 및 scalar multiplication을 preserve하는 것을 Linear map(= Linear transformation) 이라고 한다.
 
 * * *
 
 *Properties of Lienar map*
 
-1. T(0) = 0 (Zero vector 의 output은 Zero-vector이다) (즉 해당되는 공간의 벡터는 항등원 및 역원이 존재해야하고, 그렇게 되면 반드시 원점을 지나게 되므로, 당연히 Zero-vector의 Output은 Zero-vector가 된다.)
+1. $T(0) = 0$ (Zero vector 의 output은 Zero-vector이다) (즉 해당되는 공간의 벡터는 항등원 및 역원이 존재해야하고, 그렇게 되면 반드시 원점을 지나게 되므로, 당연히 Zero-vector의 Output은 Zero-vector가 된다.)
 
 즉, 아래 그림은 Linear하지 않다.
 
 <img src="/assets/image/20210305/linearmap_ex.png" width="450px" height="300px" title="title" alt="title"> 
 
-2. T(cx + y) = cT(x) + T(y)
+2. $T(cx + y) = cT(x) + T(y)$
 
-3. T(x - y) = T(x) - T(y)
+3. $T(x - y) = T(x) - T(y)$
 
-4. T($$sigma_(i=1 to n) aixi) = sigma_(i=1 to n) aiT(xi)) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
-
-* * *
-
-Ex 1. T: R^2 -> R^2
-
-(a1, a2) -> (2a1 + a2, a1)이 LT인가?
-
-2번 성질을 이용해서 풀어봤을 때 성공적이므로 맞다.
+4. $T(\sum_{i=1}^{n} a_i*x_i)$ = $(\sum_{i=1}^{n} a_i * T(x_i)$) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
 
 * * *
 
-Ex 2. T: R^2 -> R^2
+Ex 1. $T: R^2 \to R^2$
+
+$(a1, a2) \to (2a1 + a2, a1)$이 LT인가?
+
+2번 성질을 이용해서 풀어봤을 때 성공적이므로 맞다. (LT를 하기 전에 연산을 하던, LT를 한 후에 연산을 하던 같다는 것이다. 위 식에서 T는 연산, -> 는 LT를 뜻한다.)
+
+* * *
+
+Ex 2. $T: R^2 \to R^2$
 
 <img src="/assets/image/20210305/linearmap_ex2.png" width="450px" height="300px" title="title" alt="title"> 
 
@@ -73,7 +76,7 @@ Ex 2. T: R^2 -> R^2
 
 *Reflection*
 
-T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
+$T: R^2 \to R^2$ 일 때 $(a1, a2) \to (a1, -a2)$는 LT인가?
 
 역시 Additivity 및 homogeneity를 증명하면 LT라는 걸 알 수 있다.
 
@@ -97,43 +100,43 @@ T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
 
 1. Identity transformation
   
- - V -> V 공간에서 x -> x
+ -$ V \to V$ 공간에서 $x \to x$
 
 2. Zero transformation
 
- - V -> W 공간에서 x -> 0
+ - $V \to W$ 공간에서 $x \to 0$
 
 ## Nullspace
 
- - V -> W LT할 때 W에서 0가 되는 V내 벡터들의 집합을 Nullspace라고 한다.
+ - $V \to W$ LT할 때 W에서 0가 되는 V내 벡터들의 집합을 Nullspace라고 한다.
 
- - Identity transformation에서는 x -> x 여야 하므로, Nullspace가 되는 집합은 x=0으로만 구성된다.
+ - Identity transformation에서는 $x \to x$ 여야 하므로, Nullspace가 되는 집합은 $x = 0$으로만 구성된다.
 
- - Zero transformation에서는 x -> 0 이어야 하므로, Nullspace가 되는 집합은 V 내 속한 벡터 전체이다.
+ - Zero transformation에서는 $x \to 0$ 이어야 하므로, Nullspace가 되는 집합은 V 내 속한 벡터 전체이다.
 
 ## image / preimage / Range
 
-- image : X->Y로 LT했을 때 x->y가 된다고 하면, y가 image가 된다.
+- image : $X \to Y$로 LT했을 때 $x \to y$가 된다고 하면, y가 image가 된다.
 
-- pre-image : X->Y로 LT했을 때 x->y가 된다고 하면, x가 pre-image가 된다.
+- pre-image : $X \to Y$로 LT했을 때 $x \to y$가 된다고 하면, x가 pre-image가 된다.
 
 - Range : 치역의 부분집합을 의미한다. 즉 image들의 집합을 의미한다고 생각하면 될 듯.
 
 ## Ex 8.
- - I: V -> V 에서, x -> x일 때
+ - $I: V \to V$ 에서, $x \to x$일 때
 
- N(I) = {0}이고, R(I)는 그 자체가 된다.
+$N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## EX 9.
- - T0 : V -> V 에서, x -> 0 일 때
+ - $T0 : V \to V$ 에서, $x \to 0$ 일 때
 
- N(T0) = V, R(T0) = {0}가 된다. 설명은 필요없겠지?
+ $N(T0) = V, R(T0) = {0}$가 된다. 설명은 필요없겠지?
 
 ## Ex 9-1
  
- - T: $R^3 to R^2$
+ - T: $R^3 \to R^2$
 
- $(a1, a2, a3) -> (a1 - a2, 2*a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
+ $(a1, a2, a3) \to (a1 - a2, 2a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
 
  Span(1,1,0)이 T의 Null space가 된다.
 
@@ -141,25 +144,107 @@ T: R^2 -> R^2 일 때 (a1, a2) -> (a1, -a2)는 LT인가?
 
 ## Thm 2.2
 
- T: P2(R) -> M_2*2(R) 이 선형적일 때, 
+ $T: P2(R) \to M_2*2(R)$ 이 선형적일 때, 
 
- V의 basis의 집합이 b일 때, R(T) = span(T(B))를 증명.
+ V의 basis의 집합이 b일 때, $R(T) = Span(T(B))$를 증명.
 
  증명을 위해서는 서로 속한다는 걸 증명해야 함.
 
- Span(T(b)) in R(T) 증명
+ $Span(T(b))$ in $R(T)$ 증명
 
- basis의 image는 R(T) 내에 포함되어 있다. 이는 W의 Subspace이므로 그 부분집합의 (basis의) span 또한 반드시 포함해야하므로 증명된다.
+ basis의 image는 $R(T)$ 내에 포함되어 있다. 이는 W의 Subspace이므로 그 부분집합의 (basis의) span 또한 반드시 포함해야하므로 증명된다.
 
  ## Ex. 10
- T: P_2(R) -> M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 -> [f(1) - f(2)      0         ] 
+
+ T: P_2(R) \to M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 \to [f(1) - f(2)      0         ] 
                                                                   [     0          f(0)       ]
  basis = {1, x, x^2} 일 때 P_2(R).
 
  T(f(X)) = T(1) = a2=0, a2=0 이라는 뜻.                                                              
 
 ## Nullity and Rank
+
  - Nullity = Nullspace의 dimension
 
  - Rank = Range의 dimension
 
+## one-to-one(단사함수), onto(전사함수)
+
+ - One-to-one mapping => $x != y \to T(x) != T(y)$ (정의역이 서로 다를 때, 치역 역시 서로 다른 것)
+
+ - Onto mapping T(V) = W (치역과 공역이 같을 때)
+ 
+ ## Ex. 11
+
+ - $T: P_2(R) \to P_3(R)$
+
+ - T(f(x)) = 2/prime{f}(x) + \integral{0}^{x} 3f(t)dt
+
+ - 일 때 rank(T), nullity(T), one-to-one, onto를 구하라
+
+ - 즉 2차식 -> 3차식으로 갈 때 저 4가지를 구하라~ 이 문제이다.
+
+ - $R(T) = Span({T(1), T(X), T(X^2)}) = Span({3x, 2+ \frac{3}{2}x^2, 4x + x^3})$ 이 된다.
+   이 때, 세 원소는 서로 Linearly-independent하므로 rank(T) = dim(R(T)) = 3이다.
+   이 때, 공역의 Dimension은 $dim(P_3(R)) = 4$이므로, 공역과 치역은 달라진다. 따라서 T는 전사함수가 아니다.
+
+ - $nullity(T) + 치역 demension = 정의역 demension -> 0 + 3 = 3 = rank(T)$
+ - Nullity는 0. Zero-vector 하나만을 원소로 가진다.
+ 따라서 T는 one-to-one이다.
+
+ - 또한 one-to-one 함수는 image당 하나의 pre-image만 대응해야 하므로, nullity가 0라는 말은(Only Zero-vector) one-to-one이 되고
+ one-to-one이면 nullity가 0라고 할 수 있다.
+
+ ## S가 linearly independnt할 때, one-to-one이면 T(S)도 linearly independent하다.
+
+ - T가 일반적으로 linear 하기만 하면, 이건 성립하지 않는다.
+
+ - one-to-one(단사함수) 일 때는 가능하다.
+
+ - $\sum_{i=1}^{n} a_i*T(v_i) = 0$ 일 때, T는 linear하니까 밖으로 빼줄 때, 이게 성립하려면 one-to-one이므로 nullspace일 때 밖에 없다.
+   따라서 $a_i = 0$여야 하므로, T(S)는 Linearly independent하다. 다시 말하자면, 이 식이 linearly dependent하다면, 좌측변에 $a_n$이 0이 아닌 애가 있어야 할텐데
+   그런애가 없으므로, Linearly independent하다고 할 수 있다.
+
+ ## Ex 13. 
+ 
+ - $T: P_2(R) \to R^3 | a_0 + a_1x + a_2x^2 \to (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
+
+ ## Basis를 LT했을 때 같은 곳으로 mapping 된다면, 그 공간에 속하는 나머지 원소들도 같은 곳으로 mapping된다. 너무 자명해서 설명은 생략.
+
+ ## Matrix representation
+
+  - LT는 항상 행렬로 나타낼 수 있다.
+
+  ## Ex.1 
+    - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
+    $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
+
+    집합으로 보면 $\beta = \gamma$ 인데, oredered bases로 보면 서로 다르다.
+
+  # Def.
+   - V, W : Finite-dimensional vector space에서 $T:V \to W$ 일 때 V의 ordered basis $\beta = {{v_!, v_2, ..., v_n}}, W의 ordered basis $\gamma = {{w_1, w_2, ..., w_m}} 일 때
+
+     $T(v_j) = \sum_{i=1}^{m} a_ij w_i$로 표현이 가능하고, 이 때 $a_ij$를 통해서 이 LT를 행렬로 표현할 수 있다.
+
+    # Ex.3
+
+     - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 (${[1 0] [0 1]}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
+
+     - $T(1, 0) = (1, 0, 2) = 1e_! + 0e+2 + 2e_3, T(0, 1) = (3, 0, -4) = 3e_1 + 0e_2 - 4e_3$으로 나타낼 수 있다. $e_n$은 물론, R^3의 Basis들이다.
+
+     - 이걸 나타내면 $\\begin{matrix} 1 & 3 \\\ 0 & 0 \\\ 2 & -4 \\end{matrix}$로 나타낼 수 있다.
+
+     - 만약, $r^'$를 ${{e_3, e_2, e_1}}$으로 바꾼다면 단순히 행의 순서만 저것에 맞게 배치해주면 된다.
+
+     - 결론적으로는, 그냥 LT인데, 순서를 신경써라~ 이거다.
+
+     - LT를 규정하고, 순서를 신경써서 하면 된다.
+
+  # Def. LT의 모음은 그 자체가 Vector space가 된다. 
+    # Ex.5
+      - $T: R^2 \to R^3$이고, $U: R&2 \to R^3$ 일 때, 서로 LT식이 다르다고 해도, (T+U)의 LT 결과도 같다. 이게 당연한게, 예전에 이미 T(x+y) = T(x) + T(y)를 증명하지 않았던가
+        따라서 ordered basis가 적용된다고 해도, 이는 같다. 이와 유사하게 역시 Ordered basis라고 해도 cT(x) = T(cx) 역시 성립한다.
+
+  # U * T * X 가 있을 때는, T와 X를 먼저 계산하고, 그 다음에 U와의 계산을 진행한다.
+  
+  # 앞서 설명했지만, Ordered basis를 가지는 LT도 교환법칙 및 결합법칙이 모두 성립한다. 또한 Additivity 및 Homogeneouty 역시 성립한다.
