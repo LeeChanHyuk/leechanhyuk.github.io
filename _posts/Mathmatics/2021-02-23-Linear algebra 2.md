@@ -134,7 +134,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Ex 9-1
  
- - T: $R^3 to R^2$
+ - T: $R^3 \to R^2$
 
  $(a1, a2, a3) \to (a1 - a2, 2a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
 
@@ -170,7 +170,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## one-to-one(단사함수), onto(전사함수)
 
- - One-to-one mapping => x != y => T(x) != T(y) (정의역이 서로 다를 때, 치역 역시 서로 다른 것)
+ - One-to-one mapping => $x != y \to T(x) != T(y)$ (정의역이 서로 다를 때, 치역 역시 서로 다른 것)
 
  - Onto mapping T(V) = W (치역과 공역이 같을 때)
  
@@ -188,7 +188,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
    이 때, 세 원소는 서로 Linearly-independent하므로 rank(T) = dim(R(T)) = 3이다.
    이 때, 공역의 Dimension은 $dim(P_3(R)) = 4$이므로, 공역과 치역은 달라진다. 따라서 T는 전사함수가 아니다.
 
- - nullity(T) + 치역 demension = 정의역 demension -> 0 + 3 = 3 = rank(T)
+ - $nullity(T) + 치역 demension = 정의역 demension -> 0 + 3 = 3 = rank(T)$
  - Nullity는 0. Zero-vector 하나만을 원소로 가진다.
  따라서 T는 one-to-one이다.
 
@@ -216,7 +216,35 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
   - LT는 항상 행렬로 나타낼 수 있다.
 
   ## Ex.1 
-    - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \left\begin{matrix} 1 \\\ 0 \\\ 0 \end{matrix}\right e_2 = \left\begin{matrix} 0 \\\ 1 \\\ 0 \end{matrix}\right e_3 = \left\begin{matrix} 0 \\\ 0 \\\ 1 \end{matrix}\right$
+    - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
     $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
 
     집합으로 보면 $\beta = \gamma$ 인데, oredered bases로 보면 서로 다르다.
+
+  # Def.
+   - V, W : Finite-dimensional vector space에서 $T:V \to W$ 일 때 V의 ordered basis $\beta = {{v_!, v_2, ..., v_n}}, W의 ordered basis $\gamma = {{w_1, w_2, ..., w_m}} 일 때
+
+     $T(v_j) = \sum_{i=1}^{m} a_ij w_i$로 표현이 가능하고, 이 때 $a_ij$를 통해서 이 LT를 행렬로 표현할 수 있다.
+
+    # Ex.3
+
+     - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 (${[1 0] [0 1]}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
+
+     - $T(1, 0) = (1, 0, 2) = 1e_! + 0e+2 + 2e_3, T(0, 1) = (3, 0, -4) = 3e_1 + 0e_2 - 4e_3$으로 나타낼 수 있다. $e_n$은 물론, R^3의 Basis들이다.
+
+     - 이걸 나타내면 $\\begin{matrix} 1 & 3 \\\ 0 & 0 \\\ 2 & -4 \\end{matrix}$로 나타낼 수 있다.
+
+     - 만약, $r^'$를 ${{e_3, e_2, e_1}}$으로 바꾼다면 단순히 행의 순서만 저것에 맞게 배치해주면 된다.
+
+     - 결론적으로는, 그냥 LT인데, 순서를 신경써라~ 이거다.
+
+     - LT를 규정하고, 순서를 신경써서 하면 된다.
+
+  # Def. LT의 모음은 그 자체가 Vector space가 된다. 
+    # Ex.5
+      - $T: R^2 \to R^3$이고, $U: R&2 \to R^3$ 일 때, 서로 LT식이 다르다고 해도, (T+U)의 LT 결과도 같다. 이게 당연한게, 예전에 이미 T(x+y) = T(x) + T(y)를 증명하지 않았던가
+        따라서 ordered basis가 적용된다고 해도, 이는 같다. 이와 유사하게 역시 Ordered basis라고 해도 cT(x) = T(cx) 역시 성립한다.
+
+  # U * T * X 가 있을 때는, T와 X를 먼저 계산하고, 그 다음에 U와의 계산을 진행한다.
+  
+  # 앞서 설명했지만, Ordered basis를 가지는 LT도 교환법칙 및 결합법칙이 모두 성립한다. 또한 Additivity 및 Homogeneouty 역시 성립한다.
