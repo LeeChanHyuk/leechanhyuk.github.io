@@ -54,19 +54,19 @@ toc: true
 
 3. $T(x - y) = T(x) - T(y)$
 
-4. $T(\sum_{i=1}^{n} a_i*x_i)$ = $(\sum\limits{i=1}^{n} a_i * T(x_i)$) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
+4. $T(\sum_{i=1}^{n} a_i*x_i)$ = $(\sum_{i=1}^{n} a_i * T(x_i)$) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
 
 * * *
 
-Ex 1. $T: R^2 -> R^2$
+Ex 1. $T: R^2 \to R^2$
 
-$(a1, a2) -> (2a1 + a2, a1)$이 LT인가?
+$(a1, a2) \to (2a1 + a2, a1)$이 LT인가?
 
 2번 성질을 이용해서 풀어봤을 때 성공적이므로 맞다. (LT를 하기 전에 연산을 하던, LT를 한 후에 연산을 하던 같다는 것이다. 위 식에서 T는 연산, -> 는 LT를 뜻한다.)
 
 * * *
 
-Ex 2. $T: R^2 -> R^2$
+Ex 2. $T: R^2 \to R^2$
 
 <img src="/assets/image/20210305/linearmap_ex2.png" width="450px" height="300px" title="title" alt="title"> 
 
@@ -76,7 +76,7 @@ Ex 2. $T: R^2 -> R^2$
 
 *Reflection*
 
-$T: R^2 -> R^2$ 일 때 $(a1, a2) -> (a1, -a2)$는 LT인가?
+$T: R^2 \to R^2$ 일 때 $(a1, a2) \to (a1, -a2)$는 LT인가?
 
 역시 Additivity 및 homogeneity를 증명하면 LT라는 걸 알 수 있다.
 
@@ -100,35 +100,35 @@ $T: R^2 -> R^2$ 일 때 $(a1, a2) -> (a1, -a2)$는 LT인가?
 
 1. Identity transformation
   
- -$ V -> V$ 공간에서 $x -> x$
+ -$ V \to V$ 공간에서 $x \to x$
 
 2. Zero transformation
 
- - $V -> W$ 공간에서 $x -> 0$
+ - $V \to W$ 공간에서 $x \to 0$
 
 ## Nullspace
 
- - $V -> W$ LT할 때 W에서 0가 되는 V내 벡터들의 집합을 Nullspace라고 한다.
+ - $V \to W$ LT할 때 W에서 0가 되는 V내 벡터들의 집합을 Nullspace라고 한다.
 
- - Identity transformation에서는 $x -> x$ 여야 하므로, Nullspace가 되는 집합은 $x = 0$으로만 구성된다.
+ - Identity transformation에서는 $x \to x$ 여야 하므로, Nullspace가 되는 집합은 $x = 0$으로만 구성된다.
 
- - Zero transformation에서는 $x -> 0$ 이어야 하므로, Nullspace가 되는 집합은 V 내 속한 벡터 전체이다.
+ - Zero transformation에서는 $x \to 0$ 이어야 하므로, Nullspace가 되는 집합은 V 내 속한 벡터 전체이다.
 
 ## image / preimage / Range
 
-- image : $X->Y$로 LT했을 때 $x->y$가 된다고 하면, y가 image가 된다.
+- image : $X \to Y$로 LT했을 때 $x \to y$가 된다고 하면, y가 image가 된다.
 
-- pre-image : $X->Y$로 LT했을 때 $x->y$가 된다고 하면, x가 pre-image가 된다.
+- pre-image : $X \to Y$로 LT했을 때 $x \to y$가 된다고 하면, x가 pre-image가 된다.
 
 - Range : 치역의 부분집합을 의미한다. 즉 image들의 집합을 의미한다고 생각하면 될 듯.
 
 ## Ex 8.
- - $I: V -> V$ 에서, $x -> x$일 때
+ - $I: V \to V$ 에서, $x \to x$일 때
 
 $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## EX 9.
- - $T0 : V -> V$ 에서, $x -> 0$ 일 때
+ - $T0 : V \to V$ 에서, $x \to 0$ 일 때
 
  $N(T0) = V, R(T0) = {0}$가 된다. 설명은 필요없겠지?
 
@@ -136,7 +136,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
  
  - T: $R^3 to R^2$
 
- $(a1, a2, a3) -> (a1 - a2, 2a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
+ $(a1, a2, a3) \to (a1 - a2, 2a3)$ 일 때 Nullspace는 a1 = a2이고, a3=0 일 때의 집합을 의미하므로
 
  Span(1,1,0)이 T의 Null space가 된다.
 
@@ -144,7 +144,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Thm 2.2
 
- $T: P2(R) -> M_2*2(R)$ 이 선형적일 때, 
+ $T: P2(R) \to M_2*2(R)$ 이 선형적일 때, 
 
  V의 basis의 집합이 b일 때, $R(T) = Span(T(B))$를 증명.
 
@@ -156,7 +156,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  ## Ex. 10
 
- T: P_2(R) -> M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 -> [f(1) - f(2)      0         ] 
+ T: P_2(R) \to M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 \to [f(1) - f(2)      0         ] 
                                                                   [     0          f(0)       ]
  basis = {1, x, x^2} 일 때 P_2(R).
 
@@ -176,7 +176,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
  
  ## Ex. 11
 
- - $T: P_2(R) -> P_3(R)$
+ - $T: P_2(R) \to P_3(R)$
 
  - T(f(x)) = 2/prime{f}(x) + \integral{0}^{x} 3f(t)dt
 
@@ -201,11 +201,13 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  - one-to-one(단사함수) 일 때는 가능하다.
 
- - $\sum\limits{i=1}^{n} a_i*T(v_i) = 0$ 일 때, T는 linear하니까 밖으로 빼줄 때, 이게 성립하려면 one-to-one이므로 nullspace일 때 밖에 없다.
+ - $\sum_{i=1}^{n} a_i*T(v_i) = 0$ 일 때, T는 linear하니까 밖으로 빼줄 때, 이게 성립하려면 one-to-one이므로 nullspace일 때 밖에 없다.
    따라서 $a_i = 0$여야 하므로, T(S)는 Linearly independent하다. 다시 말하자면, 이 식이 linearly dependent하다면, 좌측변에 $a_n$이 0이 아닌 애가 있어야 할텐데
    그런애가 없으므로, Linearly independent하다고 할 수 있다.
 
- ## Ex 13. $T: P_2(R) -> R^3 | a_0 + a_1x + a_2x^2 -> (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
+ ## Ex 13. 
+ 
+ - $T: P_2(R) \to R^3 | a_0 + a_1x + a_2x^2 \to (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
 
  ## Basis를 LT했을 때 같은 곳으로 mapping 된다면, 그 공간에 속하는 나머지 원소들도 같은 곳으로 mapping된다. 너무 자명해서 설명은 생략.
 
@@ -214,7 +216,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
   - LT는 항상 행렬로 나타낼 수 있다.
 
   ## Ex.1 
-    - In $F^3, \beta = {e_1, e_2, e_3}, e_1 = \begin{matrix} 1 \\\ 0 \\\ 0 \end{matrix} e_2 = \begin{matrix} 0 \\\ 1 \\\ 0 \end{matrix} e_3 = \begin{matrix} 0 \\\ 0 \\\ 1 \end{matrix}$
-    - $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
+    - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \left\begin{matrix} 1 \\\ 0 \\\ 0 \end{matrix}\right e_2 = \left\begin{matrix} 0 \\\ 1 \\\ 0 \end{matrix}\right e_3 = \left\begin{matrix} 0 \\\ 0 \\\ 1 \end{matrix}\right$
+    $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
 
-    - 집합으로 보면 $\beta = \gamma$인데, oredered bases로 보면 서로 다르다.
+    집합으로 보면 $\beta = \gamma$ 인데, oredered bases로 보면 서로 다르다.
