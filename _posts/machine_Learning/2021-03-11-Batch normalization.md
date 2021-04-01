@@ -2,7 +2,7 @@
 title: "[ML] Batch normalization 개요 및 고찰"
 date: 2021-03-11 21:05:00
 author: Leechanhyuk
-categories: paper_Review
+categories: Machine_Learning
 tags: Computer_Vision Machine_Learning
 cover: "/assets/instacode.png"
 toc: true
