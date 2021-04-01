@@ -33,6 +33,7 @@ toc: true
  T가 V -> W의 Linear transformation이 되려면 
 
  $T(x + y) = T(x) + T(y)$ - (Additivity)
+
  $T(cx)    = cT(x)$       - (homogeneity) 
  
  를 모든 x,y in v, c in F에서 성립해야한다. 두 조건을 만족시키는 것을 Super position principle이 성립한다. 고 표현한다.
@@ -53,7 +54,7 @@ toc: true
 
 3. $T(x - y) = T(x) - T(y)$
 
-4. $T(\sum\limits{i=1}^{n} a_i*x_i)$ = $(\sum\limits{i=1}^{n} a_i * T(x_i)$) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
+4. $T(\sum_{i=1}^{n} a_i*x_i)$ = $(\sum\limits{i=1}^{n} a_i * T(x_i)$) -> 즉 스칼라곱을 미리하고 Linear transformation을 하나, 나중에 하나 같다는 것이다.
 
 * * *
 
