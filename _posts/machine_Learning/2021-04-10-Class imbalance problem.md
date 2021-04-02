@@ -99,55 +99,55 @@ toc: true
 
  - 조건에 따라 학습되지 않는 데이터가 있다는게 특징입니다.
 
- 1. Random sampling
+## Hard sampling - 1. Random sampling
 
-    - 가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
+  -가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
 
-    - Random sampling은 R-CNN 계열에서 Positive sample이 부족할 때, Negative sample중 Random하게 선택하는데 사용됩니다.
+  - Random sampling은 R-CNN 계열에서 Positive sample이 부족할 때, Negative sample중 Random하게 선택하는데 사용됩니다.
 
-    - IoU나 Loss value와 같은 Input box로써의 속성을 고려할 때, 더 좋은 방법들이 있는 것으로 알려져있습니다.
+  - IoU나 Loss value와 같은 Input box로써의 속성을 고려할 때, 더 좋은 방법들이 있는 것으로 알려져있습니다.
 
- 2. Hard-example mining methods
+## Hard sampling - 2. Hard-example mining methods
 
-    - 이 방법은 좀 더 학습하기 어려운 특징들을 학습할 때 Detector의 학습이 잘 된다는 가정을 바탕으로하는 방법입니다.
+  - 이 방법은 좀 더 학습하기 어려운 특징들을 학습할 때 Detector의 학습이 잘 된다는 가정을 바탕으로하는 방법입니다.
 
-    - 일종의 Bootstrap 방법이라고 볼 수 있습니다.
+  - 일종의 Bootstrap 방법이라고 볼 수 있습니다.
 
-    2.1 Hard-negative mining
+## Hard sampling - 2.1 Hard-negative mining
 
-      - 동작 방법은 우선 학습을 통해 initialization model을 만들고, 만드는 과정에서 Confidense score가 높았던 Negative 데이터들을 데이터셋에 추가하여 new classifier를 훈련시킵니다.
+  - 동작 방법은 우선 학습을 통해 initialization model을 만들고, 만드는 과정에서 Confidense score가 높았던 Negative 데이터들을 데이터셋에 추가하여 new classifier를 훈련시킵니다.
 
-      - 정리하자면, 학습 시 Background 데이터에서 오분류되었던 Sample, 즉 False positive 중 가장 크게 잘못 분류한 데이터를 데이터셋에 추가하여 훈련하는 방법을 뜻합니다.
+  - 정리하자면, 학습 시 Background 데이터에서 오분류되었던 Sample, 즉 False positive 중 가장 크게 잘못 분류한 데이터를 데이터셋에 추가하여 훈련하는 방법을 뜻합니다.
 
-      - 이를 Iterative하게 동작시킴으로써 본 방법은 동작합니다.
+  - 이를 Iterative하게 동작시킴으로써 본 방법은 동작합니다.
   
-      - 예시로 SSD에서는 Negative example들 중에 Highest value를 가진 example들 (Loss 기여도가 큰 example들)을 사용해서 훈련합니다.
+  - 예시로 SSD에서는 Negative example들 중에 Highest value를 가진 example들 (Loss 기여도가 큰 example들)을 사용해서 훈련합니다.
 
-      <img src="/assets/image/Class_imbalance/negative.png" width="450px" height="300px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/negative.png" width="450px" height="300px" title="MAE" alt="MAE">
  
-    2.2. OHEM (Online Hard Example Mining) (2016)
+## Hard sampling - 2.2. OHEM (Online Hard Example Mining) (CVPR, 2016)
 
-      - Hard-example mining methods의 전체 과정이 너무 느린 점을 개선하기 위해 등장했습니다.
+  - Hard-example mining methods의 전체 과정이 너무 느린 점을 개선하기 위해 등장했습니다.
 
-      - 모든 Region proposal(논문에서는 Selective search)들을 forward pass 한 후, 높은 Loss를 가지는 Region에 대해서만 학습시키는 방법입니다.
+  - 모든 Region proposal(논문에서는 Selective search)들을 forward pass 한 후, 높은 Loss를 가지는 Region에 대해서만 학습시키는 방법입니다.
  
-      - Sampling 과정이 없기 때문에, Hard-negative mining 보다 2배 빠른 결과를 보입니다. 
+  - Sampling 과정이 없기 때문에, Hard-negative mining 보다 2배 빠른 결과를 보입니다. 
 
-      - 추가적인 메모리 소모(Readonly model)와 학습 속도가 느린 단점이 있습니다.
+  - 추가적인 메모리 소모(Readonly model)와 학습 속도가 느린 단점이 있습니다.
 
-      <img src="/assets/image/Class_imbalance/ohem.png" width="450px" height="300px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/ohem.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
-    2.3 IoU Lower Bound
+## Hard sampling - 2.3 IoU Lower Bound
 
-      - GT와의 IoU가 높게 측정된 Negative sample을 Hard sample로 생각하고, 일정 이상의 IoU를 가진 negavie sample들만 학습에 반영시킨 방법입니다.
+  - GT와의 IoU가 높게 측정된 Negative sample을 Hard sample로 생각하고, 일정 이상의 IoU를 가진 negavie sample들만 학습에 반영시킨 방법입니다.
 
-      - Fast-R-CNN이 대표적인 예시 (2017)
+  - Fast-R-CNN이 대표적인 예시 (ICCV, 2017)
 
-    2.4 IoU-Based sampling
+## Hard sampling - 2.4 IoU-Based sampling
 
-      - Negative example의 Training hardness를 GT와 IoU가 높을 수록 높게 측정하여 학습시킵니다.
+  - Negative example의 Training hardness를 GT와 IoU가 높을 수록 높게 측정하여 학습시킵니다.
 
-      - Libra R-CNN이 대표적인 예시 (2019)
+  - Libra R-CNN이 대표적인 예시 (CVPR, 2019)
  
 ## Soft sampling
 
@@ -157,49 +157,49 @@ toc: true
 
  - 여기서 Sampling scale은 $w_i$로 나타낸다.
 
-  1. Focal loss (2017)
+## Soft sampling - 1. Focal loss (ICCV, 2017)
 
-    - Sample들의 예측율에 반비례하게 학습시키는 방법.
+ - Sample들의 예측율에 반비례하게 학습시키는 방법.
 
-    - 즉, 학습이 쉬워 예측율이 높게 나오면 Loss에 영향을 덜 주고, 학습이 어려워 예측율이 낮게 나오면 Loss에 영향을 많이 주는 방법.
+ - 즉, 학습이 쉬워 예측율이 높게 나오면 Loss에 영향을 덜 주고, 학습이 어려워 예측율이 낮게 나오면 Loss에 영향을 많이 주는 방법.
 
-    - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인.
+ - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인.
 
-    <img src="/assets/image/Class_imbalance/focal_loss.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/focal_loss.png" width="450px" height="300px" title="MAE" alt="MAE">
   
-  2. GHM (Gradient Harmonizing Mechanism) (2019)
+## Soft sampling - 2. GHM (Gradient Harmonizing Mechanism) (AAAI, 2019)
 
-    - 대부분의 Easy sample들은 비슷한 Gradient norm를 가진다는데서 착안한 방법.
+ - 대부분의 Easy sample들은 비슷한 Gradient norm를 가진다는데서 착안한 방법.
 
-    - 유사한 Gradient를 가지는 sample이 많을 수록, 도출되는 Loss에 penalty를 준다.
+ - 유사한 Gradient를 가지는 sample이 많을 수록, 도출되는 Loss에 penalty를 준다.
 
-    - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미.
+ - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미.
 
-    <img src="/assets/image/Class_imbalance/ghm.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/ghm.png" width="450px" height="300px" title="MAE" alt="MAE">
 
-  3. PISA (PrIme Sample Attention) (2019)
+## Soft sampling - 3. PISA (PrIme Sample Attention) (CVPR, 2019)
 
-    - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 rank를 계산한다.
+ - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 rank를 계산한다.
 
-    - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻한다.
+ - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻한다.
 
-    <img src="/assets/image/Class_imbalance/pisa1.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/pisa1.png" width="450px" height="300px" title="MAE" alt="MAE">
 
-    - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter이다.
+ - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter이다.
 
-    <img src="/assets/image/Class_imbalance/pisa2.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/pisa2.png" width="450px" height="300px" title="MAE" alt="MAE">
 
-    - 결과적으로 GT와의 IoU가 높은 Positive sample이 더 크게 반영되어서, 마치 robust estimation과 유사한 느낌을 준다.
+ - 결과적으로 GT와의 IoU가 높은 Positive sample이 더 크게 반영되어서, 마치 robust estimation과 유사한 느낌을 준다.
 
-    - 본 네트워크는, OHEM을 Positive sample에 적용했을 때 보다 성능이 뛰어났으며, 본 네트워크와 OHEM 결합하였을 때 더 뛰어난 결과를 보였다고 한다.
-    
-    - 직접적으로 precision 결과를 높인 것은 아니지만, IoU를 더 잘 찾게되어서 전체적인 성능 향상이 일어났다고 한다.
+ - 본 네트워크는, OHEM을 Positive sample에 적용했을 때 보다 성능이 뛰어났으며, 본 네트워크와 OHEM 결합하였을 때 더 뛰어난 결과를 보였다고 한다.
+  
+ - 직접적으로 precision 결과를 높인 것은 아니지만, IoU를 더 잘 찾게되어서 전체적인 성능 향상이 일어났다고 한다.
 
 ## Foreground-Foreground class imbalance
 
-  - 이것은 Class간의 불균형이 전부 foreground class에서 나타났을 때를 의미한다.
+ - 이것은 Class간의 불균형이 전부 foreground class에서 나타났을 때를 의미한다.
 
-  - 주로, 데이터셋 자체가 편중되어있거나 (=Dataset-level imbalance), Sampling 방법에 문제가 있을 때 (Mini-batch-level imbalance) 나타난다.
+ - 주로, 데이터셋 자체가 편중되어있거나 (=Dataset-level imbalance), Sampling 방법에 문제가 있을 때 (Mini-batch-level imbalance) 나타난다.
 
-  - 이것은 데이터셋 자체를 균등하게 제작하거나, Batch를 만들때 OFB(Online Foreground Balanaced) 샘플링 등을 사용하는데, 상당히 직관적인 문제라 다루지 않겠다.
+ - 이것은 데이터셋 자체를 균등하게 제작하거나, Batch를 만들때 OFB(Online Foreground Balanaced) 샘플링 등을 사용하는데, 상당히 직관적인 문제라 다루지 않겠다.
 
