@@ -99,33 +99,33 @@ toc: true
 
  1. Random sampling
 
-  - 가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
+   - 가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
 
-  - Random sampling은 R-CNN 계열에서 Positive sample이 부족할 때, Negative sample중 Random하게 선택하는데 사용됩니다.
+   - Random sampling은 R-CNN 계열에서 Positive sample이 부족할 때, Negative sample중 Random하게 선택하는데 사용됩니다.
 
-  - IOU나 Loss value와 같은 Input box로써의 속성을 고려할 때, 더 좋은 방법들이 있는 것으로 알려져있습니다.
+   - IOU나 Loss value와 같은 Input box로써의 속성을 고려할 때, 더 좋은 방법들이 있는 것으로 알려져있습니다.
 
  2. Hard-example mining methods
 
-  - 이 방법은 좀 더 학습하기 어려운 특징들을 학습할 때 Detector의 학습이 잘 된다는 가정을 바탕으로하는 방법입니다.
-
-  - 처음에는 Negative example로 initialization model을 만들고, 그 과정에서 학습에 실패했던 example들로 new classifier를 훈련시킵니다.
-
-  - 즉, False positive, True negative로 분류된 Sample들을 Training data에 넣어서 훈련시킵니다.
-
-  - 위와 같은 방법은 Bootstrap 방법, 관측된 Random sample들 중에 Resample을 하는 방법, 이라고 합니다.
-
-  - Computing resource가 부족한 시절에 제안된 방법이지만, Loss에 기여도가 크다는 점에서 아직도 사용되는 방법입니다.
-
-  - SSD에서는 Negative example들 중에 Highest value를 가진 example들 (Loss 기여도가 큰 example들)을 사용해서 훈련합니다.
-
+   - 이 방법은 좀 더 학습하기 어려운 특징들을 학습할 때 Detector의 학습이 잘 된다는 가정을 바탕으로하는 방법입니다.
+ 
+   - 처음에는 Negative example로 initialization model을 만들고, 그 과정에서 학습에 실패했던 example들로 new classifier를 훈련시킵니다.
+ 
+   - 즉, False positive, True negative로 분류된 Sample들을 Training data에 넣어서 훈련시킵니다.
+ 
+   - 위와 같은 방법은 Bootstrap 방법, 관측된 Random sample들 중에 Resample을 하는 방법, 이라고 합니다.
+ 
+   - Computing resource가 부족한 시절에 제안된 방법이지만, Loss에 기여도가 크다는 점에서 아직도 사용되는 방법입니다.
+ 
+   - SSD에서는 Negative example들 중에 Highest value를 가진 example들 (Loss 기여도가 큰 example들)을 사용해서 훈련합니다.
+ 
  3. OHEM (Online Hard Example Mining)
 
-  - Hard-example mining methods가 전체 과정이 너무 느린 점을 개선하기 위해 등장.
+   - Hard-example mining methods가 전체 과정이 너무 느린 점을 개선하기 위해 등장.
 
-  - 모든 Region proposal을 forward pass 한 후, 높은 Loss를 가지는 Region에 대해서만 학습시키는 방법입니다.
-
-  - Memory 및 Training speed의 문제가 있습니다.
+   - 모든 Region proposal을 forward pass 한 후, 높은 Loss를 가지는 Region에 대해서만 학습시키는 방법입니다.
+ 
+   - Memory 및 Training speed의 문제가 있습니다.
 
  
 
