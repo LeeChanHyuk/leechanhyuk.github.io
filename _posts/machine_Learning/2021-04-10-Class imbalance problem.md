@@ -165,7 +165,7 @@ toc: true
 
  - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인.
 
- <img src="/assets/image/Class_imbalance/focal_loss.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/focal_loss.PNG" width="450px" height="300px" title="MAE" alt="MAE">
   
 ## Soft sampling - 2. GHM (Gradient Harmonizing Mechanism) (AAAI, 2019)
 
@@ -175,7 +175,7 @@ toc: true
 
  - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미.
 
- <img src="/assets/image/Class_imbalance/ghm.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/ghm.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Soft sampling - 3. PISA (PrIme Sample Attention) (CVPR, 2019)
 
@@ -183,11 +183,11 @@ toc: true
 
  - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻한다.
 
- <img src="/assets/image/Class_imbalance/pisa1.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/pisa1.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter이다.
 
- <img src="/assets/image/Class_imbalance/pisa2.png" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Class_imbalance/pisa2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 결과적으로 GT와의 IoU가 높은 Positive sample이 더 크게 반영되어서, 마치 robust estimation과 유사한 느낌을 준다.
 
