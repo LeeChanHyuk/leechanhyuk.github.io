@@ -151,55 +151,59 @@ toc: true
  
 ## Soft sampling
 
- - Hard sampling과는 달리, 전체 데이터에 관해서 학습한다.
+ - Hard sampling과는 달리, 전체 데이터에 관해서 학습합니다.
 
- - 조건에 따라, 데이터 마다의 학습 정도는 다를 수 있다.
+ - 조건에 따라, 데이터 마다의 학습 정도는 다를 수 있습니다.
 
- - 여기서 Sampling scale은 $w_i$로 나타낸다.
+ - 여기서 Sampling scale은 $w_i$로 나타냅니다.
 
 ## Soft sampling - 1. Focal loss (ICCV, 2017)
 
- - Sample들의 예측율에 반비례하게 학습시키는 방법.
+ - Sample들의 예측율에 반비례하게 학습시키는 방법입니다.
 
- - 즉, 학습이 쉬워 예측율이 높게 나오면 Loss에 영향을 덜 주고, 학습이 어려워 예측율이 낮게 나오면 Loss에 영향을 많이 주는 방법.
+ - 즉, 학습이 쉬워 예측율이 높게 나오면 Loss에 영향을 덜 주고, 학습이 어려워 예측율이 낮게 나오면 Loss에 영향을 많이 주는 방법입니다.
 
- - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인.
+ - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인합니다.
 
  <img src="/assets/image/Class_imbalance/focal_loss.PNG" width="450px" height="300px" title="MAE" alt="MAE">
   
 ## Soft sampling - 2. GHM (Gradient Harmonizing Mechanism) (AAAI, 2019)
 
- - 대부분의 Easy sample들은 비슷한 Gradient norm를 가진다는데서 착안한 방법.
+ - 대부분의 Easy sample들은 비슷한 Gradient norm를 가진다는데서 착안한 방법입니다.
 
- - 유사한 Gradient를 가지는 sample이 많을 수록, 도출되는 Loss에 penalty를 준다.
+ - 유사한 Gradient를 가지는 sample이 많을 수록, 도출되는 Loss에 penalty를 줍니다.
 
- - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미.
+ - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미합니다.
 
  <img src="/assets/image/Class_imbalance/ghm.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Soft sampling - 3. PISA (PrIme Sample Attention) (CVPR, 2019)
 
- - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 rank를 계산한다.
+ - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 rank를 계산합니다.
 
- - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻한다.
+ - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻합니다.
 
  <img src="/assets/image/Class_imbalance/pisa1.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
- - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter이다.
+ - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter입니다.
 
  <img src="/assets/image/Class_imbalance/pisa2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
- - 결과적으로 GT와의 IoU가 높은 Positive sample이 더 크게 반영되어서, 마치 robust estimation과 유사한 느낌을 준다.
+ - 결과적으로 GT와의 IoU가 높은 Positive sample이 더 크게 반영되어서, 마치 robust estimation과 유사한 느낌을 줍니다.
 
- - 본 네트워크는, OHEM을 Positive sample에 적용했을 때 보다 성능이 뛰어났으며, 본 네트워크와 OHEM 결합하였을 때 더 뛰어난 결과를 보였다고 한다.
+ - 본 네트워크는, OHEM을 Positive sample에 적용했을 때 보다 성능이 뛰어났으며, 본 네트워크와 OHEM 결합하였을 때 더 뛰어난 결과를 보였다고 합니다.
   
- - 직접적으로 precision 결과를 높인 것은 아니지만, IoU를 더 잘 찾게되어서 전체적인 성능 향상이 일어났다고 한다.
+ - 직접적으로 precision 결과를 높인 것은 아니지만, IoU를 더 잘 찾게되어서 전체적인 성능 향상이 일어났다고 합니다.
+
+ ## Soft sampling - 4. Generalized focal loss (2020)
+
+  - 
 
 ## Foreground-Foreground class imbalance
 
- - 이것은 Class간의 불균형이 전부 foreground class에서 나타났을 때를 의미한다.
+ - 이것은 Class간의 불균형이 전부 foreground class에서 나타났을 때를 의미합니다.
 
- - 주로, 데이터셋 자체가 편중되어있거나 (=Dataset-level imbalance), Sampling 방법에 문제가 있을 때 (Mini-batch-level imbalance) 나타난다.
+ - 주로, 데이터셋 자체가 편중되어있거나 (=Dataset-level imbalance), Sampling 방법에 문제가 있을 때 (Mini-batch-level imbalance) 나타납니다.
 
- - 이것은 데이터셋 자체를 균등하게 제작하거나, Batch를 만들때 OFB(Online Foreground Balanaced) 샘플링 등을 사용하는데, 상당히 직관적인 문제라 다루지 않겠다.
+ - 이것은 데이터셋 자체를 균등하게 제작하거나, Batch를 만들때 OFB(Online Foreground Balanaced) 샘플링 등을 사용하는데, 상당히 직관적인 문제라 다루지 않겠습니다.
 
