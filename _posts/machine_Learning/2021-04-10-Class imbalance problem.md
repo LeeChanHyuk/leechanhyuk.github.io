@@ -137,15 +137,15 @@ toc: true
 
   <img src="/assets/image/Class_imbalance/ohem.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
-## Hard sampling - 2.3 IoU Lower Bound
+## Hard sampling - 2.3 IoU Lower Bound (CVPR, 2017)
 
   - GT와의 IoU가 높게 측정된 Negative sample을 Hard sample로 생각하고, 일정 이상의 IoU를 가진 negavie sample들만 학습에 반영시킨 방법입니다.
 
   - Positive sample과 Negative sample의 비율을 정해두고 시행합니다.
 
-  - Fast-R-CNN이 대표적인 예시 (ICCV, 2017)
+  - Fast-R-CNN이 대표적인 예시
 
-  <img src="/assets/image/Class_imbalance/iou.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/iou.png" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Soft sampling
 
