@@ -195,7 +195,7 @@ toc: true
   
  - 직접적으로 precision 결과를 높인 것은 아니지만, IoU를 더 잘 찾게되어서 전체적인 성능 향상이 일어났다고 합니다.
 
- ## Soft sampling - 4. Generalized focal loss (2020)
+## Soft sampling - 4. Generalized focal loss (2020)
 
   - Classification 및 Localization 과정을 통합한 Loss의 사용으로 performance를 향상시킨 방법입니다.
 

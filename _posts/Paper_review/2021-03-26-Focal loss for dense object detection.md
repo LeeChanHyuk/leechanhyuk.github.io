@@ -4,6 +4,7 @@ date: 2021-03-26 21:05:00
 author: Leechanhyuk
 categories: paper_Review
 tags: Computer_Vision Machine_Learning
+use_math: true
 cover: "/assets/instacode.png"
 toc: true
 ---
