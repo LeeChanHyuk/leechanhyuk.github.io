@@ -89,7 +89,7 @@ toc: true
 
  - 이 문제는 특정 Labeling 클래스에 속하는 sample들이 많던 적던간에 발생합니다. 이유는 Labeling 되지 않은 Sample들이 문제이기 때문이죠.
 
- - 이에 대한 해결책으로는 크게 Hard sampling, Soft sampling, Generative methods 총 3가지에 방법이 있습니다.
+ - 이에 대한 해결책으로는 크게 Hard sampling, Soft sampling, Generative methods 총 3가지 방법이 있습니다.
 
 ## Hard sampling
 
@@ -101,7 +101,7 @@ toc: true
 
 ## Hard sampling - 1. Random sampling
 
-  -가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
+  - 가장 기본이 되는 Hard-sampling은 Random sampling입니다. Original Foreground- Background의 분포를 유지한채 샘플링합니다.
 
   - Random sampling은 R-CNN 계열에서 Positive sample이 부족할 때, Negative sample중 Random하게 선택하는데 사용됩니다.
 
@@ -141,14 +141,12 @@ toc: true
 
   - GT와의 IoU가 높게 측정된 Negative sample을 Hard sample로 생각하고, 일정 이상의 IoU를 가진 negavie sample들만 학습에 반영시킨 방법입니다.
 
+  - Positive sample과 Negative sample의 비율을 정해두고 시행합니다.
+
   - Fast-R-CNN이 대표적인 예시 (ICCV, 2017)
 
-## Hard sampling - 2.4 IoU-Based sampling
+  <img src="/assets/image/Class_imbalance/iou.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
-  - Negative example의 Training hardness를 GT와 IoU가 높을 수록 높게 측정하여 학습시킵니다.
-
-  - Libra R-CNN이 대표적인 예시 (CVPR, 2019)
- 
 ## Soft sampling
 
  - Hard sampling과는 달리, 전체 데이터에 관해서 학습합니다.
@@ -165,27 +163,29 @@ toc: true
 
  - Cross-Entropy Loss 앞에 조절 항을 붙이는 식으로 Loss function을 디자인합니다.
 
+ - $P_s$는 해당 Sample의 예측율을 뜻합니다. $/gamma$는 조절 항의 Loss 기여 정도를 조정하는 Parameter인데, 논문에서는 2로 설정하였습니다.
+
  <img src="/assets/image/Class_imbalance/focal_loss.PNG" width="450px" height="300px" title="MAE" alt="MAE">
   
 ## Soft sampling - 2. GHM (Gradient Harmonizing Mechanism) (AAAI, 2019)
 
  - 대부분의 Easy sample들은 비슷한 Gradient norm를 가진다는데서 착안한 방법입니다.
 
- - 유사한 Gradient를 가지는 sample이 많을 수록, 도출되는 Loss에 penalty를 줍니다.
+ - 유사한 Gradient를 가지는 sample이 많을 수록, 해당 sample로부터 도출되는 Loss에 penalty를 줍니다.
 
- - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미한다. m은 batch 내 전체 bounding box를 의미합니다.
+ - 아래 공식에서 $BB_i$는 특정 sample, $G(BB_i)$는 해당 특정 sample의 gradient norm에 가까운 sample들의 숫자를 의미합니다. m은 batch 내 전체 bounding box를 의미합니다.
 
  <img src="/assets/image/Class_imbalance/ghm.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Soft sampling - 3. PISA (PrIme Sample Attention) (CVPR, 2019)
 
- - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 rank를 계산합니다.
+ - 각 클래스의 Positive sample과 GT간의 IoU를 계산하여 IoU와 비례하게 전체 sample의 rank를 계산합니다.
 
- - Normalized rank를 아래 식을 통해 계산한다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻합니다.
+ - Normalized rank를 아래 식을 통해 계산합니다. $u_i$가 normalized rank, $n_j$는 해당 클래스(j 번째)의 sample 개수, $r_i$는 해당 sample(i 번째)의 rank를 뜻합니다.
 
  <img src="/assets/image/Class_imbalance/pisa1.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
- - 아래식을 통해, sampling scale factor를 계산한다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter입니다.
+ - 아래식을 통해, sampling scale factor를 계산합니다. $\beta$ 및 $\gamma$ 는Normalized rank가 얼마나 반영될지를 결정짓는 parameter입니다.
 
  <img src="/assets/image/Class_imbalance/pisa2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
@@ -197,7 +197,11 @@ toc: true
 
  ## Soft sampling - 4. Generalized focal loss (2020)
 
-  - 
+  - Classification 및 Localization 과정을 통합한 Loss의 사용으로 performance를 향상시킨 방법입니다.
+
+  - 앞선 PISA나 IoU-based method들이 너무 Localization쪽에만 치중되어 있어서 성능이 좋지 않다고 비판하였습니다.
+
+  - 이 다음에는 방법론만 적자.
 
 ## Foreground-Foreground class imbalance
 

@@ -1,6 +1,6 @@
 ---
-title: "[CV]Generalized Focal Loss: Learning Qualified and Distributed Bounding Boxes for Dense Object Detection 논문 리뷰"
-date: 2021-04-03 21:05:00
+title: "[CV] Focal loss for dense object detection"
+date: 2021-03-26 21:05:00
 author: Leechanhyuk
 categories: paper_Review
 tags: Computer_Vision Machine_Learning
@@ -8,7 +8,8 @@ cover: "/assets/instacode.png"
 toc: true
 ---
 
-<img src="/assets/image/generalized_focal_loss.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/High-performance/frontdoor.PNG" width="450px" height="300px" title="title" alt="title">
+
 
 * * *
 
