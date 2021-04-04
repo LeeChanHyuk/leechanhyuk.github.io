@@ -135,7 +135,7 @@ toc: true
 
   - 추가적인 메모리 소모(Readonly model)와 학습 속도가 느린 단점이 있습니다.
 
-  <img src="/assets/image/Class_imbalance/ohem.PNG" width="400px" height="275px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/ohem.PNG" width="675px" height="450px" title="MAE" alt="MAE">
 
 ## Hard sampling - 2.3 IoU Lower Bound (CVPR, 2017)
 
@@ -145,7 +145,7 @@ toc: true
 
   - Fast-R-CNN이 대표적인 예시
 
-  <img src="/assets/image/Class_imbalance/iou.png" width="450px" height="300px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/iou.png" width="300px" height="200px" title="MAE" alt="MAE">
 
 ## Soft sampling
 
@@ -202,12 +202,15 @@ toc: true
   - 앞선 PISA나 IoU-based method들이 너무 Localization쪽에만 치중되어 있어서 성능이 좋지 않다고 비판하였습니다.
 
   - QFL (Quality Focal Loss)
+
 <img src="/assets/image/generalized_focal_loss/qfl.PNG" width="450px" height="300px" title="title" alt="title">
 
   - DFL (Distribution Focal Loss)
+
 <img src="/assets/image/generalized_focal_loss/dfl.PNG" width="450px" height="300px" title="title" alt="title">
 
   - GFL (Generalized Focal Loss) = QFL + DFL
+
 <img src="/assets/image/generalized_focal_loss/gfl.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## Foreground-Foreground class imbalance
