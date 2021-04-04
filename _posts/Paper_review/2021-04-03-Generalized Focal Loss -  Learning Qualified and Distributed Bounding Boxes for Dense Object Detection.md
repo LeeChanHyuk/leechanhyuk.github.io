@@ -43,7 +43,7 @@ toc: true
 
 ## Introduction
 
-<img src="/assets/image/generalized_focal_loss/figure1.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/generalized_focal_loss/figure1.PNG" width="750px" height="500px" title="title" alt="title">
 
  - 좌측이 기존 방법, 우측이 제안 방법이다.
 
@@ -55,7 +55,7 @@ toc: true
 
  - $(a)$는 Negative sample을 Localization rank가 높게 평가되었을 때를 나타내고, $(b)$의 파란색은 Localization process를 분리했을 때 classification scores와 IoU scores 간의 불균형을, 초록색은 제안 방법을 사용하여 균형을 이룬 모습을 나타낸다.
 
-<img src="/assets/image/generalized_focal_loss/figure3.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/generalized_focal_loss/figure3.PNG" width="650px" height="500px" title="title" alt="title">
 
  - 그림에서 흰색 박스는 원래 GT를, 빨간색은 Ambiguous한 Region을, 초록색은 특징이 잘 나타나는 지역을 나타낸다.
 
@@ -86,9 +86,35 @@ toc: true
 
 ## Method
 
- - 
+<img src="/assets/image/generalized_focal_loss/figure4.PNG" width="450px" height="300px" title="title" alt="title">
 
+ 1. **QFL** (Quality Focal Loss)
 
+   - **Classification과 Localization quality(IoU Score)를 Joint**하여 Loss를 만듬. ("Classification-IoU 로 줄여서 부름)
+
+   - Positive sample은 0~1사이의 값을(IoU Score에 기반함), Negative sample은 0의 값을 갖는다.
+
+   - Multiple-binary classification을 통해 Multi-class implementation을 수행(한 Sample마다 클래스의 개수만큼 이진분류를 진행한다는 뚯인가?)
+  
+<img src="/assets/image/generalized_focal_loss/qfl.PNG" width="450px" height="300px" title="title" alt="title">
+   
+   - 해당 식은 조절항인 ${\Vert y-\sigma\Vert}^\beta$ 및 Binary cross entropy와 유사한 항인 $-((1-y) log(1-\sigma) +y\log(\sigma))$의 곱으로 구성되어 있다.
+
+   - figure 4는 기존 방법 및 제안 방법을 나타내는데, 좌측에서 보면 Classification branch에는 one-hot label이, 오른쪽에는 soft one-hot label이 있는 것을 확인할 수 있다.
+
+   - Soft one-hot label이란, IoU score를 뜻하며, 확실하진 않지만, Classification label은 원래 해당 클래스가 1이 되어야하는데, 이건 1에 IoU Score를 곱한 것으로 추정된다.
+
+   - 의문점은, Target IoU Score가 1이 아닌게 이상하다.. 이 부분은 좀 더 살펴봐야할 듯.
+
+   - 이렇게 Classification vector에다가 Localization에 관한 factor를 곱해주는 방식으로 Loss를 선별해낸다.
+
+ 2. **DFL** (Distribution Focal Loss)
+
+   - 기존 Bounding box regression model은 아래 식을 통해서 FCN단에서 Regression을 진행하였다.
+
+<img src="/assets/image/generalized_focal_loss/5.PNG" width="450px" height="300px" title="title" alt="title">
+
+   - 
 
 
 

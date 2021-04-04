@@ -135,7 +135,7 @@ toc: true
 
   - 추가적인 메모리 소모(Readonly model)와 학습 속도가 느린 단점이 있습니다.
 
-  <img src="/assets/image/Class_imbalance/ohem.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+  <img src="/assets/image/Class_imbalance/ohem.PNG" width="400px" height="275px" title="MAE" alt="MAE">
 
 ## Hard sampling - 2.3 IoU Lower Bound (CVPR, 2017)
 
@@ -197,11 +197,18 @@ toc: true
 
 ## Soft sampling - 4. Generalized focal loss (CVPR, 2020)
 
-  - Classification 및 Localization 과정을 통합한 Loss의 사용으로 performance를 향상시킨 방법입니다.
+  - Classification 및 Localization을 통합한 Loss(QFL) 및 새로운 Localization function(DFL)의 사용으로 performance를 향상시킨 방법입니다.
 
   - 앞선 PISA나 IoU-based method들이 너무 Localization쪽에만 치중되어 있어서 성능이 좋지 않다고 비판하였습니다.
 
-  - 이 다음에는 방법론만 적자.
+  - QFL (Quality Focal Loss)
+<img src="/assets/image/generalized_focal_loss/qfl.PNG" width="450px" height="300px" title="title" alt="title">
+
+  - DFL (Distribution Focal Loss)
+<img src="/assets/image/generalized_focal_loss/dfl.PNG" width="450px" height="300px" title="title" alt="title">
+
+  - GFL (Generalized Focal Loss) = QFL + DFL
+<img src="/assets/image/generalized_focal_loss/gfl.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## Foreground-Foreground class imbalance
 
