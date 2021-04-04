@@ -121,8 +121,6 @@ toc: true
 
   - 이를 Iterative하게 동작시킴으로써 본 방법은 동작합니다.
   
-  - 예시로 SSD에서는 Negative example들 중에 Highest value를 가진 example들 (Loss 기여도가 큰 example들)을 사용해서 훈련합니다.
-
   <img src="/assets/image/Class_imbalance/negative.png" width="450px" height="300px" title="MAE" alt="MAE">
  
 ## Hard sampling - 2.2. OHEM (Online Hard Example Mining) (CVPR, 2016)
