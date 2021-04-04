@@ -203,15 +203,15 @@ toc: true
 
   - QFL (Quality Focal Loss)
 
-<img src="/assets/image/generalized_focal_loss/qfl.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/Class_imbalance/qfl.PNG" width="450px" height="300px" title="title" alt="title">
 
   - DFL (Distribution Focal Loss)
 
-<img src="/assets/image/generalized_focal_loss/dfl.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/Class_imbalance/dfl.PNG" width="450px" height="300px" title="title" alt="title">
 
   - GFL (Generalized Focal Loss) = QFL + DFL
 
-<img src="/assets/image/generalized_focal_loss/gfl.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/Class_imbalance/gfl.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## Foreground-Foreground class imbalance
 

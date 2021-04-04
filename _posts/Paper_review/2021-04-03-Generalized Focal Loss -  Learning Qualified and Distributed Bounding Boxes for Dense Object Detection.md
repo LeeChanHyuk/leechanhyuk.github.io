@@ -114,8 +114,13 @@ toc: true
 
 <img src="/assets/image/generalized_focal_loss/5.PNG" width="450px" height="300px" title="title" alt="title">
 
-   - 
+   - 기존 방법(Dirac delta, Gaussian) 대신에, 제안 논문은 General distribution $P(x)$를 사용해 target y를 estimation하는 것을 제안했다. 식은 아래와 같다.
 
+<img src="/assets/image/generalized_focal_loss/4.PNG" width="450px" height="300px" title="title" alt="title">
+   
+   - 또한 범위를 [$y_0, y_n$]에서 {$y_0, y_1, ..., y_n$}으로 세분화하였으며, 따라서 식은 아래와 같이 나타난다. 
+
+<img src="/assets/image/generalized_focal_loss/52.PNG" width="450px" height="300px" title="title" alt="title">
 
 
 
