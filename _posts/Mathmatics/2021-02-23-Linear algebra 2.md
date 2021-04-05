@@ -245,7 +245,9 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Ex.1 
     
-  - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
+  - In $F^3, \beta = e_1, e_2, e_3
+  
+  -  e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
   
   - $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
 
