@@ -260,7 +260,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Ex.3
 
-  - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 ($\\begin{pmartix}1 & 0 \\end{pmartix}$,  $\\begin{pmatrix}0 & 1\\end{pmartix}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
+  - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 $\\begin{pmatrix}1 & 0 \\end{pmatrix}$,  $\\begin{pmatrix}0 & 1 \\end{pmatrix}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
 
   - $T(1, 0) = (1, 0, 2) = 1e_! + 0e+2 + 2e_3, T(0, 1) = (3, 0, -4) = 3e_1 + 0e_2 - 4e_3$으로 나타낼 수 있다. $e_n$은 물론, R^3의 Basis들이다.
 
