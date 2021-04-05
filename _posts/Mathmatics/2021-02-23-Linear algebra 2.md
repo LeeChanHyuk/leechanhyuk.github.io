@@ -216,15 +216,17 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
   - LT는 항상 행렬로 나타낼 수 있다.
 
 ## Ex.1 
-    - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
-    $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
+    
+  - In $F^3, \beta = {{e_1, e_2, e_3}}, e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
+  
+  - $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
 
-    집합으로 보면 $\beta = \gamma$ 인데, oredered bases로 보면 서로 다르다.
+  - 집합으로 보면 $\beta = \gamma$ 인데, oredered bases로 보면 서로 다르다.
 
 ## Def.
-   - V, W : Finite-dimensional vector space에서 $T:V \to W$ 일 때 V의 ordered basis $\beta = {{v_!, v_2, ..., v_n}}, W의 ordered basis $\gamma = {{w_1, w_2, ..., w_m}} 일 때
+  - V, W : Finite-dimensional vector space에서 $T:V \to W$ 일 때 V의 ordered basis $\beta = {{v_!, v_2, ..., v_n}}, W의 ordered basis $\gamma = {{w_1, w_2, ..., w_m}} 일 때
 
-     $T(v_j) = \sum_{i=1}^{m} a_ij w_i$로 표현이 가능하고, 이 때 $a_ij$를 통해서 이 LT를 행렬로 표현할 수 있다.
+  - $T(v_j) = \sum_{i=1}^{m} a_ij w_i$로 표현이 가능하고, 이 때 $a_ij$를 통해서 이 LT를 행렬로 표현할 수 있다.
 
 ## Ex.3
 
