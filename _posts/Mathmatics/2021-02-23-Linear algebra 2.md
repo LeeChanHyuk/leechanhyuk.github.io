@@ -207,7 +207,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Ex 13. 
  
- - $T: P_2(R) \to R^3$ | $a_0 + a_1x + a_2x^2 \to (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
+ - $T: P_2(R) \to R^3$ , $a_0 + a_1x + a_2x^2 \to (a_0, a_1, a_2)$ 일 때, 예시 넣어보면, S가 Linearly independent하다는 것을 증명 가능하다.
  
  - Basis를 LT했을 때 같은 곳으로 mapping 된다면, 그 공간에 속하는 나머지 원소들도 같은 곳으로 mapping된다. 너무 자명해서 설명은 생략.
 
@@ -247,7 +247,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
     
   - In $F^3, \beta = e_1, e_2, e_3
   
-  -  e_1 = \\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix} e_2 = \\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix} e_3 = \\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
+  -  e_1 = $\\begin{matrix} 1 \\\ 0 \\\ 0 \\end{matrix}$ e_2 = $\\begin{matrix} 0 \\\ 1 \\\ 0 \\end{matrix}$ e_3 = $\\begin{matrix} 0 \\\ 0 \\\ 1 \\end{matrix}$
   
   - $r = {e_2, e_1, e_3}$ 일 때 $\beta != \gamma$ 일 때
 
@@ -260,11 +260,11 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Ex.3
 
-  - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 (${\\begin{pmartix}[1 & 0] \\end{pmartix}$ $\\begin{pmatrix}[0 1]}\\end{pmartix}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
+  - $T:R^2 \to R^3$일 때 $(a_1, a_2) \to (a_1 + 3a_2, 0, 2a_1 - 4a_2)$이면 $\beta$를 $R^2$의 Basis로 ($\\begin{pmartix}1 & 0 \\end{pmartix}$,  $\\begin{pmatrix}0 & 1\\end{pmartix}$이 되겠지) $\gamma$를 $R^3$의 Basis로 ($([1 0 0] [0 1 0] [0 0 1])$이 되겠지) 삼을 때, $([T]_\beta)^\gamma$를 어떻게 나타낼까?
 
   - $T(1, 0) = (1, 0, 2) = 1e_! + 0e+2 + 2e_3, T(0, 1) = (3, 0, -4) = 3e_1 + 0e_2 - 4e_3$으로 나타낼 수 있다. $e_n$은 물론, R^3의 Basis들이다.
 
-  - 이걸 나타내면 $\\begin{matrix} 1 & 3 \\\ 0 & 0 \\\ 2 & -4 \\end{matrix}$로 나타낼 수 있다.
+  - 이걸 나타내면 $\\begin{pmatrix} 1 & 3 \\\ 0 & 0 \\\ 2 & -4 \\end{pmatrix}$로 나타낼 수 있다.
 
   - 만약, $r^prime$를 $e_3, e_2, e_1$으로 바꾼다면 단순히 행의 순서만 저것에 맞게 배치해주면 된다.
 
@@ -320,7 +320,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  - $U(\alpha)$는 $U(1) = 0, U(x) = 1, U(x^2) = 2x, U(x^3) = 3x^2$으로 나타낼 수 있으므로
 
- - U*변환 시킬 차원 이라고 생각하면 U는 $U = \\begin{pmatrix} 0 & 1 & 0 & 0 \\\ 0 & 0 & 2 & 0 \\\ 0 & 0 & 0 & 3 \\end{pmartix}$
+ - U*변환 시킬 차원 이라고 생각하면 U는 $U = \\begin{pmatrix} 0 & 1 & 0 & 0 \\\ 0 & 0 & 2 & 0 \\\ 0 & 0 & 0 & 3 \\end{pmatrix}$
  
  - 로 나타낼 수 있다. 
  
