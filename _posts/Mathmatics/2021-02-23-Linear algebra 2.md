@@ -100,7 +100,7 @@ $T: R^2 \to R^2$ 일 때 $(a1, a2) \to (a1, -a2)$는 LT인가?
 
 1. Identity transformation
   
- -$ V \to V$ 공간에서 $x \to x$
+ - $ V \to V$ 공간에서 $x \to x$
 
 2. Zero transformation
 
@@ -156,11 +156,11 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  ## Ex. 10
 
- T: P_2(R) \to M_2*2(R) Linear 할 때, f(x) = a2*x^2 + a1*x + a0 \to [f(1) - f(2)      0         ] 
+ - $T: P_2(R) \to M_2*2(R)$ Linear 할 때, f(x) = a2*x^2 + a1*x + a0 \to [f(1) - f(2)      0         ] 
                                                                   [     0          f(0)       ]
  basis = {1, x, x^2} 일 때 P_2(R).
 
- T(f(X)) = T(1) = a2=0, a2=0 이라는 뜻.                                                              
+ $T(f(X)) = T(1)$ = a2=0, a2=0 이라는 뜻.                                                              
 
 ## Nullity and Rank
 
@@ -294,13 +294,13 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  - 공간 $V, W, Z$가 있고, $V \to W$를 $T$, $W \to Z$를 $U$라고 할 때, $\alpha, \beta, \gamma$는 각각 $V, W, Z$의 Basis Vector를 의미한다고 하자.
 
-<img src="/assets/image/generalized_focal_loss/a.png" width="650px" height="500px" title="title" alt="title">
+<img src="/assets/image/linear2/a.png" width="650px" height="500px" title="title" alt="title">
 
  - 여기서 V에서 Z로가는 함수를 나타내려면, 두개의 LT를 거쳐야한다. 이 두 LT를 한 식으로 표현하려면?
 
  - 행렬 곱으로 나타낼 수 있다 $\to$ $UT(\alpha) = U(T(\alpha))$
 
- - 또한, $([T]^\beta)_\gamma$를 B로 ${[U]^\gamma}_\beta$를 A로 나타낼 수 있다.
+ - 또한, $[T]^\beta_\gamma$를 B로 $[U]^\gamma_\beta$를 A로 나타낼 수 있다.
 
  - T를 먼저 처리해야하므로, T가 더 뒤에 있는걸 주의 (교환법칙이 성립하지 않는다.)
 
@@ -318,7 +318,9 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
  - $U(\alpha)$는 $U(1) = 0, U(x) = 1, U(x^2) = 2x, U(x^3) = 3x^2$으로 나타낼 수 있으므로
 
- - U*변환 시킬 차원 이라고 생각하면 U는 $\\begin{pmatrix} 0 & 1 & 0 & 0 \\\ 0 & 0 & 2 & 0 \\\ 0 & 0 & 0 & 3 \\end{pmartix}$로 나타낼 수 있다. 이유는 행렬 곱을 진행했을 때의 결과물은 3x4행렬 곱하기 4x1행렬은 3x1행렬이 되어서 한 차원 내려가므로 미분을 행렬로 나타냈다고 할 수 있겠다.
+ - U*변환 시킬 차원 이라고 생각하면 U는 $\\begin{pmatrix} 0 & 1 & 0 & 0 \\\ 0 & 0 & 2 & 0 \\\ 0 & 0 & 0 & 3 \\end{pmartix}$로 나타낼 수 있다. 
+ 
+ - 이유는 행렬 곱을 진행했을 때의 결과물은 3x4행렬 곱하기 4x1행렬은 3x1행렬이 되어서 한 차원 내려가므로 미분을 행렬로 나타냈다고 할 수 있겠다.
 
  - 반대로 T는 $T(1) = x, T(x) = (x^2)/2, T(x^2) = (x^3)/3$으로 나타낼 수 있으므로 마찬가지로 T뒤에 변환시킬 차원이 곱해진다고 생각할 때
 
@@ -328,7 +330,7 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
 
 ## Kronecker delta function
 
- - $\sigma_ij = 1 (When i = j) / 2 (When i != j)$ 
+ - $\sigma_ij = 1 (i = j) / 2 (i != j)$ 
 
  - 즉, Identity matrix는 이 Kronecker delta function으로 그대로 나타낼 수 있다. $\sigma_ij = I_ij$
 
