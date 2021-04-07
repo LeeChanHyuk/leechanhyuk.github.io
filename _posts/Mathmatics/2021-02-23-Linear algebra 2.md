@@ -1,5 +1,5 @@
 ---
-title: "[Math] Linear algebra 2"
+title: "[Linear algebra] Linear transformation and matrix"
 date: 2021-03-03 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
@@ -384,3 +384,55 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
  - 예를 들자면, L은 1->2차원, T는 2->3차원이고 A가 1차원 Vector일 때 Result = TL(A)가 되어야 하는 것이다.
 
  - 역함수는 함수가 단사함수이자 전사함수이어야한다.
+
+## Invertibility
+
+ - 역함수가 존재하는지.
+
+ - 역함수가 존재하려면 저번 시간에 증명한대로, 전사함수이자, 단사함수가 되어야한다. 두 조건을 만족시키지 못하면, 어떻게든 Pre-image가 없는 Image들이 생기기 때문이다.
+
+ - $(TU)^-1 = U^-1 T^-1$이어야 한다.
+ 
+ - $(T^-1)^-1 = T$ 이어야 한다.
+
+ - T라는 LT가 있고, $dim(V) = dim(W)$일 때 전사함수이자 단사함수여야한다.
+
+## Def. 
+
+ - V,W : Vector space일 때, T가 LT이고, $T: V -> W$를 취할 때, 이 LT의 역행렬이 존재하면 V와 W는 구조적으로 똑같은 Vector space이다.
+
+ - 위의 증명과 같이, 차원이 다르거나 하면 역행렬이 존재할 수가 없다.
+
+ - 이것을 V와 W가 Isomorphic하다고 표현한다.
+
+## Change of coordinate matrix (좌표 변환 행렬)
+
+<img src="/assets/image/linear2/equation.PNG" width="540px" height="360px" title="title" alt="title">
+
+ - 위 그림은 $x,y$ 좌표계를 $x', y'$ 좌표계, 즉 타원을 표현하는 좌표계로 변환시키려고 한다.
+
+ - 이를 $x, y$를 사용해서 나타내려면, 제일 위에 있는 식처럼 4xy라는 합성함수가 붙지만, 제일 아래에 있는 식과 같이 좌표계를 변환함으로써 합성함수 없이 간단히 나타낼 수 있다.
+
+ - 이런 역할을 하는 행렬을 보통은 $Q$로 나타낸다.
+
+ - Q는 항상 Invertable하다. 그 이유는 Q가 Identity Transformation의 행렬 Representation이기 때문이다. 즉, LT를 통해, 동일한 값이지만 차원을 변경한다고 생각하면 Q가 Identity transformation의 행렬 표현이라는 것에 대해서 감이 올 듯 하다.
+
+## Ex. 1
+ 
+ - $/beta = (1, 1), (1, -1)$이고 ,$\beta' = (2, 4), (3, 1)$이라 할 때
+
+ - $[(2, 4)]_\beta' = \\begin{pmatrix} 1 \\\ 0 \\end{pmatrix}$로 나타낼 수 있다.
+
+ - 이건 (2, 4)라는 벡터를 $\beta'$으로 나타내라는 문제인데, (2, 4)에다가 뭘 곱하면 $\beta'$이 될지를 생각해보면 [1, 0]이 되는 이유를 알 수 있다.
+
+## Def.
+
+  - $B = Q^-1 A Q$ 일 때, B와 A는 Similar하다고 표현한다. 이것은 즉, B와 A가 서로 같은 LT를 나타내고 있다는 뜻이다.
+
+## nxn elementary matrix
+
+ - Identity matrix에 특정 Operation을 취해서 변환한 행렬을 의미한다.
+
+ - 이렇게 만들어진 행렬을 다른 행렬과 곱하면, 곱해진 행렬에 위의 그 '특정 Operation'을 취하게 된다.
+
+ - 즉, (3 x 3) Identity matrix의 2행 3행을 서로 바꾼 elementary matrix를 만들었다고 가정하자. 이걸 다른 행렬에 곱하면, 곱해진 그 행렬의 2행 3행을 바꾸는 역할을 하게 된다.
