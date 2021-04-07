@@ -49,4 +49,3 @@ toc: true
    
    - Linearly independant는 $F(x) = a_0 * u_0 + ... + a_n * u_n = 0$ 일 때, 적어도 하나 이상의 $a_n$이 0이 되어서
    선형 결합으로 $u_n$을 표현할 수 없는 것을 뜻한다.
-
