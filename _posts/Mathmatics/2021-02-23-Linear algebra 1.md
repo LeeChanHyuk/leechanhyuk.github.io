@@ -1,5 +1,5 @@
 ---
-title: "[Math] Linear algebra 1"
+title: "[Linear algebra] Vector space"
 date: 2021-02-23 15:13:00
 author: Leechanhyuk
 categories: Mathmatics
