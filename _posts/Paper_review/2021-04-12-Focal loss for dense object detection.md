@@ -104,7 +104,7 @@ toc: true
 
  - 앵커는 피라미드 레벨인 $P_3 \to P_7$ 까지 $32^2 \to 512^2$의 영역 넓이를 갖는 앵커를 사용했따.
 
- - 앵커의 aspect ratios 는 {1:2, 1:1, 2:1}, {$2^0, 2^{\frac_{1}_{3}}, 2^{\frac_{2}_{3}}$} 이다.
+ - 앵커의 aspect ratios 는 {1:2, 1:1, 2:1}, {$2^0, 2^{\frac{1}{3}}, 2^{\frac{2}{3}}$} 이다.
 
  - 각 앵커박스에는 K개(클래스 종류 개수)의 Classification target(One-Hot)과 4개의 Box regression target(모서리) 가 할당되어 있다.
 
