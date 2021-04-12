@@ -72,7 +72,7 @@ toc: true
 
  - 일반적으로 Class-imbalance problem을 다룰 때에는 아래 식과 같이 Positive class인지, Negative class인지에 따라서 Loss를 조절해주는 weighting factor를 추가한다. (3)
 
-<img src="/assets/image/focal_loss/p.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/focal_loss/pt.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
 
  - Focal loss에서도 식 (4)에 나타나있던 식에 $\alpha$ Term을 덧붙여, Positive / Negative class에 따라서 Loss를 좀 더 조절하도록 하였다.
 
@@ -90,7 +90,7 @@ toc: true
  
  - RetinaNet의 Architecture는 아래와 같다.
 
-<img src="/assets/image/focal_loss/architecture.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/focal_loss/architecture.PNG" width="675px" height="450px" title="imagenet" alt="imagenet">
 
  - Backbone은 ResNet을 사용했고, FPN을 사용하여 결과로 도출된 값에 Classification 및 Box localization을 수행하는 방식으로 되어있다.
 
@@ -135,7 +135,7 @@ toc: true
 
  - COCO Dataset을 사용해서 실험한 결과는 아래와 같다.
 
-<img src="/assets/image/focal_loss/result.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/focal_loss/result.PNG" width="675px" height="450px" title="imagenet" alt="imagenet">
 
  - Classification subset의 마지막 conv layer의 bias의 조절을 하지 않았을 때에는 Diverse 했다.
 
@@ -143,11 +143,11 @@ toc: true
 
  - $\gamma$ 값은 2가 최적이었다. (아래 그래프 참조)
 
-<img src="/assets/image/focal_loss/gamma.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/focal_loss/gamma.PNG" width="675px" height="450px" title="imagenet" alt="imagenet">
 
  - SOTA와의 비교는 아래 표와 같다.
 
-<img src="/assets/image/focal_loss/SOTA.PNG" width="450px" height="300px" title="imagenet" alt="imagenet">
+<img src="/assets/image/focal_loss/SOTA.PNG" width="675px" height="450px" title="imagenet" alt="imagenet">
 
 ## Conclusion
 
