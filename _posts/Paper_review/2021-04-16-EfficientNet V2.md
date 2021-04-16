@@ -9,7 +9,7 @@ cover: "/assets/instacode.png"
 toc: true
 ---
 
-<img src="/assets/image/EfficientNetV2/FRONT.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/FIRST.PNG" width="450px" height="300px" title="title" alt="title">
 
 * * *
 
@@ -31,7 +31,7 @@ toc: true
 
  - ViT보다 2.0% 더 높은 ACC이고, 학습속도는 5x - 11x 정도 더 빨랐다.
 
-<img src="/assets/image/EfficientNetV2/figure1.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/figure1.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## Introduction
 
@@ -87,7 +87,7 @@ toc: true
 
   - **제안하는 방법은, Training epochs에 따라서 점진적으로 Image size를 늘리는 방법이다.**
 
-<img src="/assets/image/EfficientNetV2/table2.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table2.PNG" width="450px" height="300px" title="title" alt="title">
 
  
  2. Depthwise convolutions are slow in early layers
@@ -102,9 +102,9 @@ toc: true
 
   - 따라서 MBConv 및 Fused-MBConv를 혼합한 방식을 사용한다.
 
-<img src="/assets/image/EfficientNetV2/figure2.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/figure2.PNG" width="450px" height="300px" title="title" alt="title">
 
-<img src="/assets/image/EfficientNetV2/table3.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table3.PNG" width="450px" height="300px" title="title" alt="title">
 
  3. Equally scaling up every stage is sub-optimal
 
@@ -138,7 +138,7 @@ toc: true
 
  2. EfficientNet V2 Architecture
 
-<img src="/assets/image/EfficientNetV2/table4.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table4.PNG" width="450px" height="300px" title="title" alt="title">
 
   - EfficientNet V1과의 차이점 4가지
 
@@ -158,7 +158,7 @@ toc: true
 
  4. Training speed comparison
 
-<img src="/assets/image/EfficientNetV2/figure3.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/figure3.PNG" width="450px" height="300px" title="title" alt="title">
 
   - Figure 3는 Image size를 fix 시켜둔 상태에서 비교를 진행.
 
@@ -180,7 +180,7 @@ toc: true
 
  - 아래 사진은 그를 나타낸다.
 
-<img src="/assets/image/EfficientNetV2/figure4.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/figure4.PNG" width="450px" height="300px" title="title" alt="title">
 
  - Regularization 수치 증가는 Linear하게 이루어진다.
 
@@ -190,7 +190,7 @@ toc: true
 
  - 그 사이는 Interpolation해서 진행한다.
 
-<img src="/assets/image/EfficientNetV2/algorithm 1.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/algorithm 1.PNG" width="450px" height="300px" title="title" alt="title">
 
  - 각 스테이지는 이전 스테이지의 Weights를 상속한다.
 
@@ -215,17 +215,17 @@ toc: true
 
  - V1에 Progressive Learning을 적용했을 때, Training speed 및 ACC가 상승함.
 
-<img src="/assets/image/EfficientNetV2/table10.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table10.PNG" width="450px" height="300px" title="title" alt="title">
 
  - V1, V2 둘다 Progressive Learning 없이, Compound scaling만 시행했을 때
 
-<img src="/assets/image/EfficientNetV2/table11.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table11.PNG" width="450px" height="300px" title="title" alt="title">
 
  - Progressive Learning for Diffenent Networks
 
  - 다른 모델에 Progressive Learning을 적용한 결과이다. 다만, Input size나 Optimizer등 변경시킨 것들이 조금 있다.
 
-<img src="/assets/image/EfficientNetV2/table12.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table12.PNG" width="450px" height="300px" title="title" alt="title">
 
  - 이 결과는 proposed Progressive learning이 더 큰 모델일 수록 더 크게 Training time을 줄여준다는 것을 보여준다.
 
