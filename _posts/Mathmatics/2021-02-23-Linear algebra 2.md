@@ -436,3 +436,19 @@ $N(I) = {0}$이고, $R(I)$는 그 자체가 된다.
  - 이렇게 만들어진 행렬을 다른 행렬과 곱하면, 곱해진 행렬에 위의 그 '특정 Operation'을 취하게 된다.
 
  - 즉, (3 x 3) Identity matrix의 2행 3행을 서로 바꾼 elementary matrix를 만들었다고 가정하자. 이걸 다른 행렬에 곱하면, 곱해진 그 행렬의 2행 3행을 바꾸는 역할을 하게 된다.
+
+ - Elementary matrix 간의 곱은 Identity matrix가 된다. 한번 해보면 직관적으로 이해된다.
+
+ - Elementary matrix는 항상 Invertable하다. (Inverse matrix는 물론 해당 Elementary matrix이다. 곱해서 Identity matrix가 되야할테니까)
+
+## Rank of Matrix
+
+ - Matrix의 Rank는 Matrix의 Range의 Demension을 뜻한다. 따라서 이건 Matrix에 LT를 취했을 때의 Rank라고 볼 수 있으니, $rank(A) = rank(L_A)$ 가 된다.
+
+ - 이것에 대한 증명은 하지 않지만, LT를 행렬로 나타냈을 때 Range는 그 행렬의 Row space의 dimension이라고 할 수 있는데 이는 결과 행렬에도 선형적으로 적용될 것이므로 위 성질은 이해할 수 있을 것이다.
+
+ - LT를 행렬로 나타냈을 때, 이 행렬이 Invertable matrix이면 원 행렬의 Rank가 그대로 유지된다.
+
+ - 이는 LT 행렬이 정방행렬이라는 것을 뜻하고, LT 행렬의 Rank가 Row의 개수와 같다는 것을 의미하기 때문에 원 행렬의 Rank가 그대로 유지되는 것이다.
+
+ - 만약 LT 행렬이 Invertable하다는 보장이 없으면, 행렬 곱이 거듭될 수록 행렬의 Rank는 계속 작아지게 되겠지.
