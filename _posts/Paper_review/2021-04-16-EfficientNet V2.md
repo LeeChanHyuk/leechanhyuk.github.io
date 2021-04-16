@@ -174,7 +174,7 @@ toc: true
 
  - 결과적으로도 Model complexity나 Image size가 크면 강한 Regularization이 필요했다.
 
-<img src="/assets/image/EfficientNetV2/table5.PNG" width="675px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientNetV2/table5.PNG" width="450px" height="300px" title="title" alt="title">
 
  - 따라서, 초기에는 작은 이미지, 약한 Regularzation을 사용하고, Epoch이 커질수록 더 큰 이미지, 강한 Regularization을 사용하기로 했다.
 
