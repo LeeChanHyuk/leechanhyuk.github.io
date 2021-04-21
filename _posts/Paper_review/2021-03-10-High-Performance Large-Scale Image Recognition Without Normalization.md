@@ -29,7 +29,7 @@ toc: true
 
  - Batch Normalization(BN)은 대부분의 분류 문제에서 필수적이었다.
 
- - Batch-size에 Dependence가 있고, Example마다 interaction이 있다. (*Inference마다 결과가 다르다는걸 의미하는 건가?*)
+ - Batch-size에 Dependency가 있고, Example마다 interaction이 있다. (*Inference마다 결과가 다르다는걸 의미하는 건가?*)
 
  - Batchnorm 없이 학습을 시도했지만, Batchnorm을 사용한 결과에는 미치지 못했다.
 
