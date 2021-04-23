@@ -1,5 +1,5 @@
 ---
-title: "[Linear algebra] Determinant"
+title: "[Linear algebra] Diagonalization"
 date: 2021-04-16 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
