@@ -1,6 +1,6 @@
 ---
 title: "[ML] Class-imbalance problem"
-date: 2021-04-01 11:30:06
+date: 2021-04-10 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning
 tags: Machine_Learning
