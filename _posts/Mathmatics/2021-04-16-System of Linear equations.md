@@ -60,7 +60,7 @@ toc: true
 
  $\\begin{pmatrix} 1 & 2 & 2 & 2 \\\ 0 & 0 & 2 & 4 \\\ 0 & 0 & 0 & 0 \\end{pmatrix}$ $\\begin{pmatrix} P_1 \\\ 1 \\\ P_2 \\\ 0 \\end{pmatrix}$ = $\\begin{pmatrix} 0 \\\ 0 \\\ 0 \\end{pmatrix}$
 
- - 위 식을 보자. A 행렬에서는 첫째 행의 1과 둘째 항의 2가 Pivot variable이고, 나머지는 모두 Free variable이다. 즉, 이 행렬의 Rank는 2이다.
+ - 위 식을 보자. A 행렬에서는 첫째 행의 1과 둘째 행의 2가 Pivot variable이고, 나머지는 모두 Free variable이다. 즉, 이 행렬의 Rank는 2이다.
 
  - 따라서 x의 Pivot variable 빼고는 모두 임의의 숫자를 대입했다.
 
@@ -72,7 +72,7 @@ toc: true
 
  - Non-homogeneous equation. 즉 $Ax = b$에서 b가 Zero-vector가 아닌 경우, Homogeneous Equation을 먼저 푼다. 그 후에 그 해에 Particular equation을 풀어서 더해준다.
 
- - 즉, $Ax = b$에서 b의 차원이 n이고, A의 차원이 n이상이면, 이 식은 해가 존재한다. (Linearly independent한 식이 2개는 있어야 해를 구할 수 있잖아)
+ - 즉, $Ax = b$에서 b의 차원이 n이고, A의 차원이 n이상이면, 이 식은 해가 존재한다. (Linearly independent한 행이 n개는 있어야 해를 구할 수 있잖아)
 
  - 따라서, Gaussian elimination을 통해서 A를 정리하고(= Echelon Form으로 만들고) , b에도 같은 연산을 해줘야겠지?
 

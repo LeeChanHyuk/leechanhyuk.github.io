@@ -82,3 +82,69 @@ toc: true
 
  - 이것은 determinant를 구하는 데에는, cofactor를 구하는 것 보다 Gaussian Elimination을 하는게 더 좋다는 걸 뜻한다.
 
+## Type 2
+
+ - 어떤 **하나의** Row나 Column에다가 Nonzero값 k를 곱하는 것을 Type 2 operation이라고 한다.
+
+ - $Bk = A$일 때, $det(B) = kdet(A)$ 가 Type 2의 식.
+
+ - 만약에 **하나의** Row나 Column이 아니라, B전체에 k를 곱하면 $det(kb) = k^ndet(a)$가 되겠지?
+
+ - det할 때, 각 열에 곱이 들어가게 되니깐 그렇지.
+
+## Determinant of upper triangular matrix
+
+ - 대각선 밑의 성분은 전부 0일 때
+
+ - $A = \\begin{pmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \\end{pmatrix}$
+
+ - Upper triangular matrix의 determinant는 Pivot variable의 곱이라고 할 수 있다.
+
+ - 왜냐하면 이 식은 이미 Echelon form을 만들어졌다고 할 수 있으니깐.
+
+ - 즉, 이 성질은 그냥 determinant를 구할려면, Gaussian elimination을 해서 행렬을 Echelon form으로 만들어주고, Pivot끼리의 곱, 즉 대각선 성분의 곱으로 Determinant를 구하면 편하다는 것을 말해준다.
+
+ - Gaussian elimination 할 때, Row나 Column의 순서를 바꿀 때에는 det에 -1을 계속해서 곱해줘야한다는 사실을 잊지말기.
+
+## Properties of determinant
+
+ - 방금 말했지만, Row나 Column을 Exchange할 경우에는 det에 -1을 곱해줘야한다.
+
+ - $det(AB) = det(A)det(B)$ 이다.
+
+ - Invertable = nonsingular
+
+## Cramer's rule
+
+ - 해를 구하는 방법 중 하나.
+
+ - A가 square matrix이고, A가 nonsingular일 때
+
+ - $Ax = b$를 풀 때, A의 Determinant가 0이 아닌경우.
+
+ - $x_k = \frac_{det(M_k)}{det(A)}$
+
+ - 여기서 $M_k$ 란, A의 k번째 Column을 b로 치환한 matrix를 의미한다.
+
+## Cramer's rule 예제
+
+ - $\\begin{pmatrix} 1 & 2 & 3 \\\ 1 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ $\\begin{pmatrix} x1 \\\ x2 \\\ x3 \\end{pmatrix}$ $= \\begin{pmatrix} 2 \\\ 3 \\\ 1 \\end{pmatrix}$ 일 때
+
+ - $x_1 = \frac{det(M_1)}(det(A))$ = $|\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
+
+ - $x_2 = \frac{det(M_2)}{det(A)}$
+
+ - 사실, 계산이 복잡해서 잘 안쓴다.
+
+ - 그냥 알아만 두자.
+
+## Determinant가 의미하는 것.
+
+ - 3x3 matrix일 때는, determinant가 무엇을 의미하는가?
+
+ - 2x2 matrix일 때의, determinant는 평행사변형이었지.
+
+ - 3x3의 determinant가 의미하는 바는 평행 6면체를 의미한다.
+
+
+
