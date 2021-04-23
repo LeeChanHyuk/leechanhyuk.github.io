@@ -40,7 +40,7 @@ toc: true
 
  - LT인 T를 $\beta$를 통해 행렬로 표현하면 (=$[T]_\beta$) (=Linear transformation)
 
-   $\\begin{pmatrix} \lambda_1 & 0 & 0 & 0 \\\ 0 & \lambda_2 & 0 & 0 \\\ 0 & 0 & lambda_3 & 0 \\\ 0 & 0 & 0 & lambda_4 \\end{pmatrix}$
+   $\\begin{pmatrix} \lambda_1 & 0 & 0 & 0 \\\ 0 & \lambda_2 & 0 & 0 \\\ 0 & 0 & \lambda_3 & 0 \\\ 0 & 0 & 0 & \lambda_4 \\end{pmatrix}$
 
  - 위 행렬은 물론.Diagonal matrix이므로, Pivot variable 빼고는 모두 0이다.
 

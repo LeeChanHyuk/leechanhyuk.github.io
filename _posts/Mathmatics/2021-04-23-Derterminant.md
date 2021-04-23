@@ -1,6 +1,6 @@
 ---
 title: "[Linear algebra] Determinant"
-date: 2021-04-16 11:30:06
+date: 2021-04-23 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
 tags: Mathmatics Linear_argebra
@@ -30,7 +30,9 @@ toc: true
 
  - Def. $A = \\begin{pmatrix} a & b \\\ c & d \\end{pmatrix}$ 일 때, a, b, c, d는 Field의 원소일 때
 
- - determinant A를 det(A)로 표기하고, A의 절대값을 의미하며(= |A|), 이는 위 행렬에서 $ad - bc$로 나타나게 된다. 또한 determinant는 A를 이루는 두 벡터가 이루는 평행사변형의 넓이를 의미한다.
+ - determinant A를 det(A)로 표기하고, A의 절대값을 의미하며(= |A|), 이는 위 행렬에서 $ad - bc$로 나타나게 된다. 
+ 
+ - 또한 determinant는 A를 이루는 두 벡터가 이루는 평행사변형의 넓이를 의미한다.
 
  - Determinant는 Additivity를 성립하지 않는다. 따라서 이는 Non-linear transformation이다.
 
@@ -96,7 +98,7 @@ toc: true
 
  - 대각선 밑의 성분은 전부 0일 때
 
- - $A = \\begin{pmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \\end{pmatrix}$
+ - $A = \\begin{pmatrix} 1 & 2 & 3 \\\ 0 & 4 & 5 \\\ 0 & 0 & 6 \\end{pmatrix}$
 
  - Upper triangular matrix의 determinant는 Pivot variable의 곱이라고 할 수 있다.
 
@@ -130,7 +132,9 @@ toc: true
 
  - $\\begin{pmatrix} 1 & 2 & 3 \\\ 1 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ $\\begin{pmatrix} x1 \\\ x2 \\\ x3 \\end{pmatrix}$ $= \\begin{pmatrix} 2 \\\ 3 \\\ 1 \\end{pmatrix}$ 일 때
 
- - $x_1 = \frac{det(M_1)}(det(A))$ = $|\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
+ - $x_1 = \frac{det(M_1)}(det(A))$ 
+ 
+ - = $|\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
 
  - $x_2 = \frac{det(M_2)}{det(A)}$
 
