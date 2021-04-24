@@ -59,3 +59,6 @@ toc: true
  - T가 대각화 가능하려면, Ordered basis $\beta$가 diagonal이어야 한다.
 
  - 이 대각화는 항상 가능한 것이 아니다.  
+
+
+ 
