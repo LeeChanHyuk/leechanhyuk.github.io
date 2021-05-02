@@ -118,7 +118,7 @@ toc: true
 
 ## EfficientNet V2 Architecture desing - Training-Aware NAS and Scaling
 
- 1. NAS Search (조사 필요)
+ 1. NAS Search
 
   - For optimization of accuracy, parameter efficiency and training efficiency.
 
@@ -197,6 +197,10 @@ toc: true
  - Transformers와 다르게, 이 네트워크는 Input length와 Weights가 Independent해서 Stage간의 Inherit에 문제가 없다.
 
  - 본 논문에서 제시한 Progressive Learning 방법은 Dropout, RandAugment, Mixup 방법과 Compatable하다.
+
+ - 따라서 본 논문에서는 Dropout, RandAugment, Mixup 방법을 Regularization 방법으로 사용했다. (사실 Warm Learning Rate 등, Bag of Trick에서 소개되었던 기법들이 몇 개 더 있었다. 이건 논문을 참조하길 바란다.)
+
+ - 사용된 Regularization 기법들 중 햇갈릴만한 부분은 RandAugment, Mixup방법인데, 이것은 Data Augmentation 포스팅을 참조하길 바란다.
 
 
 ## Results

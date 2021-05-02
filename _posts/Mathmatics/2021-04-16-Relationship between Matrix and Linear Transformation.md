@@ -1,5 +1,5 @@
 ---
-title: "[Linear algebra] Linear transformation and matrix"
+title: "[Linear algebra] Relationship between Matrix and Linear Transformation"
 date: 2021-04-16 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
