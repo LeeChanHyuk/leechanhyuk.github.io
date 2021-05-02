@@ -30,7 +30,7 @@ toc: true
 
  - Def. $A = \\begin{pmatrix} a & b \\\ c & d \\end{pmatrix}$ 일 때, a, b, c, d는 Field의 원소일 때
 
- - determinant A를 det(A)로 표기하고, A의 절대값을 의미하며(= |A|), 이는 위 행렬에서 $ad - bc$로 나타나게 된다. 
+ - determinant A를 det(A)로 표기하고, A의 절대값을 의미하며(=|A|), 이는 위 행렬에서 $ad - bc$ 로 나타나게 된다. 
  
  - 또한 determinant는 A를 이루는 두 벡터가 이루는 평행사변형의 넓이를 의미한다.
 
@@ -40,7 +40,7 @@ toc: true
 
 ## Ex 1.
 
- - $R^2$에서 기저벡터가 $u, v$일 때 det[u, v] / |det[u, v]| = +- 1이 된다.
+ - $R^2$ 에서 기저벡터가 $u, v$ 일 때 det[u, v] / |det[u, v]| = +- 1이 된다.
 
  - 이는 두 벡터(차원 공간의 기저벡터)가 이루는 각이 시계 방향이냐(-1), 반시계 방향이냐(1)에 따라서 나뉜다.
 
@@ -124,7 +124,7 @@ toc: true
 
  - $Ax = b$를 풀 때, A의 Determinant가 0이 아닌경우.
 
- - $x_k = \frac_{det(M_k)}{det(A)}$
+ - $x_k = \frac{det(M_k)}{det(A)}$
 
  - 여기서 $M_k$ 란, A의 k번째 Column을 b로 치환한 matrix를 의미한다.
 
@@ -132,7 +132,7 @@ toc: true
 
  - $\\begin{pmatrix} 1 & 2 & 3 \\\ 1 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ $\\begin{pmatrix} x1 \\\ x2 \\\ x3 \\end{pmatrix}$ $= \\begin{pmatrix} 2 \\\ 3 \\\ 1 \\end{pmatrix}$ 일 때
 
- - $x_1 = \frac{det(M_1)}(det(A))$ 
+ - $x_1 = \frac{det(M_1)}{det(A)}$ 
  
  - = $|\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
 
