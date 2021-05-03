@@ -59,15 +59,15 @@ toc: true
 
  1. The estimation of Target value for using prediction.
  
-   <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
+  <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
 
-  - $u, u^^$ is the prediction value and target value.
+  - $u, u^(^)$ is the prediction value and target value.
 
   - The $P$ is probility of bad event.
 
   - N is the size of dataset.
 
-  - If N is high enough, $u, u^^$ will be similar than that N was small.
+  - If N is high enough, $u, u^(^)$ will be similar than that N was small.
 
   - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
 
@@ -75,17 +75,17 @@ toc: true
 
 3. The probability that the result deduced from the hypothesis is wrong in the data for which I know the correct answer.
 
-   <img src="/assets/image/Feasibility_of_learning/in.png" width="450px" height="300px" title="title" alt="title"> 
+  <img src="/assets/image/Feasibility_of_learning/in.png" width="450px" height="300px" title="title" alt="title"> 
 
 4. Probability that the inferred result from a population I do not know is not the same as the target function.
 
-   <img src="/assets/image/Feasibility_of_learning/out.png" width="450px" height="300px" title="title" alt="title"> 
+  <img src="/assets/image/Feasibility_of_learning/out.png" width="450px" height="300px" title="title" alt="title"> 
 
 5. $P[A \cup B] <= P[A] + P[B]$
 
 6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
 
-- $P[|E_in (g)-E_out (g)|>ϵ ]≤ 2Me^(-2ϵ^2 N)$
+  - $P[|E_in (g)-E_out (g)|>\epsilon ]≤ 2Me^(-2*\epsilon^2 N)$
 
 7. Minimize the $E_out(g) ~= 0$
 

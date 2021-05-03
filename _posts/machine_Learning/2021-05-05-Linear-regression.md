@@ -39,17 +39,21 @@ toc: true
 
    - Finding $h(x)$ for optimizing $E_out(h)$
 
- 2. $E_in (h)=1/N \sigma_{n=0}^{N}  (h(x_n )-y_n )^2 = 1/N \sigma_(n=1)^N (w^T x_n-y_n )^2=1/N |(|Xw-y|)|^2$
+ 2. $E_in (h)=1/N Ssigma_{n=0}^{N}$
+ 
+ -  $(h(x_n )-y_n )^2 = 1/N \Sigma_(n=1)^N$
+ 
+ -  $(w^T x_n-y_n )^2=1/N |(|Xw-y|)|^2$
 
-   - $h(x)= \sigma_(i=0)^d w_i x_i=w^T x$
+ - $h(x)= \Sigma_(i=0)^d w_i x_i=w^T x$
 
  3. 
 
-   <img src="/assets/image/class3/matrix.png" width="450px" height="300px" title="title" alt="title"> 
+   <img src="/assets/image/class3/matrix.png" width="300px" height="225px" title="title" alt="title"> 
 
  4. 
 
-   <img src="/assets/image/class3/normal.png" width="450px" height="300px" title="title" alt="title"> 
+   <img src="/assets/image/class3/normal.png" width="300px" height="225px" title="title" alt="title"> 
 
  5. If $X^T X$ can be invertable, W can have unique solution. Or W can have non-unique solution.
 
@@ -59,6 +63,6 @@ toc: true
 
  8. The variables determined by human.
 
- 9. $w(t+1) = w(t) - n\nabla(E_train(w(t))).
+ 9. $w(t+1) = w(t) - n\nabla(E_train(w(t)))$.
 
 
