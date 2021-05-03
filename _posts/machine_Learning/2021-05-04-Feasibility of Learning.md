@@ -59,63 +59,69 @@ toc: true
 
  1. The estimation of Target value for using prediction.
  
-  <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
+   <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
 
-  - $u, u^(^)$ is the prediction value and target value.
+    - $u, u^(^)$ is the prediction value and target value.
 
-  - The $P$ is probility of bad event.
+    - The $P$ is probility of bad event.
 
-  - N is the size of dataset.
+    - N is the size of dataset.
 
-  - If N is high enough, $u, u^(^)$ will be similar than that N was small.
+    - If N is high enough, $u, u^(^)$ will be similar than that N was small.
 
-  - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
+    - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
 
-2. The process finding optimal hypothesis in the hypothesis set.
+ 2. The process finding optimal hypothesis in the hypothesis set.
 
-3. The probability that the result deduced from the hypothesis is wrong in the data for which I know the correct answer.
+ 3. The probability that the result deduced from the hypothesis is wrong in the data for which I know the correct answer.
 
-  <img src="/assets/image/Feasibility_of_learning/in.png" width="450px" height="300px" title="title" alt="title"> 
+    <img src="/assets/image/Feasibility_of_learning/in.png" width="450px" height="300px" title="title" alt="title"> 
 
-4. Probability that the inferred result from a population I do not know is not the same as the target function.
+ 4. Probability that the inferred result from a population I do not know is not the same as the target function.
 
-  <img src="/assets/image/Feasibility_of_learning/out.png" width="450px" height="300px" title="title" alt="title"> 
+    <img src="/assets/image/Feasibility_of_learning/out.png" width="450px" height="300px" title="title" alt="title"> 
 
-5. $P[A \cup B] <= P[A] + P[B]$
+ 5. $P[A \cup B] <= P[A] + P[B]$
 
-6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
+ 6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
 
-  - $P[|E_in (g)-E_out (g)|>\epsilon ]≤ 2Me^(-2*\epsilon^2 N)$
+    - $P[|E_in (g)-E_out (g)|>\epsilon ]≤ 2Me^(-2*\epsilon^2 N)$
 
-7. Minimize the $E_out(g) ~= 0$
+ 7. Minimize the $E_out(g) ~= 0$
 
-  - But it can not be real because our model has dependency in dataset.
+    - But it can not be real because our model has dependency in dataset.
 
-8. Two condition.
+ 8. Two condition.
 
-  - $E_out (g) ~= E_in (g)$
+    - $E_out (g) ~= E_in (g)$
 
-  - $E_in$ must be small enough.
+    - $E_in$ must be small enough.
 
-9. The number of training example.
+ 9. The number of training example.
 
-10. The number of Hypothesises.
+ 10. The number of Hypothesises.
 
-11. The hypothesis must be less complex. You can figure out with 6.
+ 11. The hypothesis must be less complex. You can figure out with 6.
 
-12. The hypothesis must be complex. Although there is a danger of overfitting, a complexity is required for reducing error.
+ 12. The hypothesis must be complex. Although there is a danger of overfitting, a complexity is required for reducing error.
 
-13. Approximation-Generalization trade-off.
+ 13. Approximation-Generalization trade-off.
 
-14. The error of each sample.
+ 14. The error of each sample.
 
-15. The average of point-wise error.
+ 15. The average of point-wise error.
 
-16. False accept, False reject.
+ 16. False accept, False reject.
 
-17. The target distribution cared for noise.
+ 17. Interpolation means a method that satisfies all samples. Machine learning x.
 
-18. Input distribution.
+   - Target function exactly satisfies y_n. That is, E_in=0.
 
-20. Probably approximately correct.
+   - Regression does not satisfy all samples. Machine learning o
+
+ 18. The target distribution cared for noise.
+
+ 19. Input distribution.
+
+ 20. Probably approximately correct.
 

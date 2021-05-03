@@ -41,11 +41,11 @@ toc: true
 
  2. $E_in (h)=1/N Ssigma_{n=0}^{N}$
  
- -  $(h(x_n )-y_n )^2 = 1/N \Sigma_(n=1)^N$
+   -  $(h(x_n )-y_n )^2 = 1/N \Sigma_(n=1)^N$
  
- -  $(w^T x_n-y_n )^2=1/N |(|Xw-y|)|^2$
+   -  $(w^T x_n-y_n )^2=1/N |(|Xw-y|)|^2$
 
- - $h(x)= \Sigma_(i=0)^d w_i x_i=w^T x$
+   - $h(x)= \Sigma_(i=0)^d w_i x_i=w^T x$
 
  3. 
 
@@ -63,6 +63,6 @@ toc: true
 
  8. The variables determined by human.
 
- 9. $w(t+1) = w(t) - n\nabla(E_train(w(t)))$.
+ 9. $w(t+1) = w(t) - n\nabla(E_(train(w(t))))$.
 
 
