@@ -57,17 +57,17 @@ toc: true
 
 ## Answer
 
- 1. The estimation of Target value for using prediction.
- 
-   <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
+<img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
 
-    - $u, u^(^)$ is the prediction value and target value.
+ 1. The estimation of Target value for using prediction.
+
+    - $u, u^{^}$ is the prediction value and target value.
 
     - The $P$ is probility of bad event.
 
     - N is the size of dataset.
 
-    - If N is high enough, $u, u^(^)$ will be similar than that N was small.
+    - If N is high enough, $u, u^{^}$ will be similar than that N was small.
 
     - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
 
@@ -85,7 +85,7 @@ toc: true
 
  6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
 
-    - $P[|E_in (g)-E_out (g)|>\epsilon ]≤ 2Me^(-2*\epsilon^2 N)$
+    - $P[E_in(g)-E_out(g)>\epsilon ]<= 2Me^(-2*\epsilon^2 N)$
 
  7. Minimize the $E_out(g) ~= 0$
 
@@ -93,7 +93,7 @@ toc: true
 
  8. Two condition.
 
-    - $E_out (g) ~= E_in (g)$
+    - $E_out(g) ~= E_in(g)$
 
     - $E_in$ must be small enough.
 
