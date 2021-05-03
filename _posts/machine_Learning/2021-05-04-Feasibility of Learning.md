@@ -61,15 +61,15 @@ toc: true
  
    <img src="/assets/image/Feasibility_of_learning/hoeffding.png" width="450px" height="300px" title="title" alt="title"> 
 
-    - $u, u^^$ is the prediction value and target value.
+  - $u, u^^$ is the prediction value and target value.
 
-    - The $P$ is probility of bad event.
+  - The $P$ is probility of bad event.
 
-    - N is the size of dataset.
+  - N is the size of dataset.
 
-    - If N is high enough, $u, u^^$ will be similar than that N was small.
+  - If N is high enough, $u, u^^$ will be similar than that N was small.
 
-    - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
+  - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
 
 2. The process finding optimal hypothesis in the hypothesis set.
 
@@ -81,11 +81,11 @@ toc: true
 
    <img src="/assets/image/Feasibility_of_learning/out.png" width="450px" height="300px" title="title" alt="title"> 
 
-5. $P[A\cupB] <= P[A] + P[B]$
+5. $P[A \cup B] <= P[A] + P[B]$
 
 6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
 
-  - $P[|E_in (g)-E_out (g)|>ϵ ]≤ 2Me^(-2ϵ^2 N)$
+- $P[|E_in (g)-E_out (g)|>ϵ ]≤ 2Me^(-2ϵ^2 N)$
 
 7. Minimize the $E_out(g) ~= 0$
 
