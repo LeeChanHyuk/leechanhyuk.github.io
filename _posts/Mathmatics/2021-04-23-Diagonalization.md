@@ -131,7 +131,7 @@ toc: true
  A =$\\begin{pmatrix} 1 & 1 \\\ 4 & 1 \\end{pmatrix}$
  $det(A - \lambda * I) = \lambda^2 - 2 * \lambda - 3$
  
- - 따라서 $\lambda = 3 or -1$이 된다.
+ - 따라서 $\lambda =  3 or -1$이 된다.
 
 ## Calculate the eigen vector
 
@@ -145,17 +145,13 @@ toc: true
 
 ## Ex 6.
 
- - $T = 
- 
-    \\begin{pmatrix} 1 & 1 \\\ 4 & 1 \\end{pmatrix}$
+ - $T = \\begin{pmatrix} 1 & 1 \\\ 4 & 1 \\end{pmatrix}$
 
- - $\lambda_1 = 3, \labmda_2 = -1$ 일 때
+ - $\lambda_1 = 3$, $\lambda_2 = -1$ 일 때
 
  - 우선 $\lambda_1$에 대한 Eigen vector를 구하면
 
- - $T-\lambda_1 I$는
-
- $\\begin{pmatrix} -2 & 1 \\\ 4 & -2 \\end{pmatrix}$
+ - $T-\lambda_1 I$는 $\\begin{pmatrix} -2 & 1 \\\ 4 & -2 \\end{pmatrix}$
  
  $\\begin{pmatrix} -2 & 1 \\\ 4 & -2 \\end{pmatrix} * \\begin{pmatrix} x1 \\\ x2 \\end{pmatrix} = \\begin{pmatrix} 0 \\\ 0 \\end{pmatrix}$
 
