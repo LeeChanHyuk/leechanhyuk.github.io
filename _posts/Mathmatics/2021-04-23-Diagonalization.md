@@ -122,6 +122,12 @@ toc: true
 
  - Characteristic polynomial of $A = Det(A - t * I)$
 
+ - 항상 eigen value, vector는 squared matrix에서 나온다.
+
+ - nxn의 matrix일 경우 물론 degree는 n
+
+ - $t^n$의 coefficient는 $(-1)^n$ (원소 - t 가 n번 곱해지니까)
+
 ## Finding eigen value
 
  - Characteristic polynomial을 사용하는 것으로 간단하게 Eigen value를 계산 가능하다.
@@ -164,6 +170,18 @@ toc: true
  - 따라서 $\lambda_1$의 Eigen vector는 $\\begin{pmatrix} 1 \\\ 2 \\end{pmatrix}$가 된다.
 
  - $\lambda_2$의 경우에도 똑같이 구해주면 $\\begin{pmatrix} 1 \\\ -2 \\end{pmatrix}$가 된다.
+
+ - 이 EigenVector를 Q의 Column으로 쓰면, $D = Q^-1 A Q$ = $\\begin{pmatrix} \lambda_1 & 0 \\\ 0 & \lambda_2 \\end{pmatrix}$ (이해 필요)
+
+ - 이것을 행렬의 Eigen decomposition이라고 한다.
+
+ - 이 행렬을 잘 보면, 이건 Diagonal matrix의 형태를 띄고있다.
+
+ - 이는 임의의 원소 예를 들면 matrix[$y_1 \ y_2$]와 곱해졌다고 할 때
+
+ - 이것의 Output은 coupling이 전혀 없다. (서로 독립적이다).
+
+ - 따라서 Eigen-vector를 사용하면 임의의 시스템을 decoupling할 수 있다고 볼 수 있다.
 
 
 
