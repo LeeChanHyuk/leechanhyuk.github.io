@@ -27,19 +27,19 @@ toc: true
 
  - 이는 아래 그림과 같이 나타난다.
 
- <img src="/assets/image/graphics2/1.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/1.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - Point (x, y, z) = (2, 5, 10)를 Projection 하면, $x' = \frac{2}{-10} = -0.2, y' = \frac{5}{-10} = -0.5$가 된다.
 
  - 만약 Point가 Frustum 밖에 위치하고 있다면, 아래 그림과 같이 나타나게 된다.
 
- <img src="/assets/image/graphics2/2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 이렇게 자르고 변환하고 하면, 위의 예시에서 이미 봤겠지만, 양수가 음수가 되고, 음수가 양수가 되곤 한다.
 
 ## Procedure for projection
 
- <img src="/assets/image/graphics2/3.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/3.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 위 그림에서 P를 NDC로 투영하고 싶을 때, 투영된 점을 P'라고 할 때, 두 점을 포함하는 삼각형은 그림과 같이 닮음 관계에 있다.
 
@@ -67,7 +67,7 @@ toc: true
 
  - 그 이유는 w가 만약 1이 아닐 경우, 즉 w에 어떤 연산이 행해진 경우에는 동등한 비교를 위해서 Homogeneous coordinate로 나타냈다고 말하려면 w로 나눠줌으로써 행해진 Transform에 대해 역연산을 수행할 수 있는 것이기 때문이다.
 
- <img src="/assets/image/graphics2/4.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/4.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 위 식이 드디어 Affine matrix를 나타낸다.
 
@@ -75,7 +75,7 @@ toc: true
 
  - 이 행렬로 인한 Transform은 Affine transform이라고 한다고 설명했는데, 이는 역시 Linear transformation이기 때문에 선형성이 유지된다.
 
- <img src="/assets/image/graphics2/5.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/5.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 이미 연거푸 설명했지만, 위 그림이 바로 이 Matrix를 통해서 Transformation을 하는 과정을 나타낸 그림이다.
 
@@ -83,11 +83,11 @@ toc: true
 
  - 이를 코드로 나타내면 아래와 같다.
 
- <img src="/assets/image/graphics2/6.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/6.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
 ## Projection matrix와 Affine matrix의 차이점
 
- <img src="/assets/image/graphics2/7.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/7.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - Affine matrix는 항상 $m_30, m_31, m_32, m_33$이 {0, 0, 0, 1}이지만, Projection matrix는 그렇지 않다.
 
@@ -97,11 +97,11 @@ toc: true
 
  - 따라서 코드는 아래와 같이 나타날 수 있다.
 
- <img src="/assets/image/graphics2/8.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/8.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 그렇지만 메트릭스 곱 할때마다 함수가 다르면 번거롭지? 합쳐놓은 버전이 있다~
 
- <img src="/assets/image/graphics2/9.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/9.PNG" width="450px" height="300px" title="MAE" alt="MAE">
 
  - 또 Affine matrix는 그저 물체를 돌리거나 이동시키는 변환 이라는 것을 명심하고!
 
