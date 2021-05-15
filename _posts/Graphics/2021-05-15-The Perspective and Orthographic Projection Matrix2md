@@ -102,5 +102,13 @@ toc: true
  - 그렇지만 메트릭스 곱 할때마다 함수가 다르면 번거롭지? 합쳐놓은 버전이 있다~
 
  <img src="/assets/image/graphics2/9.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+
+ - 또 Affine matrix는 그저 물체를 돌리거나 이동시키는 변환 이라는 것을 명심하고!
+
+ - Projection matrix는 물체를 돌리거나 이동시키는 것 외에, NDC로 Projection 한다거나 하는걸 할 수 있는 Matrix라는 것을 기억해야한다.
+
+ - 이 Projection은 나머지 x, y, z 좌표들을 w로 나눈 다는 성질을 활용하여 w에 다른 값을 할당하는 것으로 모든 좌표들을 동등하게 변환시킨다.
+
+ - 즉, Affine transformation에다가 특정한 Transformation (공간적인!)을 한번 더 해준다고 보면 된다!
  
 
