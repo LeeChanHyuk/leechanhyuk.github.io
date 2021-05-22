@@ -33,7 +33,7 @@ toc: true
 
  - 만약 Point가 Frustum 밖에 위치하고 있다면, 아래 그림과 같이 나타나게 된다.
 
- <img src="/assets/image/Graphics2/2.PNG" width="450px" height="300px" title="MAE" alt="MAE">
+ <img src="/assets/image/Graphics2/2.PNG" width="300px" height="200px" title="MAE" alt="MAE">
 
  - 이렇게 자르고 변환하고 하면, 위의 예시에서 이미 봤겠지만, 양수가 음수가 되고, 음수가 양수가 되곤 한다.
 
