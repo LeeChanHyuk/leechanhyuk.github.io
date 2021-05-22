@@ -2,7 +2,7 @@
 title: "[Graphics] Projection Matrices: What You Need to Know First"
 date: 2021-05-15 11:30:06
 author: Leechanhyuk
-categories: 
+categories: Graphics
 tags: Graphics
 use_math: true
 cover: "/assets/instacode.png"
