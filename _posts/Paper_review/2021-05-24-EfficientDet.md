@@ -123,7 +123,7 @@ toc: true
 
  - BiFPN : Efficient bidirectional cross-scale connections and weighted feature fusion.
 
- - Multi-scale features는 $\overrightarrow{P}_{l_1}^{in}, P_{l_2}^{in}, ...}$와 같이 나타낸다.
+ - Multi-scale features는 $(\overrightarrow{P}_{l_1}^{in}, P_{l_2}^{in}, ...)$와 같이 나타낸다.
 
  - 각 $P_{L_I}^{in}$은 Level $l_i$의 feature를 나타낸다.
 
