@@ -189,7 +189,7 @@ toc: true
 
 # Integrated feature fusion
 
-    <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
     
   - LEVEL 6에서의 Feature fusion을 예시로 설명.
 
@@ -203,7 +203,7 @@ toc: true
 
 ## EfficientDet
 
-  <img src="/assets/image/EfficientDet/figure3.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/figure3.PNG" width="600px" height="450px" title="title" alt="title">
 
 ## EfficientDet Architecture
 
