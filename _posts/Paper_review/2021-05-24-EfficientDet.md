@@ -163,90 +163,90 @@ toc: true
 
 # Unbounded fusion
 
-    - $O = \Sigma_{i}{w_i} * I_i$
+  - $O = \Sigma_{i}{w_i} * I_i$
 
-    - $w_i$가 Learnable weights.
+  - $w_i$가 Learnable weights.
 
-    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
+  - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
 
-    - $w_i$는 scalar, vector, multi-dimensional tensor 전부 될 수 있다. (뒤에 나올 BiFPN의 Channel을 증가시키는 부분이 여기인 듯)
+  - $w_i$는 scalar, vector, multi-dimensional tensor 전부 될 수 있다. (뒤에 나올 BiFPN의 Channel을 증가시키는 부분이 여기인 듯)
 
-    - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
+  - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
 
 # Softmax-based fusion
 
-    - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
+  - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
 
-    - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
+  - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
 
 # Fast normalized fusion
 
-    - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
+  - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
 
-    - Normalize 전에 Relu를 적용시켜 0 이상인 부분만 적용.
+  - Normalize 전에 Relu를 적용시켜 0 이상인 부분만 적용.
 
-    - Softmax에 비해서 30% 빠르다고 한다.
+  - Softmax에 비해서 30% 빠르다고 한다.
 
 # Integrated feature fusion
 
     <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
     
-    - LEVEL 6에서의 Feature fusion을 예시로 설명.
+  - LEVEL 6에서의 Feature fusion을 예시로 설명.
 
-    - $P_6^{td}$는 Top-down path에서의 feature fusion 결과.
+  - $P_6^{td}$는 Top-down path에서의 feature fusion 결과.
 
-    - $P_6^{out}$은 Bottom-up path에서의 feature fusion 결과.
+  - $P_6^{out}$은 Bottom-up path에서의 feature fusion 결과.
 
-    - 각 Node들 간의 Connection의 Input마다 Weights가 할당되어 있는 것을 확인 가능.
+  - 각 Node들 간의 Connection의 Input마다 Weights가 할당되어 있는 것을 확인 가능.
 
-    - Efficiency 향상을 위해 depthwise separable convolution을 사용했고, 그 후 BN 및 Activation function을 적용했다.
+  - Efficiency 향상을 위해 depthwise separable convolution을 사용했고, 그 후 BN 및 Activation function을 적용했다.
 
 ## EfficientDet
 
-   <img src="/assets/image/EfficientDet/figure3.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/figure3.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## EfficientDet Architecture
 
-   - ImageNet Data로 훈련된 EfficientNet을 Backbone으로 사용.
+  - ImageNet Data로 훈련된 EfficientNet을 Backbone으로 사용.
 
-   - 마지막 class and box network weights는 각 LEVEL Features에 대해서 공유하는 방식으로 사용. (각 LEVEL Feature에서 Network output까지 어떻게 이어지는지 확인 필요.)
+  - 마지막 class and box network weights는 각 LEVEL Features에 대해서 공유하는 방식으로 사용. (각 LEVEL Feature에서 Network output까지 어떻게 이어지는지 확인 필요.)
 
 ## Compound scaling
 
-   - Compound coefficient $\pi$를 Backbone network, BiFPN network, class/box network, resolution에 공통적으로 적용.
+  - Compound coefficient $\pi$를 Backbone network, BiFPN network, class/box network, resolution에 공통적으로 적용.
 
-   - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
+  - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
 
 ## Backbone network
 
-     - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
+  - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
 
 ## BiFPN network
 
-     - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
+  - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
 
-     - BiFPN의 Channel의 결정은 $W_{bifpn} = 64 * (1.35^\pi)$
+  - BiFPN의 Channel의 결정은 $W_{bifpn} = 64 * (1.35^\pi)$
 
-     - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
+  - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
 
 ## Box/class prediction network
 
-     - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
+  - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
 
-     - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
+  - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
 
 ## Input Image Resolution
 
-     - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
+  - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
 
-     - $R_{input} = 512 + \pi * 128$
+  - $R_{input} = 512 + \pi * 128$
 
-    - EfficientDet D0-D7은 각각 $\pi$가 0부터 7까지 할당되었을 때를 의미한다.
+  - EfficientDet D0-D7은 각각 $\pi$가 0부터 7까지 할당되었을 때를 의미한다.
 
-    - Table 1은 Scaling configuration을 나타낸다.
+  - Table 1은 Scaling configuration을 나타낸다.
 
-   <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
-
+  <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
+  
 ## Experiments
 
-   <img src="/assets/image/EfficientDet/table2.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/table2.PNG" width="450px" height="300px" title="title" alt="title">
