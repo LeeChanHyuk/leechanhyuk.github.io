@@ -123,15 +123,15 @@ toc: true
 
  - BiFPN : Efficient bidirectional cross-scale connections and weighted feature fusion.
 
- - Multi-scale features는 $\overrightarrow{P_(l_1)^in, P_(l_2)^in, ...}$와 같이 나타낸다.
+ - Multi-scale features는 $\overrightarrow{P}_{l_1}^{in}, P_{l_2}^{in}, ...}$와 같이 나타낸다.
 
- - 각 $P_(L_I)^in$은 Level $l_i$의 feature를 나타낸다.
+ - 각 $P_{L_I}^{in}$은 Level $l_i$의 feature를 나타낸다.
 
  - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow^out = f(\overrightarrow^in)$이 된다.
 
- - figure 2 (a)는 FPN을 나타내느데, 여기서 LEVEL 3-7은 $\overrightarrow{P^in} = (P_3^in, ..., P_7^in)$으로 나타낼 수 있다.
+ - figure 2 (a)는 FPN을 나타내는데, 여기서 LEVEL 3-7은 $\overrightarrow{P}^{in} = (P_3^{in}, ..., P_7^{in})$으로 나타낼 수 있다.
 
- - 또한 각 $P_i_in$은 resolution이 $\frac{1}{2^i}$를 뜻한다.
+ - 또한 각 $P_{i}^{in}$은 resolution이 $\frac{1}{2^i}$를 뜻한다.
 
  - 예를 들면, Input이 640x640이라고 할 때, LEVEL 3이면 $640/2^3 = 80$이므로 한 변이 80이 되는 것이다. 또한 LEVEL 7이면 한 변의 길이가 5가 되겠지.
 
@@ -143,5 +143,110 @@ toc: true
 
 ## BiFPN - Cross Scale Connections
 
- - 
+ - Figure 2에서도 확인할 수 있듯이, FPN은 단 방향으로만 information flow를 구축한다.
 
+ - PANet은 여기에 Bottom-Up information flow를 추가했다.
+
+ - NAS-FPN은 GPU 기준 몇천시간이 소요되고, Output이 일반적인 형태가 아니기 때문에 네트워크를 해석하거나 변형하기가 힘들다.
+
+ - PANet은 FPN이나 NAS-FPN보다 ACC가 높지만, efficiency가 좋지 않다.
+
+ - Efficiency를 높이기 위해서, PANet에서 Input이 하나 였던, 즉 가장 모서리 부분에 위치했던 Node들을 뺐다.
+
+ - 또한 Cost를 많이 높이지 않으면서도 더 많은 features를 고려하기 위해서, extra-edge를 추가했다.
+
+ - 마지막으로, 좀 더 high-level의 feature fusion을 위해서 BiFPN Layer를 여러번 중첩시켰다.
+
+## BiFPN - Weighted Feature Fusion
+
+ - Input features의 Resolution이 전부 다르다는 사실이 output feature에 동등하게 반영되지 않는다는 사실로 나타남에따라, 각 Input에 Weight를 주어서 각 Input의 importance를 학습하게 했다. (Input의 종류에 따라 Detection 성능을 높이기 위해 Input을 scaling하는 방향으로 학습되기를 기대한 듯 함.)
+
+  # Unbounded fusion
+
+    - $O = \Sigma_{i}{w_i} * I_i$
+
+    - $w_i$가 Learnable weights.
+
+    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
+
+    - $w_i$는 scalar, vector, multi-dimensional tensor 전부 될 수 있다. (뒤에 나올 BiFPN의 Channel을 증가시키는 부분이 여기인 듯)
+
+    - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
+
+  # Softmax-based fusion
+
+    - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
+
+    - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
+
+  # Fast normalized fusion
+
+    - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
+
+    - Normalize 전에 Relu를 적용시켜 0 이상인 부분만 적용.
+
+    - Softmax에 비해서 30% 빠르다고 한다.
+
+  # Integrated feature fusion
+
+    <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
+    
+    - LEVEL 6에서의 Feature fusion을 예시로 설명.
+
+    - $P_6^{td}$는 Top-down path에서의 feature fusion 결과.
+
+    - $P_6^{out}$은 Bottom-up path에서의 feature fusion 결과.
+
+    - 각 Node들 간의 Connection의 Input마다 Weights가 할당되어 있는 것을 확인 가능.
+
+    - Efficiency 향상을 위해 depthwise separable convolution을 사용했고, 그 후 BN 및 Activation function을 적용했다.
+
+## EfficientDet
+
+   <img src="/assets/image/EfficientDet/figure3.PNG" width="450px" height="300px" title="title" alt="title">
+
+  ## EfficientDet Architecture
+
+   - ImageNet Data로 훈련된 EfficientNet을 Backbone으로 사용.
+
+   - 마지막 class and box network weights는 각 LEVEL Features에 대해서 공유하는 방식으로 사용. (각 LEVEL Feature에서 Network output까지 어떻게 이어지는지 확인 필요.)
+
+  ## Compound scaling
+
+   - Compound coefficient $\pi$를 Backbone network, BiFPN network, class/box network, resolution에 공통적으로 적용.
+
+   - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
+
+    ## Backbone network
+
+     - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
+
+    ## BiFPN network
+
+     - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
+
+     - BiFPN의 Channel의 결정은 $W_{bifpn} = 64 * (1.35^\pi)$
+
+     - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
+
+    ## Box/class prediction network
+
+     - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
+
+     - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
+
+    ## Input Image Resolution
+
+     - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
+
+     - $R_{input} = 512 + \pi * 128$
+
+    - EfficientDet D0-D7은 각각 $\pi$가 0부터 7까지 할당되었을 때를 의미한다.
+
+    - Table 1은 Scaling configuration을 나타낸다.
+
+   <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
+
+## Experiments
+
+   <img src="/assets/image/EfficientDet/table2.PNG" width="450px" height="300px" title="title" alt="title">
