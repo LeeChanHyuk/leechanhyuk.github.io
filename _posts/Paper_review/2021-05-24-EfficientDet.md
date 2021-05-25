@@ -127,7 +127,7 @@ toc: true
 
  - 각 $P_{L_I}^{in}$은 Level $l_i$의 feature를 나타낸다.
 
- - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow^out = f(\overrightarrow^in)$이 된다.
+ - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow{P}_out = f(\overrightarrow{P}_{in})$이 된다.
 
  - figure 2 (a)는 FPN을 나타내는데, 여기서 LEVEL 3-7은 $\overrightarrow{P}^{in} = (P_3^{in}, ..., P_7^{in})$으로 나타낼 수 있다.
 
@@ -161,7 +161,7 @@ toc: true
 
  - Input features의 Resolution이 전부 다르다는 사실이 output feature에 동등하게 반영되지 않는다는 사실로 나타남에따라, 각 Input에 Weight를 주어서 각 Input의 importance를 학습하게 했다. (Input의 종류에 따라 Detection 성능을 높이기 위해 Input을 scaling하는 방향으로 학습되기를 기대한 듯 함.)
 
-  # Unbounded fusion
+# Unbounded fusion
 
     - $O = \Sigma_{i}{w_i} * I_i$
 
@@ -173,13 +173,13 @@ toc: true
 
     - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
 
-  # Softmax-based fusion
+# Softmax-based fusion
 
     - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
 
     - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
 
-  # Fast normalized fusion
+# Fast normalized fusion
 
     - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
 
@@ -187,7 +187,7 @@ toc: true
 
     - Softmax에 비해서 30% 빠르다고 한다.
 
-  # Integrated feature fusion
+# Integrated feature fusion
 
     <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
     
@@ -205,23 +205,23 @@ toc: true
 
    <img src="/assets/image/EfficientDet/figure3.PNG" width="450px" height="300px" title="title" alt="title">
 
-  ## EfficientDet Architecture
+## EfficientDet Architecture
 
    - ImageNet Data로 훈련된 EfficientNet을 Backbone으로 사용.
 
    - 마지막 class and box network weights는 각 LEVEL Features에 대해서 공유하는 방식으로 사용. (각 LEVEL Feature에서 Network output까지 어떻게 이어지는지 확인 필요.)
 
-  ## Compound scaling
+## Compound scaling
 
    - Compound coefficient $\pi$를 Backbone network, BiFPN network, class/box network, resolution에 공통적으로 적용.
 
    - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
 
-    ## Backbone network
+## Backbone network
 
      - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
 
-    ## BiFPN network
+## BiFPN network
 
      - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
 
@@ -229,13 +229,13 @@ toc: true
 
      - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
 
-    ## Box/class prediction network
+## Box/class prediction network
 
      - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
 
      - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
 
-    ## Input Image Resolution
+## Input Image Resolution
 
      - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
 
