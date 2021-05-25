@@ -19,7 +19,7 @@ toc: true
 
 * * *
 
-<img src="/assets/image/EfficientDet/figure1.PNG" width="600px" height="450px" title="title" alt="title">
+<img src="/assets/image/EfficientDet/figure1.PNG" width="450px" height="300px" title="title" alt="title">
 
 ## Abstract
 
@@ -92,6 +92,56 @@ toc: true
  - 본 논문도 여기에 속함.
 
  - **Multi-Scale feature representations**
+
+ - 이전의 Object detectors는 multi-scale features를 잘 다루는 것이 중요했다.
+
+ - 몇몇 모델은 Backbone network로 부터 추출된 pyramidal feature에 직접적으로 Prediction을 적용하기도 했다.
+
+ - FPN은 Top-down 방식이었다.
+
+ - PANet은 FPN 방식에 Bottom-up 방식을 추가했다.
+
+ - STDL은 Cross-scale feature를 다루기 위해 scale-transfer module을 사용했다.
+
+ - M2det은 Multi-scale의 feature를 섞기 위해 U-Shape의 module을 도입했다.
+
+ - NAS-FPN은 Feature network topology를 자동으로 design하는 방식을 사용하여 효과를 보았다.
+
+ - NAS-FPN은 GPU로 처리할 때, 탐색에(Network architecture) 몇 천시간이 소요되며 결과 네트워크는 일반적이지 않아서 해석하기 힘들다.
+
+ - 본 논문에서는 multi-scale feature fusion을 optimization 시키기 위해서 좀 더 직관적이고 정형화된 방법을 사용한다.
+
+ - **Model scaling**
+
+ - 지금까지는 Acc 향상을 위해, 좀 더 큰 Backbone을 사용했다.
+
+ - 여기서는 EfficientNet에 나온 Compound scaling과 유사한 방법을 사용하겠다.
+
+## BiFPN - Problem Formulation
+
+<img src="/assets/image/EfficientDet/figure2.PNG" width="450px" height="300px" title="title" alt="title">
+
+ - BiFPN : Efficient bidirectional cross-scale connections and weighted feature fusion.
+
+ - Multi-scale features는 $\overrightarrow{P_(l_1)^in, P_(l_2)^in, ...}$와 같이 나타낸다.
+
+ - 각 $P_(L_I)^in$은 Level $l_i$의 feature를 나타낸다.
+
+ - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow^out = f(\overrightarrow^in)$이 된다.
+
+ - figure 2 (a)는 FPN을 나타내느데, 여기서 LEVEL 3-7은 $\overrightarrow{P^in} = (P_3^in, ..., P_7^in)$으로 나타낼 수 있다.
+
+ - 또한 각 $P_i_in$은 resolution이 $\frac{1}{2^i}$를 뜻한다.
+
+ - 예를 들면, Input이 640x640이라고 할 때, LEVEL 3이면 $640/2^3 = 80$이므로 한 변이 80이 되는 것이다. 또한 LEVEL 7이면 한 변의 길이가 5가 되겠지.
+
+ - 아래 공식처럼 FPN의 각 LEVEL의 Output이 나타난다.
+
+<img src="/assets/image/EfficientDet/two.PNG" width="450px" height="300px" title="title" alt="title">
+
+ - 여기서 Resize는 Down-sampling이나 Up-sampling을, Conv는 Convolution layer를 의미한다.
+
+## BiFPN - Cross Scale Connections
 
  - 
 
