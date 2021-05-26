@@ -119,7 +119,7 @@ toc: true
 
 ## 3. BiFPN
 
-<img src="/assets/image/EfficientDet/figure2.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/EfficientDet/figure2.PNG" width="600px" height="450px" title="title" alt="title">
 
  - BiFPN : Efficient bidirectional cross-scale connections and weighted feature fusion.
 
@@ -263,7 +263,7 @@ toc: true
 
  - Swish activation 적용 (Exponential moving average : 0.9998)
 
- - Focal loss 적용($\alpha = 0.25, \gamma = 1.5, aspect ratio = {\frec{1}{2}, 1, 2}$)
+ - Focal loss 적용($\alpha = 0.25, \gamma = 1.5, aspect ratio = {\frac{1}{2}, 1, 2}$)
 
  - Batch size = 128
 
@@ -271,13 +271,13 @@ toc: true
 
  - Auto-augment는 사용하지 않음.
 
- - SOTA 달성 - 52.2AP(In test), 51.8AP(In validation)
+ - SOTA 달성 - 52.2AP (In test), 51.8AP (In validation)
 
-  <img src="/assets/image/EfficientDet/table2.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/table2.PNG" width="600px" height="450px" title="title" alt="title">
 
   - 다른 모델과의 비교를 위해 Hardware 및 학습 Configuration을 고정시키고 실험. Figure 4가 그 결과.
 
-  <img src="/assets/image/EfficientDet/figure4.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/figure4.PNG" width="600px" height="450px" title="title" alt="title">
 
 ## 5.2 EfficientDet for Semantic Segmentation
 
@@ -312,7 +312,7 @@ toc: true
 
  - Softmax와 Fast normalized fusion의 심층적 비교를 위해, EfficientDet-D3에서 사용된 Layer 중 랜덤으로 선택해서 차이를 비교했다.
 
-  <img src="/assets/image/EfficientDet/figure5.PNG" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/EfficientDet/figure5.PNG" width="600px" height="450px" title="title" alt="title">
 
  - Normalize에 사용된 weights는 Training동안 빠르게 변화했다. 이는 각 Feature들이 output에 비슷하게 기여한 것이 아니라는 것을 나타낸다.
 
