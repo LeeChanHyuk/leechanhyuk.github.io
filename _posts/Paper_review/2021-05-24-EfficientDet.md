@@ -143,7 +143,7 @@ toc: true
 
  - 여기서 Resize는 Down-sampling이나 Up-sampling을, Conv는 Convolution layer를 의미한다.
 
-- ## 3.2 Cross Scale Connections
+- ## 3.2 Cross Scale Connections🔑
 
     - Figure 2에서도 확인할 수 있듯이, FPN은 단 방향으로만 information flow를 구축한다.
 
