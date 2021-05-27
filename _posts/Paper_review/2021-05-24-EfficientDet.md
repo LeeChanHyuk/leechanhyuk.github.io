@@ -51,19 +51,19 @@ toc: true
 
  - **Challenge 1 : Efficient multi-scale feature fusion**
 
- - 다른 Input feature는 다른 Resolution에서 왔음에도 불구하고, 기존의 FPN은 input Feature를 그냥 더하는 구조였다.
+   - 다른 Input feature는 다른 Resolution에서 왔음에도 불구하고, 기존의 FPN은 input Feature를 그냥 더하는 구조였다.
 
- - 따라서 Output-feature에는 여러 Input features가 균일하게 반영되지 못했다.
+   - 따라서 Output-feature에는 여러 Input features가 균일하게 반영되지 못했다.
 
- - 제안하는 BiFPN은 Learnable한 weight로 다른 Input features의 중요성?을 배우고, Top-down, Bottom-up 방식으로 반복 적용되며 multi-scale feature fusion을 가능하게 한다.
+   - 제안하는 BiFPN은 Learnable한 weight로 다른 Input features의 중요성?을 배우고, Top-down, Bottom-up 방식으로 반복 적용되며 multi-scale feature fusion을 가능하게 한다.
 
  - **Challenge 2 : Model scaling**
 
- - 기존 모델을은 Acc 향상을 위해 규모가 큰 모델이나 High resolution image를 사용하곤 했다.
+    - 기존 모델을은 Acc 향상을 위해 규모가 큰 모델이나 High resolution image를 사용하곤 했다.
 
- - 우리는 Feature network, box/class prediction network를 같이 scaling 하는 것이 Efficiency 및 Accuracy를 동시에 잡기위해 중요하다는 것을 알았다.
+    - 우리는 Feature network, box/class prediction network를 같이 scaling 하는 것이 Efficiency 및 Accuracy를 동시에 잡기위해 중요하다는 것을 알았다.
 
- - EfficientNet에서 착안하여, EfficientDet은 Resolution, depth, width for all backbone, feature network, box/class prediction network를 전부 Scaling했다.
+    - EfficientNet에서 착안하여, EfficientDet은 Resolution, depth, width for all backbone, feature network, box/class prediction network를 전부 Scaling했다.
 
  - EfficientDet은 EfficientNet을 Backbone으로 사용했다.
 
@@ -83,39 +83,39 @@ toc: true
 
 # 2. Related work
 
- - **One-stage detectors**
+ - ## 2.1 One-stage detectors
 
- - Region proposal이 따로 분리되어 있지 않은 Detectors를 의미.
+    - Region proposal이 따로 분리되어 있지 않은 Detectors를 의미.
 
- - Focal loss, Yolo, Overheat 등이 속함.
+    - Focal loss, Yolo, Overheat 등이 속함.
 
- - 본 논문도 여기에 속함.
+    - 본 논문도 여기에 속함.
 
- - **Multi-Scale feature representations**
+ - ## 2.2 Multi-Scale feature representations
 
- - 이전의 Object detectors는 multi-scale features를 잘 다루는 것이 중요했다.
+    - 이전의 Object detectors는 multi-scale features를 잘 다루는 것이 중요했다.
 
- - 몇몇 모델은 Backbone network로 부터 추출된 pyramidal feature에 직접적으로 Prediction을 적용하기도 했다.
+    - 몇몇 모델은 Backbone network로 부터 추출된 pyramidal feature에 직접적으로 Prediction을 적용하기도 했다.
 
- - FPN은 Top-down 방식이었다.
+    - FPN은 Top-down 방식이었다.
 
- - PANet은 FPN 방식에 Bottom-up 방식을 추가했다.
+    - PANet은 FPN 방식에 Bottom-up 방식을 추가했다.
 
- - STDL은 Cross-scale feature를 다루기 위해 scale-transfer module을 사용했다.
+    - STDL은 Cross-scale feature를 다루기 위해 scale-transfer module을 사용했다.
 
- - M2det은 Multi-scale의 feature를 섞기 위해 U-Shape의 module을 도입했다.
+    - M2det은 Multi-scale의 feature를 섞기 위해 U-Shape의 module을 도입했다.
 
- - NAS-FPN은 Feature network topology를 자동으로 design하는 방식을 사용하여 효과를 보았다.
+    - NAS-FPN은 Feature network topology를 자동으로 design하는 방식을 사용하여 효과를 보았다.
 
- - NAS-FPN은 GPU로 처리할 때, 탐색에(Network architecture) 몇 천시간이 소요되며 결과 네트워크는 일반적이지 않아서 해석하기 힘들다.
+    - NAS-FPN은 GPU로 처리할 때, 탐색에(Network architecture) 몇 천시간이 소요되며 결과 네트워크는 일반적이지 않아서 해석하기 힘들다.
 
- - 본 논문에서는 multi-scale feature fusion을 optimization 시키기 위해서 좀 더 직관적이고 정형화된 방법을 사용한다.
+    - 본 논문에서는 multi-scale feature fusion을 optimization 시키기 위해서 좀 더 직관적이고 정형화된 방법을 사용한다.
 
- - **Model scaling**
+ - ## 2.3 Model scaling
 
- - 지금까지는 Acc 향상을 위해, 좀 더 큰 Backbone을 사용했다.
+    - 지금까지는 Acc 향상을 위해, 좀 더 큰 Backbone을 사용했다.
 
- - 여기서는 EfficientNet에 나온 Compound scaling과 유사한 방법을 사용하겠다.
+    - 여기서는 EfficientNet에 나온 Compound scaling과 유사한 방법을 사용하겠다.
 
 # 3. BiFPN
 
@@ -123,41 +123,41 @@ toc: true
 
  - BiFPN : Efficient bidirectional cross-scale connections and weighted feature fusion.
 
-## 3.1 Problem Formulation
+- ## 3.1 Problem Formulation
 
- - Multi-scale features는 $(\overrightarrow{P}_{l_1}^{in}, P_{l_2}^{in}, ...)$와 같이 나타낸다.
+    - Multi-scale features는 $(\overrightarrow{P}_{l_1}^{in}, P_{l_2}^{in}, ...)$와 같이 나타낸다.
 
- - 각 $P_{L_I}^{in}$은 Level $l_i$의 feature를 나타낸다.
+    - 각 $P_{L_I}^{in}$은 Level $l_i$의 feature를 나타낸다.
 
- - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow{P}_out = f(\overrightarrow{P}_{in})$이 된다.
+    - 여기서 목표는 여러 Input을 잘 엮어서 Output을 만들어낼 수 있는 Transformation $f$를 찾는 것이다. 물론 식으로 나타내면 $\overrightarrow{P}_out = f(\overrightarrow{P}_{in})$이 된다.
 
- - figure 2 (a)는 FPN을 나타내는데, 여기서 LEVEL 3-7은 $\overrightarrow{P}^{in} = (P_3^{in}, ..., P_7^{in})$으로 나타낼 수 있다.
+    - figure 2 (a)는 FPN을 나타내는데, 여기서 LEVEL 3-7은 $\overrightarrow{P}^{in} = (P_3^{in}, ..., P_7^{in})$으로 나타낼 수 있다.
 
- - 또한 각 $P_{i}^{in}$은 resolution이 $\frac{1}{2^i}$를 뜻한다.
+    - 또한 각 $P_{i}^{in}$은 resolution이 $\frac{1}{2^i}$를 뜻한다.
 
- - 예를 들면, Input이 640x640이라고 할 때, LEVEL 3이면 $640/2^3 = 80$이므로 한 변이 80이 되는 것이다. 또한 LEVEL 7이면 한 변의 길이가 5가 되겠지.
+    - 예를 들면, Input이 640x640이라고 할 때, LEVEL 3이면 $640/2^3 = 80$이므로 한 변이 80이 되는 것이다. 또한 LEVEL 7이면 한 변의 길이가 5가 되겠지.
 
- - 아래 공식처럼 FPN의 각 LEVEL의 Output이 나타난다.
+    - 아래 공식처럼 FPN의 각 LEVEL의 Output이 나타난다.
 
 <img src="/assets/image/EfficientDet/two.PNG" width="450px" height="300px" title="title" alt="title">
 
  - 여기서 Resize는 Down-sampling이나 Up-sampling을, Conv는 Convolution layer를 의미한다.
 
-## 3.2 Cross Scale Connections
+- ## 3.2 Cross Scale Connections
 
- - Figure 2에서도 확인할 수 있듯이, FPN은 단 방향으로만 information flow를 구축한다.
+    - Figure 2에서도 확인할 수 있듯이, FPN은 단 방향으로만 information flow를 구축한다.
 
- - PANet은 여기에 Bottom-Up information flow를 추가했다.
+    - PANet은 여기에 Bottom-Up information flow를 추가했다.
 
- - NAS-FPN은 GPU 기준 몇천시간이 소요되고, Output이 일반적인 형태가 아니기 때문에 네트워크를 해석하거나 변형하기가 힘들다.
+    - NAS-FPN은 GPU 기준 몇천시간이 소요되고, Output이 일반적인 형태가 아니기 때문에 네트워크를 해석하거나 변형하기가 힘들다.
 
- - PANet은 FPN이나 NAS-FPN보다 ACC가 높지만, efficiency가 좋지 않다.
+    - PANet은 FPN이나 NAS-FPN보다 ACC가 높지만, efficiency가 좋지 않다.
 
- - Efficiency를 높이기 위해서, PANet에서 Input이 하나 였던, 즉 가장 모서리 부분에 위치했던 Node들을 뺐다.
+    - Efficiency를 높이기 위해서, PANet에서 Input이 하나 였던, 즉 가장 모서리 부분에 위치했던 Node들을 뺐다.
 
- - 또한 Cost를 많이 높이지 않으면서도 더 많은 features를 고려하기 위해서, extra-edge를 추가했다.
+    - 또한 Cost를 많이 높이지 않으면서도 더 많은 features를 고려하기 위해서, extra-edge를 추가했다.
 
- - 마지막으로, 좀 더 high-level의 feature fusion을 위해서 BiFPN Layer를 여러번 중첩시켰다.
+    - 마지막으로, 좀 더 high-level의 feature fusion을 위해서 BiFPN Layer를 여러번 중첩시켰다.
 
 ## 3.3 Weighted Feature Fusion
 
