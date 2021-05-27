@@ -163,13 +163,13 @@ toc: true
 
  - Input features의 Resolution이 전부 다르다는 사실이 output feature에 동등하게 반영되지 않는다는 사실로 나타남에따라, 각 Input에 Weight를 주어서 각 Input의 importance를 학습하게 했다. (Input의 종류에 따라 Detection 성능을 높이기 위해 Input을 scaling하는 방향으로 학습되기를 기대한 듯 함.)
 
-  ### 3.3.1 Unbounded fusion
+*  ### 3.3.1 Unbounded fusion
 
-    - $O = \Sigma_{i}{w_i} * I_i$
+* *    - $O = \Sigma_{i}{w_i} * I_i$
 
-    - $w_i$가 Learnable weights.
+* *    - $w_i$가 Learnable weights.
 
-    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
+* *    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
 
     - $w_i$는 scalar, vector, multi-dimensional tensor 전부 될 수 있다. (뒤에 나올 BiFPN의 Channel을 증가시키는 부분이 여기인 듯)
 
