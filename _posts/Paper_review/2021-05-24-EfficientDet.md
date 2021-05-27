@@ -165,11 +165,11 @@ toc: true
 
 *  ### 3.3.1 Unbounded fusion
 
-* *    - $O = \Sigma_{i}{w_i} * I_i$
+    - $O = \Sigma_{i}{w_i} * I_i$
 
-* *    - $w_i$가 Learnable weights.
+    - $w_i$가 Learnable weights.
 
-* *    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
+    - Input에 Weight를 곱하는식으로 디자인했다. Scaling이 computational cost를 낮추면서도 ACC를 높일 수 있어서 선택했다고 한다.
 
     - $w_i$는 scalar, vector, multi-dimensional tensor 전부 될 수 있다. (뒤에 나올 BiFPN의 Channel을 증가시키는 부분이 여기인 듯)
 
@@ -207,7 +207,7 @@ toc: true
 
   <img src="/assets/image/EfficientDet/figure3.PNG" width="600px" height="450px" title="title" alt="title">
 
-## 4.1 EfficientDet Architecture
+* ## 4.1 EfficientDet Architecture
 
   - ImageNet Data로 훈련된 EfficientNet을 Backbone으로 사용.
 
