@@ -175,13 +175,13 @@ toc: true
 
     - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
 
-  ### 3.3.2 Softmax-based fusion
+*  ### 3.3.2 Softmax-based fusion
 
     - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
 
     - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
 
-  ### 3.3.3 Fast normalized fusion
+*  ### 3.3.3 Fast normalized fusion
 
     - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
 
@@ -189,7 +189,7 @@ toc: true
 
     - Softmax에 비해서 30% 빠르다고 한다.
 
-  ### 3.3.4 Integrated feature fusion
+-  ### 3.3.4 Integrated feature fusion
 
     <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
       
@@ -221,34 +221,34 @@ toc: true
 
   * ### 4.2.1 Backbone network
 
-  - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
+    - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
 
   * ### 4.2.2 BiFPN network
 
-  - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
+    - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
 
-  - BiFPN의 Channel의 결정은 $W_{bifpn} = 64 * (1.35^\pi)$
+    - BiFPN의 Channel의 결정은 $W_{bifpn} = 64 * (1.35^\pi)$
 
-  - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
+    - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
 
   * ### 4.2.3 Box/class prediction network
 
-  - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
+    - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
 
-  - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
+    - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
 
   * ### 4.2.4 Input Image Resolution
 
-  - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
+    - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
 
-  - $R_{input} = 512 + \pi * 128$
+    - $R_{input} = 512 + \pi * 128$
 
-  - EfficientDet D0-D7은 각각 $\pi$가 0부터 7까지 할당되었을 때를 의미한다.
+    - EfficientDet D0-D7은 각각 $\pi$가 0부터 7까지 할당되었을 때를 의미한다.
 
-  - Table 1은 Scaling configuration을 나타낸다.
+    - Table 1은 Scaling configuration을 나타낸다.
 
-  <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
-  
+    <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
+    
 # 5. Experiments
 
 ## 5.1 EfficientDet for Object Detection
