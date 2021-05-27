@@ -213,17 +213,17 @@ toc: true
 
   - 마지막 class and box network weights는 각 LEVEL Features에 대해서 공유하는 방식으로 사용. (각 LEVEL Feature에서 Network output까지 어떻게 이어지는지 확인 필요.)
 
-## 4.2 Compound scaling
+* ## 4.2 Compound scaling
 
   - Compound coefficient $\pi$를 Backbone network, BiFPN network, class/box network, resolution에 공통적으로 적용.
 
   - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
 
-### 4.2.1 Backbone network
+  * ### 4.2.1 Backbone network
 
   - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
 
-### 4.2.2 BiFPN network
+  * ### 4.2.2 BiFPN network
 
   - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
 
@@ -231,13 +231,13 @@ toc: true
 
   - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
 
-### 4.2.3 Box/class prediction network
+  * ### 4.2.3 Box/class prediction network
 
   - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
 
   - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
 
-### 4.2.4 Input Image Resolution
+  * ### 4.2.4 Input Image Resolution
 
   - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
 
