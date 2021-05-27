@@ -21,7 +21,7 @@ toc: true
 
 <img src="/assets/image/EfficientDet/figure1.PNG" width="450px" height="300px" title="title" alt="title">
 
-## 0. Abstract
+# 0. Abstract
 
  - Model efficiency는 computer vision 분야에서 계속해서 중요하게 다뤄져왔다.
 
@@ -35,7 +35,7 @@ toc: true
 
  - COCO에서 SOTA를 달성(52.2 AP), 52M Parameters, 325B FLOPS.
 
-## 1. Introduction
+# 1. Introduction
 
  - SOTA Detectors는 Object detection acc에 집중해서 Cost efficiency에 대한 고려가 부족하다.
 
@@ -73,7 +73,7 @@ toc: true
 
  - 모델을 조금 수정해서, EfficientDet은 Semantic segmentation Pascal VOC 2012에서 81.74%의 mIOU Accuracy를 18B FLOPS와 함께 달성했다. (DeepLabV3+보다 1.7% 정확하게, 9.8배 적은 FLOPs와 함께)
 
-## 찾아봐야 할 것
+# 찾아봐야 할 것
 
  - FLOPs, FLOPS의 차이.
 
@@ -81,7 +81,7 @@ toc: true
 
  - AP (Average Precision)의 정확한 의미.
 
-## 2. Related work
+# 2. Related work
 
  - **One-stage detectors**
 
@@ -117,7 +117,7 @@ toc: true
 
  - 여기서는 EfficientNet에 나온 Compound scaling과 유사한 방법을 사용하겠다.
 
-## 3. BiFPN
+# 3. BiFPN
 
 <img src="/assets/image/EfficientDet/figure2.PNG" width="600px" height="450px" title="title" alt="title">
 
@@ -163,7 +163,7 @@ toc: true
 
  - Input features의 Resolution이 전부 다르다는 사실이 output feature에 동등하게 반영되지 않는다는 사실로 나타남에따라, 각 Input에 Weight를 주어서 각 Input의 importance를 학습하게 했다. (Input의 종류에 따라 Detection 성능을 높이기 위해 Input을 scaling하는 방향으로 학습되기를 기대한 듯 함.)
 
-## 3.3.1 Unbounded fusion
+### 3.3.1 Unbounded fusion
 
   - $O = \Sigma_{i}{w_i} * I_i$
 
@@ -175,13 +175,13 @@ toc: true
 
   - 하지만 Bound되지 않은 scaling은 Training에 stability를 저하시키므로, weight를 Normalization해주기로 함.
 
-## 3.3.2 Softmax-based fusion
+### 3.3.2 Softmax-based fusion
 
   - $O = \Sigma_{i}\frac{e^{w_i}}{\Sigma_{j}{e^{w_j}}}*I_i$
 
   - 일반적인 Softmax이다. 이거 쓰려했는데 너무 느려서 다른 방법을 썼다고 한다.
 
-## 3.3.3 Fast normalized fusion
+### 3.3.3 Fast normalized fusion
 
   - $O = \Sigma_{i}{\frac{w_i}{\epsilon+\Sigma_{j}w_j}}*I_i$
 
@@ -189,7 +189,7 @@ toc: true
 
   - Softmax에 비해서 30% 빠르다고 한다.
 
-## 3.3.4 Integrated feature fusion
+### 3.3.4 Integrated feature fusion
 
   <img src="/assets/image/EfficientDet/three.PNG" width="450px" height="300px" title="title" alt="title">
     
@@ -203,7 +203,7 @@ toc: true
 
   - Efficiency 향상을 위해 depthwise separable convolution을 사용했고, 그 후 BN 및 Activation function을 적용했다.
 
-## 4. EfficientDet
+# 4. EfficientDet
 
   <img src="/assets/image/EfficientDet/figure3.PNG" width="600px" height="450px" title="title" alt="title">
 
@@ -219,11 +219,11 @@ toc: true
 
   - Grid search는 너무 시간이 많이 걸려서, Heuristic하게 Parameter를 결정하기로 함.
 
-## 4.2.1 Backbone network
+### 4.2.1 Backbone network
 
   - EfficientNet B0-B6까지의 coefficient를 동일하게 적용하기로 함.
 
-## 4.2.2 BiFPN network
+### 4.2.2 BiFPN network
 
   - {1.2, 1.25, 1.3, 1.35, 1.4, 1.45} 중에서 Grid search를 통해 $\pi$를 결정. 1.35가 베스트.
 
@@ -231,13 +231,13 @@ toc: true
 
   - BiFPN의 Depth의 결정은 $D_{bifpn} = 3 + \pi$
 
-## 4.2.3 Box/class prediction network
+### 4.2.3 Box/class prediction network
 
   - Network의 Channel은 BiFPN의 Channel과 동일하게 유지.
 
   - Depth는 $D_{box} = D_{class} = 3 + [\pi /3]$
 
-## 4.2.4 Input Image Resolution
+### 4.2.4 Input Image Resolution
 
   - BiFPN 단계에서 $2^n$으로 사이즈가 줄어드므로, Scaling 역시 그를 고려해서 해줌.
 
@@ -249,7 +249,7 @@ toc: true
 
   <img src="/assets/image/EfficientDet/table1.PNG" width="450px" height="300px" title="title" alt="title">
   
-## 5. Experiments
+# 5. Experiments
 
 ## 5.1 EfficientDet for Object Detection
 
@@ -287,7 +287,7 @@ toc: true
 
   <img src="/assets/image/EfficientDet/table3.PNG" width="450px" height="300px" title="title" alt="title">
 
-## 6. Ablation Study
+# 6. Ablation Study
 
  - Chapter 6에서 나오는 ACC는 모두 COCO 기준이다.
 
@@ -324,7 +324,7 @@ toc: true
 
   <img src="/assets/image/EfficientDet/figure6.PNG" width="450px" height="300px" title="title" alt="title">
 
-## 7. Conclusion
+# 7. Conclusion
 
  - 본 논문에서는 Efficiency 및 Accuracy를 둘 다 향상시키기 위해서 Weighted bidirectional feature network 및 compound scaling method를 제안했다.
 
