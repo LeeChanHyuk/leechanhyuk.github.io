@@ -183,7 +183,41 @@ toc: true
 
  - 따라서 Eigen-vector를 사용하면 임의의 시스템을 decoupling할 수 있다고 볼 수 있다.
 
+## Thm 5.4.
 
+ - v: eigenvector of T with eigenvalue $\lambda$
+
+ - 따라서 v는 $N(T-\lambda*I)$이다. (N은 Null-space를 의미)
+
+## 정리 
+
+ - 결국 Matrix의 Characteristic polynomial(Det)을 풀어서, 고유값들을 찾고, 그 고유값들을 이용해 $(A-\lambdaI)x = 0$을 풀음으로써, 이 Null space가 바로 Eigen vector가 되는 것이다.
+
+ - 또한 이것은 Matrix를 digonalize하면 그것의 Pivot varialbe이 Eigen value가 되는 것을 뜻한다.
+
+## Ex. 7
+
+ - T : $P_2(R) \to P_2(R), f(x) \to f(x) + (x+1)f'(x)$
+
+ - $\beta = {1, x, x^2}$ - Standard ordered basis
+
+ - T의 고유 벡터를 구하면?
+
+ - $A = [T]_\beta = \\begin{pmatrix} 1 & 1 ^& 0 \\\ 0 & 2 & 2 \\\ 0 & 0 & 3 \\end{pmatrix}$
+
+ - 푸는 방법 : 똑같다. A의 Characteristic polynomial 구해보면, eigen value는 1, 2, 3이 나온다.
+
+ - $A-\lambdaI)의 Null-space를 구하면 Eigen vector가 나온다.
+
+## 5.2 Diagonalizability
+
+ - T가 DIAGONALIZE가 가능할 때, T는 Decoupling (나누는 것) 가능한 시스템인가?
+
+ - = 이건 T의 Eigen vector를 찾을 수 있는가? 랑 같다.
+
+ - 어, 그럼 찾은 Eigen vector 들은 모두 linearly independent 하냐?
+
+ - 그렇다. Induction hypothesis를 참조.
 
 
  
