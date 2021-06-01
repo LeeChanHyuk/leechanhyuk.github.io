@@ -329,12 +329,3 @@ toc: true
     - 본 논문에서는 `Efficiency 및 Accuracy`를 둘 다 향상시키기 위해서 Weighted bidirectional feature network 및 compound scaling method를 제안했다.
 
     - Resource constraints의 제약을 덜 받으면서도 SOTA를 달성했다.
-
-
-
-
-
-
-  
-
-
