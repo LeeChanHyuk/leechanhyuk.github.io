@@ -144,11 +144,11 @@ toc: true
 
   - $l^{th}$ 번째 계층의 기울기는 다음과 같이 Clipping 될 수 있다.
 
-      $$G_{i}^{\ell} \rightarrow\left\{\begin{array}{ll}\lambda \frac{\left\|W_{i}^{\ell}\right\|_{F}^{\star}}{\left\|G_{i}^{\ell}\right\|_{F}} G_{i}^{\ell} & \text { if } \frac{\left\|G_{i}^{\ell}\right\|_{F}}{\left\|W_{i}^{\ell}\right\|_{F}^{\star}}>\lambda \\G_{i}^{\ell} & \text { otherwise. }\end{array}\right.$$
+      $$G_{i}^{\ell}\rightarrow\left\{\begin{array}{ll}\lambda \frac{\left\|W_{i}^{\ell}\right\|_{F}^{\star}}{\left\|G_{i}^{\ell}\right\|_{F}} G_{i}^{\ell} & \text { if } \frac{\left\|G_{i}^{\ell}\right\|_{F}}{\left\|W_{i}^{\ell}\right\|_{F}^{\star}}>\lambda \\G_{i}^{\ell} & \text { otherwise. }\end{array}\right$$
 
   - 하이퍼 파라미터 $\lambda$는 다음과 같이 정의한다.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e6e0ee62-6080-4fa1-b03e-c41e0451510c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e6e0ee62-6080-4fa1-b03e-c41e0451510c/Untitled.png)
+ <img src="/assets/image/High-performance/b.png" width="450px" height="300px" title="title" alt="title">
 
   - 최적의 파라미터 값은 옵티마이저, 배치 사이즈에 따라 조금씩 다르다. 하지만, 큰 배치의 경우는 값이 작아야 한다
 
@@ -156,7 +156,7 @@ toc: true
 
   - 기존의 NF-ResNet은 배치 사이즈가 커지면, 정확도가 확 떨어지지만, AGC를 더하면 정확도가 유지 된다.
 
-  ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2995b024-51b9-4475-8f86-acc2d302a5a9/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2995b024-51b9-4475-8f86-acc2d302a5a9/Untitled.png)
+ <img src="/assets/image/High-performance/c.png" width="450px" height="300px" title="title" alt="title">
 
 ## Normalizer-Free Architectures with Improved Accuracy and Training Speed
 
