@@ -128,9 +128,11 @@ toc: true
 
    - loss의 landscape가 거칠때는 learning rate가 높으면, global minimum을 지나쳐서 local minimum에 빠질 수 있기 때문에 적당히 stable한 learning rate가 필요하고, batch size가 클 때에는 gradient가 안정적이지만 크게 형성되지 않아 learning rate를 올리는 것이 필요한데, 이 때 stable하면서도 효과적인 lr을 찾는게 힘들다..
 
- <img src="/assets/image/High-performance/gradient_clipping.png" width="450px" height="300px" title="title" alt="title">
-
  - Gradient Clipping이 배치 사이즈를 늘리면서 학습이 가능하게는 하지만, 학습의 안정성은 다소 떨어진다 (Threshold, 모델 깊이, lr 등에 민감함)
+
+## Gradient Clipping
+
+ <img src="/assets/image/High-performance/gradient_clipping.png" width="450px" height="300px" title="title" alt="title">
 
 ## Adaptive Gradient Clipping
     
