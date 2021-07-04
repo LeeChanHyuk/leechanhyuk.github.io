@@ -4,13 +4,14 @@ date: 2021-03-10 21:05:00
 author: Leechanhyuk
 categories: paper_Review
 tags: Computer_Vision Machine_Learning
+use_math: true
 cover: "/assets/instacode.png"
 toc: true
 ---
 
 <img src="/assets/image/High-performance/frontdoor.PNG" width="450px" height="300px" title="title" alt="title">
 
-<img src="/assets/image/High-performance/figure1.PNG" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/High-performance/figure1.png" width="450px" height="300px" title="title" alt="title">
 
 * * *
 
@@ -107,13 +108,13 @@ toc: true
 
  - 본 연구에서는 Normalizer-Free Resnet(NF-ResNEts)의 구조를 차용한다. NF-Resnet은 $h_{i+1}=h_{i}+\alpha f_{i}(h_{i}/\beta_{i})$형태의 Residual Bock을 사용한다.
 
- <img src="/assets/image/High-performance/residual.PNG" width="450px" height="300px" title="title" alt="title">
+ <img src="/assets/image/High-performance/residual.png" width="450px" height="300px" title="title" alt="title">
 
  - **Scaled Weight Standardization (Qiao et al., 2019)**
 
     - Mean-Shift를 없에기 위하여 가중치를 정규화 해준다.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0dfac0c-3427-4fc8-b44d-047765b8a126/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0dfac0c-3427-4fc8-b44d-047765b8a126/Untitled.png)
+    <img src="/assets/image/High-performance/a.png" width="450px" height="300px" title="title" alt="title">
 
     - 활성화 함수도 $\gamma$ 로 Scaled 된다.
 
@@ -127,7 +128,7 @@ toc: true
 
    - loss의 landscape가 거칠때는 learning rate가 높으면, global minimum을 지나쳐서 local minimum에 빠질 수 있기 때문에 적당히 stable한 learning rate가 필요하고, batch size가 클 때에는 gradient가 안정적이지만 크게 형성되지 않아 learning rate를 올리는 것이 필요한데, 이 때 stable하면서도 효과적인 lr을 찾는게 힘들다..
 
- <img src="/assets/image/High-performance/gradient_clipping.PNG" width="450px" height="300px" title="title" alt="title">
+ <img src="/assets/image/High-performance/gradient_clipping.png" width="450px" height="300px" title="title" alt="title">
 
  - Gradient Clipping이 배치 사이즈를 늘리면서 학습이 가능하게는 하지만, 학습의 안정성은 다소 떨어진다 (Threshold, 모델 깊이, lr 등에 민감함)
 
@@ -139,7 +140,7 @@ toc: true
 
   - 예를 들어 경사 하강 법을 이용해 (모멘텀 없이) 학습 시킬 경우 $\frac{\left \| \Delta W^l \right \|}{\left \| W^l \right \|}$= h$\frac{\left \| G^l \right \|}{\left \| W^l \right \|}$ 다음과 같이 나타낼 수 있고, $l^{th}$ 번째 계층의 가중치 업데이트는 다음과 같이 주어진다.
 
-    $\Delta{W^l} = -hG^l$, h는 learning rate.
+    $\delta{W^l} = -hG^l$, h는 learning rate.
 
   - $l^{th}$ 번째 계층의 기울기는 다음과 같이 Clipping 될 수 있다.
 
@@ -167,13 +168,13 @@ toc: true
 
  - 조건 2. 각 Stage마다 균일하게 depth를 조정했다.
 
- <img src="/assets/image/High-performance/depth.PNG" width="450px" height="300px" title="title" alt="title">
+ <img src="/assets/image/High-performance/depth.png" width="450px" height="300px" title="title" alt="title">
 
  - 조건 3. Conv layer channel을 균일하게 조정했다. [256, 512, 1024, 2048]
 
 ## Experiments
 
- <img src="/assets/image/High-performance/experiment.PNG" width="450px" height="300px" title="title" alt="title">
+ <img src="/assets/image/High-performance/experiment.png" width="450px" height="300px" title="title" alt="title">
 
 ## Conclusion
 
