@@ -64,7 +64,7 @@ toc: true
 
 3. 라이브러리 링킹을 위한 경로 설정 (VC++ Directories / Linker-General - Library Directories / Additional Library Directories)
  
- <img src="/assets/image/20210304a/Linker.png" width="450px" height="300px" title="MAE" alt="MAE"> 
+ <img src="/assets/image/20210304a/linker.png" width="450px" height="300px" title="MAE" alt="MAE"> 
 
 4. 라이브러리 종속성 파일 설정 (Linker - Input - Additional Dependencies)
 

@@ -191,7 +191,7 @@ toc: true
 
 ## 정리 
 
- - 결국 Matrix의 Characteristic polynomial(Det)을 풀어서, 고유값들을 찾고, 그 고유값들을 이용해 $(A-\lambdaI)x = 0$을 풀음으로써, 이 Null space가 바로 Eigen vector가 되는 것이다.
+ - 결국 Matrix의 Characteristic polynomial(Det)을 풀어서, 고유값들을 찾고, 그 고유값들을 이용해 $(A- \lambda I)x = 0$을 풀음으로써, 이 Null space가 바로 Eigen vector가 되는 것이다.
 
  - 또한 이것은 Matrix를 digonalize하면 그것의 Pivot varialbe이 Eigen value가 되는 것을 뜻한다.
 
@@ -203,7 +203,7 @@ toc: true
 
  - T의 고유 벡터를 구하면?
 
- - $A = [T]_\beta = \\begin{pmatrix} 1 & 1 ^& 0 \\\ 0 & 2 & 2 \\\ 0 & 0 & 3 \\end{pmatrix}$
+ - $A = [T]_\beta = \\begin{pmatrix} 1 & 1 & 0 \\\ 0 & 2 & 2 \\\ 0 & 0 & 3 \\end{pmatrix}$
 
  - 푸는 방법 : 똑같다. A의 Characteristic polynomial 구해보면, eigen value는 1, 2, 3이 나온다.
 

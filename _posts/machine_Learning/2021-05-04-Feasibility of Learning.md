@@ -35,9 +35,9 @@ toc: true
 
  10. What is the hypothesis complexity?
 
- 11. What is the condition of hypothesis when $E_in ~= E_out$ ?
+ 11. What is the condition of hypothesis when $E_{in} ~= E_{out} $ ?
 
- 12. What is the condition of hypothesis when $E_in ~= 0$ ?
+ 12. What is the condition of hypothesis when $E_{in} \~= 0$ ?
 
  13. What is the compact between 11, 12 ?
 
@@ -49,7 +49,7 @@ toc: true
 
  17. What is the difference between the interpolation and regression?
 
- 18. What is the $P(y|x)$ ?
+ 18. What is the P(y|x) ?
 
  19. What is the $P(x)$ ?
 
@@ -61,13 +61,13 @@ toc: true
 
  1. The estimation of Target value for using prediction.
 
-    - $u, u^{^}$ is the prediction value and target value.
+    - $u, u^^$ is the prediction value and target value.
 
     - The $P$ is probility of bad event.
 
     - N is the size of dataset.
 
-    - If N is high enough, $u, u^{^}$ will be similar than that N was small.
+    - If N is high enough, $u, u^^$ will be similar than that N was small.
 
     - And if $\epsilon$ is high, the approximation of $u$ is better. But we need more sample.
 
@@ -85,17 +85,17 @@ toc: true
 
  6. The version of multi hypothesises. Is has meaning when the hypothesis set is finite.
 
-    - $P[E_in(g)-E_out(g)>\epsilon ]<= 2Me^(-2*\epsilon^2 N)$
+    - $P[E_{in}(g)-E_{out}(g)>\epsilon ]<= 2Me^(-2*\epsilon^2 N)$
 
- 7. Minimize the $E_out(g) ~= 0$
+ 7. Minimize the $E_{out}(g) ~= 0$
 
     - But it can not be real because our model has dependency in dataset.
 
  8. Two condition.
 
-    - $E_out(g) ~= E_in(g)$
+    - $E_{out}(g) ~= E_{in}(g)$
 
-    - $E_in$ must be small enough.
+    - $E_{in}$ must be small enough.
 
  9. The number of training example.
 
@@ -115,9 +115,9 @@ toc: true
 
  17. Interpolation means a method that satisfies all samples. Machine learning x.
 
-   - Target function exactly satisfies y_n. That is, E_in=0.
+    - Target function exactly satisfies y_n. That is, E_in=0.
 
-   - Regression does not satisfy all samples. Machine learning o
+    - Regression does not satisfy all samples. Machine learning o
 
  18. The target distribution cared for noise.
 

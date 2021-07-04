@@ -22,9 +22,9 @@ Cross-Entropy (CE)
 
  Activation function이 주로 Sigmoid나 Softmax가 된다.
 
-$$-Sigma(Li*Log(Si))$$
+$\Sigma(L_i*Log(S_i))$
 
-<img src="/assets/image/Cross_Entropy/-log.png" width="450px" height="300px" title="title" alt="title">
+<img src="/assets/image/Cross_Entropy/-log.PNG" width="450px" height="300px" title="title" alt="title">
 
 -Log(x) 의 개형이다.
 

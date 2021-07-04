@@ -40,7 +40,9 @@ toc: true
 
 ## Ex 1.
 
- - $R^2$ 에서 기저벡터가 $u, v$ 일 때 det[u, v] / |det[u, v]| = +- 1이 된다.
+ - $R^2$ 에서 기저벡터가 $u, v$ 일 때 
+ 
+ - det[u, v] / |det[u, v]| = +- 1이 된다.
 
  - 이는 두 벡터(차원 공간의 기저벡터)가 이루는 각이 시계 방향이냐(-1), 반시계 방향이냐(1)에 따라서 나뉜다.
 
@@ -134,7 +136,7 @@ toc: true
 
  - $x_1 = \frac{det(M_1)}{det(A)}$ 
  
- - = $|\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
+ - = $\\begin{pmatrix} 2 & 2 & 3 \\\ 3 & 0 & 1 \\\ 1 & 1 & -1 \\end{pmatrix}$ div $det(A)$
 
  - $x_2 = \frac{det(M_2)}{det(A)}$
 
