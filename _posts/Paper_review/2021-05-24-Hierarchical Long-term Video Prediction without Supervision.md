@@ -65,29 +65,29 @@ toc: true
 
   - ## 3.1. Patch-level prediction
 
-   - Video prediction을 위한 최초의 방법
+    - Video prediction을 위한 최초의 방법
 
-   - 예측 값이 blockiness (이미지가 checker board처럼 가로 세로 줄이 생기는 현상) image로 나타나는 단점이 있었다.
+    - 예측 값이 blockiness (이미지가 checker board처럼 가로 세로 줄이 생기는 현상) image로 나타나는 단점이 있었다.
 
   - ## 3.2. Frame-level prediction on realistic videos
 
-   - 좀 더 후에는, Convolution layer로 Encoder 및 Decoder를 구성하여 Predict하는 방법들이 제안되었다.
+    - 좀 더 후에는, Convolution layer로 Encoder 및 Decoder를 구성하여 Predict하는 방법들이 제안되었다.
 
-   - 한 연구는, 픽셀 단위의 예측을 한 후에 지역적으로 평균을 취하여 예측을 하는 방법을 사용했다. (L2 Loss 사용)
+    - 한 연구는, 픽셀 단위의 예측을 한 후에 지역적으로 평균을 취하여 예측을 하는 방법을 사용했다. (L2 Loss 사용)
   
-   - 한 연구는, adversarial training 방법을 사용했다.
+    - 한 연구는, adversarial training 방법을 사용했다.
 
-   - 한 연구는, Video 내 Motion 및 Content를 decompose 함으로써 prediction을 진행하여, 이전 연구들 보다 더 좋은 성과를 내었다.
+    - 한 연구는, Video 내 Motion 및 Content를 decompose 함으로써 prediction을 진행하여, 이전 연구들 보다 더 좋은 성과를 내었다.
 
-   - 한 연구는, 차영상으로 Learning을 진행하여 Prediction 하였다.
+    - 한 연구는, 차영상으로 Learning을 진행하여 Prediction 하였다.
 
-   - 한 연구는, Stochatic video prediction을 진행하였다.
+    - 한 연구는, Stochatic video prediction을 진행하였다.
 
   - ## 3.3. Long-term prediction
 
-   - 한 연구는, Action conditional encoder-decoder architecture를 사용하여 Video games를 예측하였지만 실 환경에서의 적용은 불가능했다.
+    - 한 연구는, Action conditional encoder-decoder architecture를 사용하여 Video games를 예측하였지만 실 환경에서의 적용은 불가능했다.
 
-   - 한 연구는, Long-term prediction이 가능한 hierarchical method를 사용하였지만, Landmark등의 High-level Annnotation data가 많이 필요했다.
+    - 한 연구는, Long-term prediction이 가능한 hierarchical method를 사용하였지만, Landmark등의 High-level Annnotation data가 많이 필요했다.
 
 # 4. Background
 
@@ -113,93 +113,93 @@ toc: true
 
  - ## 5.1. Network Architecture
 
-   <img src="/assets/image/hierarchical_video/figure3.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure3.PNG" width="600px" height="450px" title="title" alt="title">
    
-   - $e_{t-1}$은 Input image $I^{t-1}$을 Encoder network에 통과시킨 Output이다.
+    - $e_{t-1}$은 Input image $I^{t-1}$을 Encoder network에 통과시킨 Output이다.
    (논문에는 $I^t$라고 되어있는데 오타인 듯 하다.)
 
-   - $e_{t}^{\hat}$은 LSTM으로부터 예측된 Feature를 의미한다.
+    - $\hat{e_{t}}$은 LSTM으로부터 예측된 Feature를 의미한다.
 
-   - 위 값들을 이용하여 아래의 식을 통해 예측을 계속 진행한다.
+    - 위 값들을 이용하여 아래의 식을 통해 예측을 계속 진행한다.
 
-   <img src="/assets/image/hierarchical_video/figure4.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure4.PNG" width="600px" height="450px" title="title" alt="title">
 
-   - $f_{enc} : R^d \to R^{s \cdot s \cdot m}$ (Convolutional network for transfer Feature vector to feature tensor)
+    - $f_{enc} : R^d \to R^{s \cdot s \cdot m}$ (Convolutional network for transfer Feature vector to feature tensor)
 
-   - $f_{img} : R^{h \cdot w \cdot c} \to R^{s \cdot s \cdot m}$ (convolutional network for transfer input image to feature tensor)
+    - $f_{img} : R^{h \cdot w \cdot c} \to R^{s \cdot s \cdot m}$ (convolutional network for transfer input image to feature tensor)
 
-   - $f_{dec} : R^{s \cdot s \cdot m} \to R^{h \cdot w \cdot c}$ (Deconvolutional network that maps a feature tensor into an image)
+    - $f_{dec} : R^{s \cdot s \cdot m} \to R^{h \cdot w \cdot c}$ (Deconvolutional network that maps a feature tensor into an image)
 
-   <img src="/assets/image/hierarchical_video/figure5.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure5.PNG" width="600px" height="450px" title="title" alt="title">
 
-   - $f_{diff}$ : x, y의 차를 구함
+    - $f_{diff}$ : x, y의 차를 구함
 
-   - [...] : Concatenation in depth channel
+    - [...] : Concatenation in depth channel
 
-   - $f_{analogy} : R^{s \cdot s \cdot 2m} \to R^{s \cdot s \cdot m}$ : Mapping function
+    - $f_{analogy} : R^{s \cdot s \cdot 2m} \to R^{s \cdot s \cdot m}$ : Mapping function
 
-   - 즉, 첫 이미지와 첫 feature vector의 차와 t 시점에서 예측되는 feature vector를 concatenation시키고, t 시점에서 예측되는 feature vector와 더한 후에 decoding을 진행한다는 것이다.
+    - 즉, 첫 이미지와 첫 feature vector의 차와 t 시점에서 예측되는 feature vector를 concatenation시키고, t 시점에서 예측되는 feature vector와 더한 후에 decoding을 진행한다는 것이다.
 
-   - 위 과정으로 도출된 $I^{-}_t, M_t$를 통해 목표로 하는 이미지인 $\hat{I_t}$를 만들어낸다.
+    - 위 과정으로 도출된 $I^{-}_t, M_t$를 통해 목표로 하는 이미지인 $\hat{I_t}$를 만들어낸다.
 
-   - 즉, 정리하자면 첫 이미지와 예측하기를 원하는 시점간의 차영상과 예측되는 시점의 주요 feature vector들을 가지고 예측되는 이미지와 그 가중치를 VAN을 통해 예측해내고, 가중치를 바탕으로 첫 이미지와 예측 이미지간의 합성을 통해 예측 이미지를 정확하게 만드는 것이다.
+    - 즉, 정리하자면 첫 이미지와 예측하기를 원하는 시점간의 차영상과 예측되는 시점의 주요 feature vector들을 가지고 예측되는 이미지와 그 가중치를 VAN을 통해 예측해내고, 가중치를 바탕으로 첫 이미지와 예측 이미지간의 합성을 통해 예측 이미지를 정확하게 만드는 것이다.
   
   - ## 5.2. Training objective
 
-   - 제안 네트워크에서는 이전 연구와는 다르게 LSTM과 VAN을 Jointly training 시킨다.
+    - 제안 네트워크에서는 이전 연구와는 다르게 LSTM과 VAN을 Jointly training 시킨다.
 
-   - ### 5.2.1. END-TO-END PREDICTION
+    - ### 5.2.1. END-TO-END PREDICTION
 
-     - 첫 번째 방법은 Predicted image와 실제 Image 간에 L2 Loss를 적용하여 Minimize하는 식으로 End-to-End로 학습하는 방법이다.
+      - 첫 번째 방법은 Predicted image와 실제 Image 간에 L2 Loss를 적용하여 Minimize하는 식으로 End-to-End로 학습하는 방법이다.
 
-     - 과정은 아래 사진과 같다.
+      - 과정은 아래 사진과 같다.
 
-     <img src="/assets/image/hierarchical_video/figure6.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure6.PNG" width="600px" height="450px" title="title" alt="title">
    
-     - 본 방법을 사용했을 때는 Prediction image에 Blur가 있었다고 한다.
+      - 본 방법을 사용했을 때는 Prediction image에 Blur가 있었다고 한다.
 
-   - ### 5.2.2. ENCODER PREDICTOR WITH ANALOGY MAKING
+    - ### 5.2.2. ENCODER PREDICTOR WITH ANALOGY MAKING
 
-     - 일반 L2 Loss를 사용하는 방법의 대안으로는, encoder 또한 같이 훈련시키는 방법이 있다.
+      - 일반 L2 Loss를 사용하는 방법의 대안으로는, encoder 또한 같이 훈련시키는 방법이 있다.
 
-     - Encoder의 훈련은 아래 식과 같이 이루어진다.
+      - Encoder의 훈련은 아래 식과 같이 이루어진다.
 
-     <img src="/assets/image/hierarchical_video/figure7.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure7.PNG" width="600px" height="450px" title="title" alt="title">
 
-     - 식은 예측 이미지와 실제 이미지의 L2 및 예측되는 encoder output과 실제 encoder output의 L2 Loss를 Minimize하는 식으로 되어있다.
+      - 식은 예측 이미지와 실제 이미지의 L2 및 예측되는 encoder output과 실제 encoder output의 L2 Loss를 Minimize하는 식으로 되어있다.
 
-     - 각각의 부분을 띠로 Gradient descent등읗 활용해서 학습시킬 수도 있었지만, summantion 후 Minimize하는 것이 가장 효과가 좋았다고 한다.
+      - 각각의 부분을 띠로 Gradient descent등읗 활용해서 학습시킬 수도 있었지만, summantion 후 Minimize하는 것이 가장 효과가 좋았다고 한다.
 
-     - 또한 식에서의 $\alpha$는 encoder 훈련 강도를 조절하는 Hyperparameter인데, 이게 없으면 predictor 및 encoder가 둘 다 zero-vector를 초래할 수 있다고 한다.
+      - 또한 식에서의 $\alpha$는 encoder 훈련 강도를 조절하는 Hyperparameter인데, 이게 없으면 predictor 및 encoder가 둘 다 zero-vector를 초래할 수 있다고 한다.
 
-     - 아래 그림은 제안 방법의 Flow를 나타낸다.
+      - 아래 그림은 제안 방법의 Flow를 나타낸다.
 
-     <img src="/assets/image/hierarchical_video/figure8.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure8.PNG" width="600px" height="450px" title="title" alt="title">
 
-     - Figure 2의 붉은색 선은 VAN의 학습을, 파란색 선은 Encoder와 Predictor를 학습시킨다.
+      - Figure 2의 붉은색 선은 VAN의 학습을, 파란색 선은 Encoder와 Predictor를 학습시킨다.
 
-     - 기존 방식과의 가장 큰 차이점은 학습이 두 가지 부분으로 나누어진다는 것 외에도, VAN의 학습에 참여하는 Input이 Predicted value가 아닌 Ground truth value의 encoding output이라는 점에 있다.
+      - 기존 방식과의 가장 큰 차이점은 학습이 두 가지 부분으로 나누어진다는 것 외에도, VAN의 학습에 참여하는 Input이 Predicted value가 아닌 Ground truth value의 encoding output이라는 점에 있다.
 
-     - 또한 이 방식의 장점은 VAN이 Ground truth frame으로부터 Training 되기 때문에 좀 더 Pixel을 sharp하게 예측가능하다는 것.
+      - 또한 이 방식의 장점은 VAN이 Ground truth frame으로부터 Training 되기 때문에 좀 더 Pixel을 sharp하게 예측가능하다는 것.
 
-     - 물론, Inference시에는 $e_t$대신에 $\hat{e_t}$를 사용한다.
+      - 물론, Inference시에는 $e_t$대신에 $\hat{e_t}$를 사용한다.
 
-     - 저자들은 이 방법을 EPVA라고 칭한다.
+      - 저자들은 이 방법을 EPVA라고 칭한다.
 
-     - EPVA에서는 $\alpha$가 1e-7부터 점진적으로 커지며 학습되는 것이 효과가 좋았다고 한다.
+      - EPVA에서는 $\alpha$가 1e-7부터 점진적으로 커지며 학습되는 것이 효과가 좋았다고 한다.
 
-   - ### 5.2.3.**EPVA** WITH ADVERSARIAL LOSS IN PREDICTOR
+    - ### 5.2.3.**EPVA** WITH ADVERSARIAL LOSS IN PREDICTOR
 
-     - EPVA의 단점은 Prediction 시에 Blurry effect를 초래할 수 있는 L2 Loss를 사용한다는 점이다.
+      - EPVA의 단점은 Prediction 시에 Blurry effect를 초래할 수 있는 L2 Loss를 사용한다는 점이다.
 
-     - 여기에 저자들은 Adverserial Loss를 Predicted encoding 및 Ground truth encoding을 분별하는데 적용했다.
+      - 여기에 저자들은 Adverserial Loss를 Predicted encoding 및 Ground truth encoding을 분별하는데 적용했다.
 
-     <img src="/assets/image/hierarchical_video/figure9.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure9.PNG" width="600px" height="450px" title="title" alt="title">
 
-     - Predictor에 Gaussian noise variable (*Variable?*) 을 추가하여 학습하였더니 효과가 좋았다고 한다.
+      - Predictor에 Gaussian noise variable (*Variable?*) 을 추가하여 학습하였더니 효과가 좋았다고 한다.
 
-     - 게다가 여기에 VAN 역시 훈련시키기 위해서 VAN의 Encoder (???) Output과 predicted encoding을 concatenation하고, VAN의 Encoder Output과 실제 encoding을 concatenation시켜서 역시 discriminator에 넣고 훈련시킴으로써 VAN의 Encoder 역시 훈련시켰다.
+      - 게다가 여기에 VAN 역시 훈련시키기 위해서 VAN의 Encoder (???) Output과 predicted encoding을 concatenation하고, VAN의 Encoder Output과 실제 encoding을 concatenation시켜서 역시 discriminator에 넣고 훈련시킴으로써 VAN의 Encoder 역시 훈련시켰다.
      (VAN의 Encoder?)
-
+ 
      
 
