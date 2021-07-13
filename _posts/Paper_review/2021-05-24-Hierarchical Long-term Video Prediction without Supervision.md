@@ -63,13 +63,13 @@ toc: true
 
 # 3. Related work
 
-  ## 3.1. Patch-level prediction
+  - ## 3.1. Patch-level prediction
 
    - Video prediction을 위한 최초의 방법
 
    - 예측 값이 blockiness (이미지가 checker board처럼 가로 세로 줄이 생기는 현상) image로 나타나는 단점이 있었다.
 
-  ## 3.2. Frame-level prediction on realistic videos
+  - ## 3.2. Frame-level prediction on realistic videos
 
    - 좀 더 후에는, Convolution layer로 Encoder 및 Decoder를 구성하여 Predict하는 방법들이 제안되었다.
 
@@ -83,7 +83,7 @@ toc: true
 
    - 한 연구는, Stochatic video prediction을 진행하였다.
 
-  ## 3.3. Long-term prediction
+  - ## 3.3. Long-term prediction
 
    - 한 연구는, Action conditional encoder-decoder architecture를 사용하여 Video games를 예측하였지만 실 환경에서의 적용은 불가능했다.
 
@@ -99,7 +99,7 @@ toc: true
 
  <img src="/assets/image/hierarchical_video/FIGURE1.PNG" width="600px" height="450px" title="title" alt="title">
 
- - 추가적으로 본 연구에서는 오직 Hidden state에 의해서만 Prediction 될 수 있도록 $p^{\hat}_{t-1}$의 Auto-regressive connection을 제거했다고 한다.
+ - 추가적으로 본 연구에서는 오직 Hidden state에 의해서만 Prediction 될 수 있도록 $\hat{p_{t-1}}$의 Auto-regressive connection을 제거했다고 한다.
 
  - 그 후 VAN(Visual Analogy Network)를 적용하여 t시점의 Image를 만들기 위해 Output 및 C 시점의 Input의 Gaussian heatmap의 차이를 C시점의 Input에 적용함으로써 t시점의 이미지를 만들어낸다.
 
@@ -111,7 +111,7 @@ toc: true
 
 # 5. Method
 
- ## 5.1. Network Architecture
+ - ## 5.1. Network Architecture
 
    <img src="/assets/image/hierarchical_video/figure3.PNG" width="600px" height="450px" title="title" alt="title">
    
@@ -140,15 +140,15 @@ toc: true
 
    - 즉, 첫 이미지와 첫 feature vector의 차와 t 시점에서 예측되는 feature vector를 concatenation시키고, t 시점에서 예측되는 feature vector와 더한 후에 decoding을 진행한다는 것이다.
 
-   - 위 과정으로 도출된 $I^{-}_t, M_t$를 통해 목표로 하는 이미지인 $I^{\hat}_t$를 만들어낸다.
+   - 위 과정으로 도출된 $I^{-}_t, M_t$를 통해 목표로 하는 이미지인 $\hat{I_t}$를 만들어낸다.
 
    - 즉, 정리하자면 첫 이미지와 예측하기를 원하는 시점간의 차영상과 예측되는 시점의 주요 feature vector들을 가지고 예측되는 이미지와 그 가중치를 VAN을 통해 예측해내고, 가중치를 바탕으로 첫 이미지와 예측 이미지간의 합성을 통해 예측 이미지를 정확하게 만드는 것이다.
   
-  ## 5.2. Training objective
+  - ## 5.2. Training objective
 
    - 제안 네트워크에서는 이전 연구와는 다르게 LSTM과 VAN을 Jointly training 시킨다.
 
-   ### 5.2.1. END-TO-END PREDICTION
+   - ### 5.2.1. END-TO-END PREDICTION
 
      - 첫 번째 방법은 Predicted image와 실제 Image 간에 L2 Loss를 적용하여 Minimize하는 식으로 End-to-End로 학습하는 방법이다.
 
@@ -158,7 +158,7 @@ toc: true
    
      - 본 방법을 사용했을 때는 Prediction image에 Blur가 있었다고 한다.
 
-   ### 5.2.2. ENCODER PREDICTOR WITH ANALOGY MAKING
+   - ### 5.2.2. ENCODER PREDICTOR WITH ANALOGY MAKING
 
      - 일반 L2 Loss를 사용하는 방법의 대안으로는, encoder 또한 같이 훈련시키는 방법이 있다.
 
@@ -182,13 +182,13 @@ toc: true
 
      - 또한 이 방식의 장점은 VAN이 Ground truth frame으로부터 Training 되기 때문에 좀 더 Pixel을 sharp하게 예측가능하다는 것.
 
-     - 물론, Inference시에는 $e_t$대신에 $e^{\hat}_t$를 사용한다.
+     - 물론, Inference시에는 $e_t$대신에 $\hat{e_t}$를 사용한다.
 
      - 저자들은 이 방법을 EPVA라고 칭한다.
 
      - EPVA에서는 $\alpha$가 1e-7부터 점진적으로 커지며 학습되는 것이 효과가 좋았다고 한다.
 
-   ### 5.2.3.**EPVA** WITH ADVERSARIAL LOSS IN PREDICTOR
+   - ### 5.2.3.**EPVA** WITH ADVERSARIAL LOSS IN PREDICTOR
 
      - EPVA의 단점은 Prediction 시에 Blurry effect를 초래할 수 있는 L2 Loss를 사용한다는 점이다.
 
