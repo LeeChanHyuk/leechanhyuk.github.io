@@ -97,7 +97,7 @@ toc: true
 
  - 여기서 Input은 Predicted value **(High-level features - Landmark)** 및 Hidden state, Output은 value, Hidden state 이다.
 
- <img src="/assets/image/hierarchical_video/FIGURE1.PNG" width="600px" height="450px" title="title" alt="title">
+ <img src="/assets/image/hierarchical_video/FIGURE1.PNG" width="400px" height="300px" title="title" alt="title">
 
  - 추가적으로 본 연구에서는 오직 Hidden state에 의해서만 Prediction 될 수 있도록 $\hat{p_{t-1}}$의 Auto-regressive connection을 제거했다고 한다.
 
@@ -105,7 +105,7 @@ toc: true
 
  - 아래 식은 VAN의 과정을 나타낸다.
 
- <img src="/assets/image/hierarchical_video/FIGURE2.PNG" width="600px" height="450px" title="title" alt="title">
+ <img src="/assets/image/hierarchical_video/FIGURE2.PNG" width="400px" height="300px" title="title" alt="title">
 
  - 제안 방법은 t 시점의 이미지 복원을 위해 Moving object의 Pixel을 찾기 쉽게 만들어 VAN의 Input으로 삼음으로써 Prediction을 진행한다.
 
@@ -113,7 +113,7 @@ toc: true
 
  - ## 5.1. Network Architecture
 
-    <img src="/assets/image/hierarchical_video/figure3.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure3.PNG" width="400px" height="300px" title="title" alt="title">
    
     - $e_{t-1}$은 Input image $I^{t-1}$을 Encoder network에 통과시킨 Output이다.
    (논문에는 $I^t$라고 되어있는데 오타인 듯 하다.)
@@ -122,7 +122,7 @@ toc: true
 
     - 위 값들을 이용하여 아래의 식을 통해 예측을 계속 진행한다.
 
-    <img src="/assets/image/hierarchical_video/figure4.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure4.PNG" width="400px" height="300px" title="title" alt="title">
 
     - $f_{enc} : R^d \to R^{s \cdot s \cdot m}$ (Convolutional network for transfer Feature vector to feature tensor)
 
@@ -130,7 +130,7 @@ toc: true
 
     - $f_{dec} : R^{s \cdot s \cdot m} \to R^{h \cdot w \cdot c}$ (Deconvolutional network that maps a feature tensor into an image)
 
-    <img src="/assets/image/hierarchical_video/figure5.PNG" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure5.PNG" width="400px" height="300px" title="title" alt="title">
 
     - $f_{diff}$ : x, y의 차를 구함
 
@@ -164,7 +164,7 @@ toc: true
 
       - Encoder의 훈련은 아래 식과 같이 이루어진다.
 
-      <img src="/assets/image/hierarchical_video/figure7.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure7.PNG" width="400px" height="300px" title="title" alt="title">
 
       - 식은 예측 이미지와 실제 이미지의 L2 및 예측되는 encoder output과 실제 encoder output의 L2 Loss를 Minimize하는 식으로 되어있다.
 
@@ -194,12 +194,105 @@ toc: true
 
       - 여기에 저자들은 Adverserial Loss를 Predicted encoding 및 Ground truth encoding을 분별하는데 적용했다.
 
-      <img src="/assets/image/hierarchical_video/figure9.PNG" width="600px" height="450px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/figure9.PNG" width="400px" height="300px" title="title" alt="title">
 
       - Predictor에 Gaussian noise variable (*Variable?*) 을 추가하여 학습하였더니 효과가 좋았다고 한다.
 
       - 게다가 여기에 VAN 역시 훈련시키기 위해서 VAN의 Encoder (???) Output과 predicted encoding을 concatenation하고, VAN의 Encoder Output과 실제 encoding을 concatenation시켜서 역시 discriminator에 넣고 훈련시킴으로써 VAN의 Encoder 역시 훈련시켰다.
      (VAN의 Encoder?)
  
-     
+# 6. Experiments
 
+  - 실험은 Human 3.6M dataset 및 Bouncing shape에 관한 Toy dataset으로 실험을 진행하였다.
+
+  - ## 6.1. Long-term Prediction on a Toy Dataset
+
+    - 저자는 Toy dataset으로 제안 방법 및 기존 연구 중 하나로 Training 시켰다.
+
+    - Training은 16-Frames를 예측하도록 했고, Evaluating은 1000-Frames에 대해서 진행하였다.
+
+    - 평가는 정량적 평가를 위해, 예측된 객체의 Shape과 Color가 제대로 유지 되는지를 천 번의 iteration을 통해 측정하였다.
+
+    <img src="/assets/image/hierarchical_video/table1.PNG" width="400px" height="300px" title="title" alt="title">
+    
+    - 결과는 기존 방법에 비해 훨씬 뛰어난 성능을 보이는 것을 확인할 수 있다. 또한 저자들은 Predicted image를 Figure 3을 통해 나타내었다.
+
+    <img src="/assets/image/hierarchical_video/figure11.PNG" width="400px" height="300px" title="title" alt="title">
+
+    - Figure 3을 통해, 1000 이상의 time-step이 지나도 형태가 잘 유지되는 것을 확인할 수 있다.
+
+    - **저자는 해당 단락 마지막에 1000번 이상의 Time-step이 지나도 Location을 잘 찾는 것은 비 현실적이라고 하고 있지만, 적어도 기존 알고리즘보다 뛰어나다면, Figure 3에 256~258 time-step을 제시한 것 처럼 기존 알고리즘보다 더 Location을 잘 찾는 Time-step을 제시할 수 있었지 않을까 하는 생각이 든다.**
+
+  - ## 6.2. Long-term Prediction on Human 3.6M
+
+    - Human dataset에 대해서는 데이터 셋의 세부 종류에 따라서 각 64개의 이미지를 사용하여 FPS를 6.25로 맞춘 후에 Training을 진행하였다.
+
+    - 32개의 Frames를 예측하도록 훈련하였으며, 실제로는 126개 이상의 Frame을 예측한 결과를 논문에서는 제시하고 있다.
+
+    - 제안 방법은 시작 부분으로부터 0.8초까지의 Frames를 Context 삼아서 20초 가량을 Prediction 가능한 결과를 보였다.
+
+    - EPVA Network의 Encoder 부분은 Pre-trained VGG Net을 사용하였다.
+
+    - 다른 모델과의 비교를 통해, 데이터셋에 관한 파라미터와 그 외 실험 환경을 통일하고 실험을 진행하였다.
+
+    - 그럼에도, 다른 모델과의 비교가 완벽히 공정하지는 않았다고 설명하고 있다.
+
+    - Figure 5는 제안 방법과 기존 연구들을 비교하며, 또한 encoder 및 Predictor의 foreground mask를 나타내고 있다.
+   
+    <img src="/assets/image/hierarchical_video/figure12.PNG" width="400px" height="300px" title="title" alt="title">
+
+    - Figure 5를 통해, 제안 방법이 기존 방법들 보다는 Localtional 하게나 Shape, Color 면에서 우수하다는 것을 확인할 수 있다.
+
+    - E2E 방식 및 CDNA 방식은 매우 빠르게 Blur 되어버린다. (L2 Loss의 영향으로 추정)
+
+    - ### 6.2.1. PERSON DETECTOR EVALUATION
+
+      - 제안 모델의 사람 형상 복원 정도의 테스트를 위해서 저자는 MobileNet을 COCO Dataset으로 Training 시키고, Prediction image를 판별함으로써 그 정도를 테스트하였다.
+
+      - 테스트 결과는 0~1의 범위로 나타내었고, 이를 'Person score'로 명명하였다.
+
+      - 훈련시킨 Detector의 Ground truth에 대한 Person score는 0.4였다. (너무 낮은 거 아닌가..?)
+
+      - 제안 방법 (EPVA Adversarial Version)은 다른 방법들에 비해서 Person score의 일정함 및 높음을 보였다.
+
+      <img src="/assets/image/hierarchical_video/figure13.PNG" width="400px" height="300px" title="title" alt="title">
+
+    - ### 6.2.2. HUMAN EVALUATION
+
+      - 제안 모델의 Prediction Realistic 평가를 위해 사람에게 직접 두 비디오 중, 어떤게 진짜에 가까운가를 평가하게 했다.
+
+      <img src="/assets/image/hierarchical_video/table2.PNG" width="400px" height="300px" title="title" alt="title">
+
+      - 결과적으로는 EPVA가 다른 모델보다 더, EPVA-Adversarial이 EPVA보다 더 좋은 결과를 내었다.
+    
+    - ### 6.2.3. POSE REGRESSION FROM LEARNED FEATURES
+
+      - Encoder feature를 통해 Human pose regression 하는데에도 실험을 진행하였다.
+
+      - Encoder의 Output feature를 2-Layer-MLP를 통과시켜서 Regression을 진행하는 방식으로 실험을 진행하였다.
+
+      - 비교대상은 Encoder의 Baseline인 VGG NET으로, 결과는 VGG NET보다 9% 향상된 결과를 보였다.
+
+  - ## 6.3. Ablation Studies
+
+    - 저자는 VAN의 사용이 Prediction quality를 향상시킨다는 것을 증명하기 위해서 VAN을 다른 Decoder로 대체하고 실험을 진행하였다.
+
+    - 이 Decoder는 오직 Encoder의 Output에만 Access 가능하게 하였고, 첫 번째 Frame은 관찰 불가능하게 하였다. (학습에서 배제한 듯)
+
+    - VAN을 사용했을 때에는, 사람 영역을 나타내는 Mask를 제대로 만들어서, First frame에 해당 사람 이미지가 대체되지 않게 만들었다.
+
+    - VAN을 사용하지 않았을 때에는, 32 Frame을 넘어가면 Human region을 제대로 가리지 못해서 First frame으로 부터 사람 영역이 대체되게 만들었다.
+
+    - 또한 EPVA와 E2E 방식을 결합해봤는데, 이건 Output이 blur되는 결과를 초래했다.
+
+    - 또한 Context frame을 5에서 10으로 증가시켜봤지만, 이건 long-term prediction의 성능을 improve시키지는 못했다.
+
+# 7. Conclusion
+
+  - High-level structure annotation이 필요없는 hierarchical long-term video prediction을 제안했다.
+
+  - 제안하는 EPVA 방식은 가끔 Prediction이 사라지는 단점이 있지만, 기존 방법들 보다 Long-term에서 뛰어난 결과를 보인다.
+
+  - EPVA-Adversarial version은 기존 방법들보다 더욱 실감나는 Video를 만들어냈다.
+
+  - Future work로는 feature space에 다른 방법들을 더욱 더 적용해 볼 것이다.
