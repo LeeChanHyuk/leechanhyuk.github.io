@@ -239,7 +239,7 @@ toc: true
 
     - Figure 5는 제안 방법과 기존 연구들을 비교하며, 또한 encoder 및 Predictor의 foreground mask를 나타내고 있다.
    
-    <img src="/assets/image/hierarchical_video/figure12.PNG" width="400px" height="300px" title="title" alt="title">
+    <img src="/assets/image/hierarchical_video/figure12.PNG" width="600px" height="450px" title="title" alt="title">
 
     - Figure 5를 통해, 제안 방법이 기존 방법들 보다는 Localtional 하게나 Shape, Color 면에서 우수하다는 것을 확인할 수 있다.
 
@@ -261,7 +261,7 @@ toc: true
 
       - 제안 모델의 Prediction Realistic 평가를 위해 사람에게 직접 두 비디오 중, 어떤게 진짜에 가까운가를 평가하게 했다.
 
-      <img src="/assets/image/hierarchical_video/table2.PNG" width="400px" height="300px" title="title" alt="title">
+      <img src="/assets/image/hierarchical_video/table2.PNG" width="600px" height="450px" title="title" alt="title">
 
       - 결과적으로는 EPVA가 다른 모델보다 더, EPVA-Adversarial이 EPVA보다 더 좋은 결과를 내었다.
     
