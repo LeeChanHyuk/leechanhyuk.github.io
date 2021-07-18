@@ -3,7 +3,7 @@ title: "[CV] You Only Learn One Representation: Unified Network for Multiple Tas
 date: 2021-07-16 21:05:00
 author: Leechanhyuk
 categories: paper_Review
-tags: Computer_vision Multiple_task
+tags: Computer_vision
 use_math: true
 cover: "/assets/instacode.png"
 toc: true
