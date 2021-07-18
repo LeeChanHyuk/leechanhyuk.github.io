@@ -1,5 +1,5 @@
 ---
-title: "[ML] EfficientDet : Scalable and Efficient Object Detection"
+title: "[CV] EfficientDet : Scalable and Efficient Object Detection Review"
 date: 2021-05-24 21:05:00
 author: Leechanhyuk
 categories: paper_Review

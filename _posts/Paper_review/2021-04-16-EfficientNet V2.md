@@ -1,5 +1,5 @@
 ---
-title: "[CV] EfficientNetV2 : Smaller Models and Faster Training"
+title: "[CV] EfficientNetV2 : Smaller Models and Faster Training Review" 
 date: 2021-04-16 21:05:00
 author: Leechanhyuk
 categories: paper_Review

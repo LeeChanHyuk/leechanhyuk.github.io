@@ -2,8 +2,8 @@
 title: "[Error]Tensorflow-gpu import 관련 오류"
 date: 2021-02-24 22:10:00
 author: Leechanhyuk
-categories: Tip
-tags:	Tip
+categories: Record
+tags:	Record
 cover: "/assets/instacode.png"
 toc: true
 ---

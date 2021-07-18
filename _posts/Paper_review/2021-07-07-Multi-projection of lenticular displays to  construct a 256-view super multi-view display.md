@@ -1,5 +1,5 @@
 ---
-title: "[3D] Multi-projection of lenticular displays to construct a 256-view super multi-view display"
+title: "[3D] Multi-projection of lenticular displays to construct a 256-view super multi-view display Review"
 date: 2021-07-07 21:05:00
 author: Leechanhyuk
 categories: paper_Review

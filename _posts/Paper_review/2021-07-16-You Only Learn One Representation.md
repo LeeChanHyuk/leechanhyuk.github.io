@@ -1,5 +1,5 @@
 ---
-title: "[CV] You Only Learn One Representation: Unified Network for Multiple Tasks [ENG]"
+title: "[CV] You Only Learn One Representation: Unified Network for Multiple Tasks Review [ENG]"
 date: 2021-07-16 21:05:00
 author: Leechanhyuk
 categories: paper_Review

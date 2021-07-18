@@ -2,8 +2,8 @@
 title: "FLOPS vs FLOPs"
 date: 2021-06-04 16:59:00
 author: Leechanhyuk
-categories: Tip
-tags:	Tip
+categories: Discussion
+tags:	Discussion
 use_math: true
 cover: "/assets/instacode.png"
 toc: true

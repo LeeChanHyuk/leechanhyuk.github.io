@@ -2,8 +2,8 @@
 title: "[Tip] Static-Dynamic Library / Visual studio setting for Library"
 date: 2021-03-04 14:33:00
 author: Leechanhyuk
-categories: Tip
-tags:	Tip
+categories: Record
+tags:	Record
 cover: "/assets/instacode.png"
 toc: true
 ---

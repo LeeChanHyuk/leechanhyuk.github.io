@@ -1,5 +1,5 @@
 ---
-title: "[Math] Linear algebra 공부 복습 문제들"
+title: "[Linear algebra] Linear algebra 공부 복습 문제들"
 date: 2021-03-03 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
