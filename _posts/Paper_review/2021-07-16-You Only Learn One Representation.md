@@ -131,7 +131,7 @@ toc: true
 
        - $g_{\pi}$ is a task specific operation that serves to combine or select information from explicit knowledge and explicit knowledge.
 
-       <img src="/assets/image/yolor/eqaution3.png" width="400px" height="300px" title="title" alt="title">
+       <img src="/assets/image/yolor/equation3.png" width="400px" height="300px" title="title" alt="title">
 
        - equation 2 can be depicted as equation 3. The Star means the operators that can combine $f_{\theta}$ and $g_{\theta}$. And in this work, the sort of operators are addition, multiplication, concatenation.
        
@@ -147,7 +147,7 @@ toc: true
      
      - ### 4.2.2. Matrix Factorization
 
-       <img src="/assets/image/yolor/eqaution8.png" width="400px" height="300px" title="title" alt="title">
+       <img src="/assets/image/yolor/equation8.png" width="400px" height="300px" title="title" alt="title">
 
         - The $Z$ is the implicit prior basis and the $c$ is the coefficient for forming implicit representation.
 
@@ -176,7 +176,7 @@ toc: true
      
      - If the operation is addition, and the subsequant layer is conv layer, no activation layer, it can be integrated like equation (10).
 
-       <img src="/assets/image/yolor/figure10.png" width="400px" height="300px" title="title" alt="title">
+       <img src="/assets/image/yolor/equation10.png" width="400px" height="300px" title="title" alt="title">
 
 # 5. Experiments
 
