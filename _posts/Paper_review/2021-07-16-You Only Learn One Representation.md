@@ -105,9 +105,9 @@ toc: true
 
   - In this section, the comparison between conventional networks and proposed unified networks.
 
-  ## 4.1. Formulation of implicit knowledge
+  - ## 4.1. Formulation of implicit knowledge
 
-    ### 4.1.1. Conventional networks
+    - ### 4.1.1. Conventional networks
 
        <img src="/assets/image/yolor/equation1.png" width="400px" height="300px" title="title" alt="title">
      
@@ -121,7 +121,7 @@ toc: true
 
        <img src="/assets/image/yolor/figure6.png" width="400px" height="300px" title="title" alt="title">
 
-    ### 4.1.2. Unified networks
+    - ### 4.1.2. Unified networks
        
        - The following equation is about the unified objective function with implicit knowledge and explicit knowledge.
 
@@ -135,17 +135,17 @@ toc: true
 
        - equation 2 can be depicted as equation 3. The Star means the operators that can combine $f_{\theta}$ and $g_{\theta}$. And in this work, the sort of operators are addition, multiplication, concatenation.
        
-   ## 4.2. Modeling implicit knowledge
+   - ## 4.2. Modeling implicit knowledge
 
      - The implicit knowledge can be modeled in the Vector / Matrix / Tensor.
 
-     ### 4.2.1. Neural Network.
+     - ### 4.2.1. Neural Network.
 
         - The weight matrix can be used for linear combination or non-linaarization with z as the prior of implicit knowledge.
 
         - The weight matrix can be substitute by more complex neural network or Markov chain.
      
-     ### 4.2.2. Matrix Factorization
+     - ### 4.2.2. Matrix Factorization
 
        <img src="/assets/image/yolor/eqaution8.png" width="400px" height="300px" title="title" alt="title">
 
@@ -155,7 +155,7 @@ toc: true
 
        <img src="/assets/image/yolor/figure7.png" width="400px" height="300px" title="title" alt="title">
    
-   ## 4.3. Training
+   - ## 4.3. Training
 
      - Assuming that our model dos not have any prior implicit knowledge at the beginning, that is to say, it will not have ny effect on explicit representation $f_{\theta}(x)$.
 
@@ -165,7 +165,7 @@ toc: true
 
      - Here, σ is a very small value which is close to zero. As for z and φ, they both are trained with backpropagation algorithm during the training process.
    
-   ## 4.4. Inference
+   - ## 4.4. Inference
 
      - Since implicit knowledge is irrelevant with observation $x$, the model $g_{\pi}$ can be constant tensor before inference phase.
        So, implicit information has no effect on computational cost. (Why..?)
@@ -182,7 +182,7 @@ toc: true
 
   - The experiments is conducted with the MSCOCO dataset which is including object detection, instance segmentation, and so on..!
 
-  ## 5.1. Experimental setup
+  - ## 5.1. Experimental setup
 
      - The implicit knowledge in this experiments, is three aspect.
 
@@ -192,13 +192,13 @@ toc: true
 
        <img src="/assets/image/yolor/figure8.png" width="400px" height="300px" title="title" alt="title">
 
-   ## 5.2. Feature alignment for FPN
+  - ## 5.2. Feature alignment for FPN
 
      - The implicit representation for feature alignment in each FPN layer improves all of the AP. The result is shown in table 1.
 
        <img src="/assets/image/yolor/table1.png" width="400px" height="300px" title="title" alt="title">
 
-   ## 5.3. Prediction refinement for object detection
+  - ## 5.3. Prediction refinement for object detection
 
      - The table 2 shows the result of adding implicit knowledge in prediction refinement.
 
@@ -206,7 +206,7 @@ toc: true
      
      - In overall objective function of object detection model has position, objectness, class information. So the implicit knowledge is already reflected in almost object detection model.
    
-   ## 5.4. Canonical representaion for multi-task
+  - ## 5.4. Canonical representaion for multi-task
 
      - In normal case, for multi-task, the cost function is designed with joint optimization process and this process can make worse the total accuracy.
 
@@ -214,7 +214,7 @@ toc: true
 
        <img src="/assets/image/yolor/table3.png" width="400px" height="300px" title="title" alt="title">
 
-   ## 5.5. Implicit modeling with different operators
+  - ## 5.5. Implicit modeling with different operators
 
      - In the implicit knowledge for feature alignment experiment, the addition and concatenation improve performance, while the multiplicaiton makes worse in accuracy.
 
@@ -228,13 +228,13 @@ toc: true
 
        <img src="/assets/image/yolor/table5.png" width="400px" height="300px" title="title" alt="title">
    
-   ## 5.6. Modeling implicit knowledge in different ways
+  - ## 5.6. Modeling implicit knowledge in different ways
 
      - The result of modeling with neural networks and matrix factorization is shown in table 6.
 
        <img src="/assets/image/yolor/table6.png" width="400px" height="300px" title="title" alt="title">
 
-   ## 5.7. Analysis of implicit models
+  - ## 5.7. Analysis of implicit models
 
      - In this section, the parameters, FLOPs, and the learning process of model with/ w/o implicit knowledge is described in table 7 and figure 11.
 
@@ -242,7 +242,7 @@ toc: true
 
        <img src="/assets/image/yolor/figure11.png" width="400px" height="300px" title="title" alt="title">
 
-   ## 5.8. Implicit knowledge for object detection
+  - ## 5.8. Implicit knowledge for object detection
 
      - The table 8 shows the effect of introducing implicit knowledge.
 
