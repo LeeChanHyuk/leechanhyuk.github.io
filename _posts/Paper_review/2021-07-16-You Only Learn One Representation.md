@@ -11,7 +11,7 @@ toc: true
 
 * * *
 
-**You Only Learn One Representation: Unified Network for Multiple Tasks Paper review**
+**you only learn one representation: unified network for multiple tasks paper review**
 
 <img src="/assets/image/yolor/front.png" width="600px" height="450px" title="title" alt="title">
 
@@ -79,7 +79,7 @@ toc: true
 
      - So, like figure 3, if the target categories are classified enough, the inner product between implicit representation and projection vector can effectively achieve various tasks.
 
-     <img src="/assets/image/yolor/figure3.png" width="600px" height="450px" title="title" alt="title">
+     <img src="/assets/image/yolor/figure3.png" width="400px" height="300px" title="title" alt="title">
 
   - ## 3.2. Kernel space alignment
 
@@ -87,7 +87,7 @@ toc: true
 
      - The misalignment can be deal with translation, rotation, and scaling of output feature and implicit representation.
 
-     <img src="/assets/image/yolor/figure4.png" width="600px" height="450px" title="title" alt="title">
+     <img src="/assets/image/yolor/figure4.png" width="400px" height="300px" title="title" alt="title">
 
   - ## 3.3. More functions
 
@@ -99,7 +99,7 @@ toc: true
 
      - Figure 5 illustrates the examples of the functions able to be applied by implicit knowledge.
 
-     <img src="/assets/image/yolor/figure5.png" width="600px" height="450px" title="title" alt="title">
+     <img src="/assets/image/yolor/figure5.png" width="400px" height="300px" title="title" alt="title">
 
 # 4. Implicit knowledge in our unified networks
 
@@ -109,11 +109,11 @@ toc: true
 
     ### 4.1.1. Conventional networks
 
-       <img src="/assets/image/yolor/equation1.png" width="600px" height="450px" title="title" alt="title">
+       <img src="/assets/image/yolor/equation1.png" width="400px" height="300px" title="title" alt="title">
      
        - $x$ is observation, $\theta$ is the set of parameters of a neural network, $f_{\theta}$ represents operation of the neural network, $\epsilon$ is the error term, and $y$ is the garget of given task.
  
-       - In the conventional networks, the different observation project to the same point (=the same task) if the target of different observation is same. Figure 6-(a) illustrates the problem.
+       - In the conventional networks, the different observation project to the same point (=the same task) if the target of different observation is same. Figure 6-(a) illustrates the problem. 
  
        - For the general purpose neural network, the obtained representation must be able to depict the all purpose. But that is impossible with a trivial mathematical method (One-Hot vector, theshold of Euclidean distance... and so on.). Figure 6-(b) depict the impossible state of an above problem.
 
