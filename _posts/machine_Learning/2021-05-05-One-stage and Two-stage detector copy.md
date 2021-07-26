@@ -1,6 +1,6 @@
 ---
-title: "[ML] Faster-r-cnn Anchor 개념 의문점 정리23121414"
-date: 2021-05-10 11:30:06
+title: "[ML] Faster-r-cnn Anchor 개념 의문점 정리"
+date: 2021-05-04 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning
 tags: Machine_Learning
