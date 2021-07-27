@@ -15,4 +15,4 @@ toc: true
 
 # Titanik competition jupyter lab link.
 
-  - {% assets/image/Kaggle/Titanik1.html %} 
+  - {% post_url assets/image/Kaggle/Titanik1.html %} 
