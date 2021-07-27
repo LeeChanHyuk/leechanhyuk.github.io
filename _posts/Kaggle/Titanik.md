@@ -1,3 +1,14 @@
+---
+title: "[Project 1] Titanik competition"
+date: 2021-04-18 11:30:06
+author: Leechanhyuk
+categories: Kaggle
+tags: Kaggle
+use_math: true
+cover: "/assets/instacode.png"
+toc: true
+---
+
 ```python
 import numpy
 import pandas as pd
