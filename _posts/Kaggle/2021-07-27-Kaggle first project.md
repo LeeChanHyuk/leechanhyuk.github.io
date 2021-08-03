@@ -19,7 +19,7 @@ toc: true
 
 # Data_visualization_Summary
 
-  1. data.groupby()
+  -  1. data.groupby()
 
     - data.groupby(['Sex', 'Survived]) --> 모든 데이터를 Sex와 Survived를 통해 나타낸다. 즉 female - survived 한 사람들을 나머지 카테고리에 대해서 나타내고, male -survived ... 이런 식. 즉 Group by에 하나씩 늘 때마다, 축이 하나씩 는다고 생각하면 편할 듯.
 
@@ -29,11 +29,11 @@ toc: true
 
     - data.count()나 data.mean()과 같이 어떤 label에 대해서 묶을 수 없는 경우는 동작하지 않는다.
 
-  2. data.plot.bar()
+  -  2. data.plot.bar()
 
     - data.plot.bar(), data.plot.pie(), data.plot.kde(), data.plot.hist(bin=20) 등 plot.Graph의 형태로 나타내어 Data를 해당 Graph로써 표현 가능하다.
 
-  3. sns.countplot(x, y, hue, data, order), sns.factorplot(x, y, hue, data, order), sns.violinplot(x, y, hue, data, order)
+  -  3. sns.barplot(x, y, hue, data, order) sns.countplot(x, (y is the count), hue, data, order), sns.factorplot(x, y, hue, data, order), sns.violinplot(x, y, hue, data, order), sns.distplot(a, bins, hist, ax) , sns.heatmap(data, annot=False)
 
     - seaborn 라이브러리를 통해 count를 plot하는 함수. 일단 data.plot.bar()보다 조금 더 Colorfull 한 듯.
 
@@ -41,7 +41,7 @@ toc: true
 
     - factorplot은 일반 선 그래프로 나타내준다. 나머지는 sns.countplot()과 같음.
 
-  4. pd.crosstab(index, columns, margins)
+  -  4. pd.crosstab(index, columns, margins)
 
     - Table 형식으로 표현해주는 함수.
 
@@ -49,13 +49,13 @@ toc: true
 
     - margins는 총 합의 표시 유무.
 
-  5. data.value_counts()
+  -  5. data.value_counts()
 
     - data의 label마다 counts를 반환해준다. data.count()대신 이걸 사용하도록.
 
     - 주로 data.value_counts().plot.bar()과 같이 사용되곤 한다.
 
-  6. data.loc[y, x]
+  -  6. data.loc[y, x]
 
     - data.loc['Sex'] -> Sex 행의 데이터를 모두 가져옴
 
