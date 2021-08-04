@@ -31,7 +31,7 @@ toc: true
 
   - The result of creating environment.
 
-  <img src="/assets/image/export/result2.png" width="900px" height="600px" title="MAE" alt="MAE"> 
+  <img src="/assets/image/export/result2.png" width="900px" height="900px" title="MAE" alt="MAE"> 
 
 
   
