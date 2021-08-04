@@ -149,7 +149,7 @@ toc: true
 
       - 학습 과정이 Sequential한 만큼, 학습 속도가 느린 단점이 있다.
      
-      <img src="/assets/image/titanik/adaoost.png" width="600px" height="400px" title="title" alt="title">
+      <img src="/assets/image/titanik/adaboost.png" width="600px" height="400px" title="title" alt="title">
     
     - ### 3.2. Gradient Boost
 
