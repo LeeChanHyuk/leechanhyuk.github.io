@@ -15,7 +15,11 @@ toc: true
 
 # Titanik competition jupyter lab link.
 
-  [Link](/assets/image/Kaggle/Titanik1.html) 
+  [Link](/assets/image/Kaggle/Titanik1.html) - Result in titanik competition.
+
+  [Link](/assets/image/Kaggle/Titanik_ensemble.html) - Result for using ensemble method in titanik competition.
+
+
 
 # Data_visualization_Summary
 
