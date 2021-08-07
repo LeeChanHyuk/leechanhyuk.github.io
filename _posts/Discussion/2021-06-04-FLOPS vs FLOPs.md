@@ -1,5 +1,5 @@
 ---
-title: "FLOPS vs FLOPs"
+title: "[Discussion] FLOPS vs FLOPs"
 date: 2021-06-04 16:59:00
 author: Leechanhyuk
 categories: Discussion

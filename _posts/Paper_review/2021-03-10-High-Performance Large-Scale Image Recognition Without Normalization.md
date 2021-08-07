@@ -2,7 +2,7 @@
 title: "[Image recognition] High-Performance Large-Scale Image Recognition Without Normalization Review"
 date: 2021-03-10 21:05:00
 author: Leechanhyuk
-categories: paper_Review
+categories: Paper_review
 tags: Computer_Vision Machine_Learning
 use_math: true
 cover: "/assets/instacode.png"

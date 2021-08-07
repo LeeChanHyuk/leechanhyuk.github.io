@@ -2,7 +2,7 @@
 title: "[Image recognition] Efficient Net Review"
 date: 2020-12-24 18:13:00
 author: Leechanhyuk
-categories: paper_Review
+categories: Paper_review
 tags: Computer_Vision Machine_Learning
 cover: "/assets/instacode.png"
 toc: true

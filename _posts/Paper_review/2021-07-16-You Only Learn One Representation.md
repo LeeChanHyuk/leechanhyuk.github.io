@@ -2,7 +2,7 @@
 title: "[Object detection] You Only Learn One Representation: Unified Network for Multiple Tasks Review [ENG]"
 date: 2021-07-16 21:05:00
 author: Leechanhyuk
-categories: paper_Review
+categories: Paper_review
 tags: Computer_vision
 use_math: true
 cover: "/assets/instacode.png"
