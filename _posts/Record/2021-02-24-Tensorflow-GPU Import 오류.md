@@ -1,5 +1,5 @@
 ---
-title: "[Error]Tensorflow-gpu import 관련 오류"
+title: "[Error] Tensorflow-gpu import 관련 오류"
 date: 2021-02-24 22:10:00
 author: Leechanhyuk
 categories: Record

@@ -1,5 +1,5 @@
 ---
-title: "[ML] Feasibility of Learning"
+title: "[Pattern recognition] Feasibility of Learning"
 date: 2021-05-04 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning

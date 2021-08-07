@@ -1,5 +1,5 @@
 ---
-title: "[CV] Efficient Net Review"
+title: "[Image recognition] Efficient Net Review"
 date: 2020-12-24 18:13:00
 author: Leechanhyuk
 categories: paper_Review

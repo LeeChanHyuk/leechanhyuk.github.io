@@ -1,5 +1,5 @@
 ---
-title: "[ML] Batch normalization 개요 및 고찰"
+title: "[Concept summary] Batch normalization 개요 및 고찰"
 date: 2021-03-11 21:05:00
 author: Leechanhyuk
 categories: Machine_Learning

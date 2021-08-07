@@ -1,5 +1,5 @@
 ---
-title: "[ML] Cost(Loss) function의 종류 및 특징"
+title: "[Concept summary] Cost(Loss) function의 종류 및 특징"
 date: 2020-11-25 18:13:00
 author: Leechanhyuk
 categories: Machine_Learning

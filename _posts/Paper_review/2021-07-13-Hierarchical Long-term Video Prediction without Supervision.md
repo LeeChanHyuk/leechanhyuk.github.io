@@ -1,5 +1,5 @@
 ---
-title: "[CV] Hierarchical Long-term Video Prediction without Supervision Review"
+title: "[Video prediction] Hierarchical Long-term Video Prediction without Supervision Review"
 date: 2021-07-13 21:05:00
 author: Leechanhyuk
 categories: paper_Review

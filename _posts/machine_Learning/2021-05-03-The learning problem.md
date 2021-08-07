@@ -1,5 +1,5 @@
 ---
-title: "[ML] The learning problem"
+title: "[Pattern recognition] The learning problem"
 date: 2021-05-03 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning

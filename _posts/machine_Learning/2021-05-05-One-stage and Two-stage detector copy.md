@@ -1,5 +1,5 @@
 ---
-title: "[ML] Faster-r-cnn Anchor 개념 의문점 정리"
+title: "[Curiosity] Faster-r-cnn Anchor 개념 의문점 정리"
 date: 2021-05-04 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning

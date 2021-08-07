@@ -1,5 +1,5 @@
 ---
-title: "Anaconda virtual environment export and import"
+title: "[Tip] Anaconda virtual environment export and import"
 date: 2021-07-27 16:59:00
 author: Leechanhyuk
 categories: Record

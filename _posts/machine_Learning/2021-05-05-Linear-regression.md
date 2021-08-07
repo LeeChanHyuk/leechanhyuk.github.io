@@ -1,5 +1,5 @@
 ---
-title: "[ML] Linear regression & Classification"
+title: "[Pattern recognition] Linear regression & Classification"
 date: 2021-05-04 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning

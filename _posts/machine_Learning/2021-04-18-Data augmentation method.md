@@ -1,5 +1,5 @@
 ---
-title: "[ML] Data Augmentation"
+title: "[Concept summary] Data Augmentation"
 date: 2021-04-18 11:30:06
 author: Leechanhyuk
 categories: Machine_Learning

@@ -1,5 +1,5 @@
 ---
-title: "[ML] Cross-Entropy"
+title: "[Concept summary] Cross-Entropy"
 date: 2021-03-26 18:13:00
 author: Leechanhyuk
 categories: Machine_Learning
