@@ -1,9 +1,9 @@
 ---
-title: "[Face & Eye Detector] Develop comment"
-date: 2021-05-04 11:30:06
+title: "[Develop record] Face and eye detector for using EfficientDet"
+date: 2021-07-04 11:30:06
 author: Leechanhyuk
-categories: Machine_Learning
-tags: Machine_Learning
+categories: Develop_record
+tags: Develop_record
 use_math: true
 cover: "/assets/instacode.png"
 toc: true
