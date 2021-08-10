@@ -19,7 +19,87 @@ toc: true
 
   [Link](/assets/image/Kaggle/Titanik_ensemble.html) - Result for using ensemble method in titanik competition.
 
+# Review
 
+ - 전체 진행 프로세스
+   
+   - 1. 데이터셋 확인
+  
+     - 데이터를 확인하고 분류 계획를 세우며, 결측치 확인 및 처리를 진행한다.
+
+   - 2. EDA (Exploratory Data Analysis)
+
+     - 여러 Feature 간의 상관관계를 분석한다.
+
+   - 3. Feature engineering
+
+     - EDA를 진행하여 얻은 Insight에 기초하여, 쓸모없는 feature들을 제거하고, 수정하는 등의 작업을 진행한다. (One-hot encoding, Categorical split 등)
+
+   - 4. Initialize model
+
+     - 모델을 만들고 최적의 Parameter들을 찾는다. (Grid search등의 방법으로)
+
+   - 5. Prediction
+
+     - 만든 모델을 가지고 결과값을 예측한다.
+
+   - 6. Model evaluation
+
+     - 결과치를 분석하여 모델이 어떤 Feature를 중요하게 사용했는지, 어떤 모델이 성능이 잘 나왔는지, 어떻게 개량해야 할 지 (Ensemble 조합을 바꿔본다던가, Hyper parameter를 수정한다거나)
+
+- 1. 데이터셋 확인
+
+  - 데이터를 불러오고, head()나 Describe()를 통해 전체적인 맥락을 파악한다.
+
+  - isnull()을 이용해 결측치를 체크한다.(결측치가 nan일 경우에는)
+
+  - 결측치가 몇개 되지 않을 경우에는 일반적으로 중앙값이나 평균으로 채운다.
+
+  - 많을 경우에는 주변 Feature 중 Correlation이 높은 feature들 중 주변 값이 비슷하면서 결측치가 아닌 경우의 값을 가지고 오거나, 아니면 모델을 만들어서 결측치를 Prediction을 통해 채울 수도 있다. (이럴 경우에는 Feature enginnering 파트에서 채운다.)
+
+  - 또한 IQR을 계산해서 이상치를 먼저 탐색하고 이상치 이내의 데이터들만 사용하는 것도 좋은 방법인 것 같다.
+
+- 2. EDA (Exploratory Data Analysis)
+
+  - 보통 하나의 Feature마다 해당 Feature가 Target에 미치는 영향을 위주로 탐색한다.
+
+  - 탐색은 Matplotlib의 다양한 plot이나 Seaborn의 다양한 plot (bar, count, factor, violin, dist, heatmap 등) 들을 이용해서 Visualization해서 Insight를 가지기 쉽게 해준다. (Seaborn이 조금 더 이쁜 것 같다.)
+
+  - pandas의 crosstab 또한 유용했다.
+
+  - Dataframe을 특정 항목별로 정리할 때, df.groupby(['Feature'])를 많이 사용했다.
+
+- 3. Feature enginnering
+
+   - 결측치 채우기
+
+   - Feature 내 항목들을 범주형 데이터로 바꾸거나(df.loc을 사용하거나 함수를 Design해서 apply 함수를 사용하거나), str을 num으로 바꾸어주는 등의 작업을 진행하거나, One-hot encoding 등을 진행한다.(pd.get_dummies 활용)
+
+   - 필요없는 Feature들을 drop시킨다. (train.drop(['Feature name']))
+
+- 4. Initialize model
+
+   - 주로 Sklearn 라이브러리 내 모델들을 사용한다. (SVM, RandomForest, MLP 등등)
+
+   - 나중에는 최신 논문에 탑재된 모델들을 사용해야 할 듯 하다.
+
+   - Ensemble을 자주 사용한다. (XGBoost등 Gradient Boosting 계열의 알고리즘이 많이 사용됨.)
+
+- 5. Prediction
+
+   - 학습을 진행하고, testset에다가 prediction을 진행한다.
+
+   - 결과값을 확인하고, Importance feature을 check 한다.(model.feature_importances_)
+
+ - 6. Model evaluation
+
+   - 만들어둔 모델의 Feature importance를 활용해서, 어떤 feature를 사용했을 때 결과가 좋았고, 그 결과가 좋았다면 feature engineering 과정에서 어떤걸 잘 해서 좋았는지, 좋지 않았다면 비교적 결과가 좋았던 feature과 비교해서 어떤 방식을 사용해서 feature engineering 쪽을 진행하였는지 등을 확인해야한다.
+
+   - 또한 ensemble을 활용하였다면 어떤 모델들을 사용했는지, 그리고 feature importance 측면을 생각했을 때, 너무 비슷한 feature들을 중요하게 사용하는 모델을 사용한건 아닌지 (다양한 측면을 고려해야 결과가 잘나온다는 kaggle winner들의 말이 있다.)를 생각해봐야한다.
+
+   - 또한 drop 시킨 feature들의 중요성을 다시 생각해보고, 다른 Feature들이 정말 필요한지, 어떻게 engineering을 고치면 좋을지를 다시 생각해보자.
+
+   - 마지막으로 전체적인 방향성에 대해서 살펴보자. 예를 들자면, 본 Competition에서 중요하게 작용되는 것이 무엇일지. Data noise를 제거하는게 키포인트라서 그에 맞게 Auto-encoder based model을 사용한다거나 하는 Competition의 핵심을 말이다.
 
 # Data_visualization_Summary
 
@@ -168,5 +248,3 @@ toc: true
       - XGBoost는 Gradient Boost + Regularization + Early Stopping 이라고 생각하면 된다.
 
       <img src="/assets/image/titanik/xgboost.png" width="600px" height="400px" title="title" alt="title">
-
-   
