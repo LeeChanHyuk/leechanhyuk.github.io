@@ -79,7 +79,7 @@ toc: true
 
 - ## 4. Initialize model
 
-   - 주로 Sklearn 라이브러리 내 모델들을 사용한다. (SVM, RandomForest, MLP 등등)
+   - 주로 Sklearn 라이브러리 내 모델들을 사용한다. (SVM, RandomForest, MLP, KNeighbor algorithm, 각종 Regression 등등)
 
    - 나중에는 최신 논문에 탑재된 모델들을 사용해야 할 듯 하다.
 
@@ -248,3 +248,17 @@ toc: true
       - XGBoost는 Gradient Boost + Regularization + Early Stopping 이라고 생각하면 된다.
 
       <img src="/assets/image/titanik/xgboost.png" width="600px" height="400px" title="title" alt="title">
+
+# Types of features
+
+  - Categorical features
+
+    - Label이 문자로 되어 있고, 정확히 분류할 수 있는 특징을 의미.
+
+  - Ordinal features
+
+    - Label이 숫자로 되어 있어 Sorting등이 가능하지만, 정확히 분류할 수 있는 특징을 의미.
+
+  - Continous features
+
+    - Label이 숫자로 되어 있고 연속적이라 Regression을 통해 예측해야 하는 특징.ㄴ
