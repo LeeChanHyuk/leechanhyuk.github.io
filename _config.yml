@@ -121,6 +121,8 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LeeChanHyuk"
+    - label: 'Baekjoon'
+      url: "https://www.acmicpc.net/user/sayfour"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
