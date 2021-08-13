@@ -113,7 +113,7 @@ toc: true
 
     - data.count()나 data.mean()과 같이 어떤 label에 대해서 묶을 수 없는 경우는 동작하지 않는다.
 
-    <img src="/assets/image/titanik/groupby.png" width="400px" height="300px" title="title" alt="title">
+    <img src="/assets/image/titanik/groupby.png" width="600px" height="450px" title="title" alt="title">
 
   - ## 2. data.plot.bar()
 
@@ -133,9 +133,9 @@ toc: true
 
     <img src="/assets/image/titanik/factor.png" width="600px" height="400px" title="title" alt="title">
 
-    <img src="/assets/image/titanik/dist.png" width="600px" height="400px" title="title" alt="title">
+    <img src="/assets/image/titanik/dist.png" width="700px" height="500px" title="title" alt="title">
 
-    <img src="/assets/image/titanik/colormap.png" width="600px" height="400px" title="title" alt="title">
+    <img src="/assets/image/titanik/colormap.png" width="600px" height="500px" title="title" alt="title">
 
   - ## 4. pd.crosstab(index, columns, margins)
 
@@ -145,7 +145,7 @@ toc: true
 
     - margins는 총 합의 표시 유무.
 
-    <img src="/assets/image/titanik/crosstab.png" width="600px" height="400px" title="title" alt="title">
+    <img src="/assets/image/titanik/crosstab.png" width="400px" height="300px" title="title" alt="title">
 
   - ## 5. data.value_counts()
 
@@ -153,7 +153,7 @@ toc: true
 
     - 주로 data.value_counts().plot.bar()과 같이 사용되곤 한다.
 
-    <img src="/assets/image/titanik/valuecounts.png" width="600px" height="400px" title="title" alt="title">
+    <img src="/assets/image/titanik/valuecounts.png" width="400px" height="300px" title="title" alt="title">
 
   - ## 6. data.loc[y, x]
 
@@ -163,7 +163,7 @@ toc: true
 
     - data.loc['Sex', 'Survived'] -> Sex행, Survived 열의 데이터를 모두 가져옴. 
 
-    <img src="/assets/image/titanik/loc.png" width="600px" height="400px" title="title" alt="title">
+    <img src="/assets/image/titanik/loc.png" width="700px" height="500px" title="title" alt="title">
 
 # Binary classifier
 
@@ -261,4 +261,4 @@ toc: true
 
   - Continous features
 
-    - Label이 숫자로 되어 있고 연속적이라 Regression을 통해 예측해야 하는 특징.ㄴ
+    - Label이 숫자로 되어 있고 연속적이라 Regression을 통해 예측해야 하는 특징.
