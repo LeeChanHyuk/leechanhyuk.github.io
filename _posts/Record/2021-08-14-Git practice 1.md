@@ -29,19 +29,19 @@ toc: true
 
       - git shortlog -sn | nl
 
-      <img src="/assets/image/git_practice/one.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/one.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **개발자별 commit 개수 요약**
 
       - git shortlog --summary (-s)
 
-      <img src="/assets/image/git_practice/two.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/two.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **개발자별 commit 개수 순위 정리**
 
       - git shortlog --number (-n)
       
-      <img src="/assets/image/git_practice/three.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/three.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
   - ## Commit 내역 체크
 
@@ -49,19 +49,19 @@ toc: true
 
       - git log
 
-      <img src="/assets/image/git_practice/4.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/4.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **commit 내역 한 줄로 요약해서 출력**
 
       - git log --oneline (commit 내역 한 줄로 요약해서 출력)
 
-      <img src="/assets/image/git_practice/5.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/5.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **한 commit의 세부 commit 내역 출력**
 
       - git show 3f43a8b9a3(commit hash) (한 commit의 세부 내역 출력)
 
-      <img src="/assets/image/git_practice/6.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/6.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **특정 키워드가 포함된 commit 내역 출력**
     
@@ -69,19 +69,19 @@ toc: true
     
       - grep은 filtering 해주는 역할을 담당. 여기서는 git show로 출력되는 내용 중에서 "diff --git"이 포함된 애들을 출력해주는 것. (diff는 파일을 변경했기에 추가되는 것.)
 
-      <img src="/assets/image/git_practice/7.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/7.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **특정 폴더의 commit 내역 출력**
 
       - git log --oneline -- foldername
 
-      <img src="/assets/image/git_practice/8.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/8.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **특정 날짜기준 commit 내역 출력**
 
       - git log --oneline --after=2020-01-01 --before=2020-06-30
 
-      <img src="/assets/image/git_practice/9.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/9.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
   - ## Branch
 
@@ -93,19 +93,19 @@ toc: true
 
       - git branch branch_name
 
-      <img src="/assets/image/git_practice/11.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/11.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **Branch 변경**
 
       - git checkout branch_name
 
-      <img src="/assets/image/git_practice/12.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/12.png" width="600px" height="400px" title="MAE" alt="MAE"> 
     
     - **Branch 생성 및 변경**
 
       - git checkout -b branch_name
 
-      <img src="/assets/image/git_practice/10.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/10.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **Branch 삭제**
 
@@ -113,13 +113,13 @@ toc: true
 
       - git branch -D branch_name
 
-      <img src="/assets/image/git_practice/13.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/13.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - **Branch 목록 확인**
 
       - git branch
 
-      <img src="/assets/image/git_practice/14.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/14.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
   - ## pull request
 
@@ -131,7 +131,7 @@ toc: true
 
     - 내 git 내 fork한 repository에서 pull-request를 누른다.
 
-      <img src="/assets/image/git_practice/15.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/15.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
   - ## 다른 함수 모음
 
@@ -141,7 +141,7 @@ toc: true
 
       - 나는 주석 하나를 추가하였다.
 
-      <img src="/assets/image/git_practice/18.png" width="200px" height="300px" title="MAE" alt="MAE">
+      <img src="/assets/image/git_practice/18.png" width="600px" height="400px" title="MAE" alt="MAE">
 
     - **git stash**
 
@@ -151,7 +151,7 @@ toc: true
 
       - 그럴때 before - after 점검이 필요할 때 사용한다.
 
-      <img src="/assets/image/git_practice/19.png" width="200px" height="300px" title="MAE" alt="MAE">
+      <img src="/assets/image/git_practice/19.png" width="600px" height="400px" title="MAE" alt="MAE">
 
       - 위 그림처럼, stash하면 원 상태로 돌아가기 때문에 diff로도 변경사항을 확인할 수가 없고, stash pop으로 다시 변경 상태로 돌아갈 수 있다. 그 상태에서 diff하면 다시 변경 상태로 돌아간 것을 확인할 수 있다.
 
@@ -193,7 +193,7 @@ toc: true
 
     - git remote -v 명령어로 내 remote 저장소를 모두 확인할 수 있다.
 
-    <img src="/assets/image/git_practice/16.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+    <img src="/assets/image/git_practice/16.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
     - 여기서 upstream이란, 기존 오픈소스 저장소를 일컫는다.
 
@@ -205,6 +205,6 @@ toc: true
 
       - git push --force origin fix-mnist
 
-      <img src="/assets/image/git_practice/17.png" width="200px" height="300px" title="MAE" alt="MAE"> 
+      <img src="/assets/image/git_practice/17.png" width="600px" height="400px" title="MAE" alt="MAE"> 
 
       - 실제로 나는 작업도중 rebase가 필요하지 않아서 up-to-date 메세지가 출력됐지만, rebase가 필요한 경우에는 작동했을 것이다
