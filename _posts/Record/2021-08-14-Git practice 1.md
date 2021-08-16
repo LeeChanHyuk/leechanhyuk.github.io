@@ -1,5 +1,5 @@
 ---
-title: "[Tip] Git 기본 기능 정리"
+title: "[Tip] Git commit 가지고 놀기 1"
 date: 2021-06-14 16:59:00
 author: Leechanhyuk
 categories: Git

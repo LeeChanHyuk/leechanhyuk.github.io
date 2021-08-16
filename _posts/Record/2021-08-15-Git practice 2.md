@@ -1,5 +1,5 @@
 ---
-title: "[Tip] Git commit 가지고 놀기"
+title: "[Tip] Git commit 가지고 놀기 2"
 date: 2021-06-15 16:59:00
 author: Leechanhyuk
 categories: Git
