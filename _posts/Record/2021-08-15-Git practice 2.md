@@ -8,7 +8,10 @@ use_math: true
 cover: "/assets/instacode.png"
 toc: true
 ---
+# 시작하기전에
 
+ - 본 포스팅은 '2021 오픈소스 컨트리뷰션 아카데미'의 일환으로 제공된 Git 교육을 개인 공부 및 기록용으로 제작한 포스팅입니다.
+ 
 ## commit 되감기 (rebase)
 
  - commit을 잘못 추가했을 경우, 새 커밋을 기존 커밋사이에 넣어야 할 때, 이 기능을 사용한다.
