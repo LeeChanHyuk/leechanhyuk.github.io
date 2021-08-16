@@ -2,7 +2,7 @@
 title: "[Tip] Git 기본 기능 정리"
 date: 2021-06-14 16:59:00
 author: Leechanhyuk
-categories: Record
+categories: Git
 tags:	Record
 use_math: true
 cover: "/assets/instacode.png"
