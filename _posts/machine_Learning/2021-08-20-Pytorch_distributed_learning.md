@@ -15,15 +15,15 @@ toc: true
 
  - Multi-GPU에서는 아래와 같은 과정을 따릅니다.
 
- - 1. GPU의 개수만큼 Process를 생성 및 GPU에 Process 할
+ 1. GPU의 개수만큼 Process를 생성 및 GPU에 Process 할
 
- - 2. 각 Process마다 Model 생성
+ 2. 각 Process마다 Model 생성
 
- - 3. 데이터를 GPU의 개수에 따라 나눔 (Scatter)
+ 3. 데이터를 GPU의 개수에 따라 나눔 (Scatter)
 
- - 4. Inference - 출력을 한 곳에 모음 (Gather)
+ 4. Inference - 출력을 한 곳에 모음 (Gather)
 
- - 5. Backpropagation 
+ 5. Backpropagation 
 
 # Data Parallel
 
