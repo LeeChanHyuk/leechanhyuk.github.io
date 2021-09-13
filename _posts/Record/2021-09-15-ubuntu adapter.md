@@ -1,6 +1,6 @@
 ---
 title: "[Tip] Ubuntu 어댑터를 찾을 수 없습니다."
-date: 2021-06-15 16:59:00
+date: 2021-09-15 16:59:00
 author: Leechanhyuk
 categories: Git
 tags:	Record
