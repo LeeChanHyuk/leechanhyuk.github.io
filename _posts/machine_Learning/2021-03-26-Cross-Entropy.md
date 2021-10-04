@@ -12,11 +12,11 @@ Cross-Entropy (CE)
 
 ------------------------------------------------------
 
-## 시작하기전에
+# 시작하기전에
 
  - 개인 공부 목적으로 정리한 글입니다. 설명이 부족할 수 있습니다.
 
-## Cross-Entropy란?
+# Cross-Entropy란?
 
  - Loss function중 하나. Input 값(=Model의 Output값)이 일반적으로는 확률로써 들어가기 때문에 Activation function이 주로 Sigmoid나 Softmax가 된다.
 
