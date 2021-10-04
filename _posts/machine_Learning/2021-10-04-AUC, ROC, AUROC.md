@@ -22,7 +22,7 @@ AUROC (Area Under Receiver Operating Characteristic) Curve
 
   - 이 때, AUROC는 ROC Curve 아래쪽의 면적이니까 AUROC는 초록색으로 색칠한 면적이 되겠죠?
 
-  - 그림 2 (Reference 2)
+  - 그림 2
 
   - <img src="/assets/image/auroc/auroc2.png" width="450px" height="300px" title="title" alt="title"> 
 
@@ -31,6 +31,8 @@ AUROC (Area Under Receiver Operating Characteristic) Curve
 # Confusion Matrix
 
   - Confusion matrix란, 실제 정답을 어떻게 분류했는가에 따라서 나올 수 있는 경우의 수를 행렬의 형태로 나타낸 것을 의미합니다.
+
+  - 그림 3 (Reference 2)
 
   - <img src="/assets/image/auroc/confusionmatrix.png" width="450px" height="300px" title="title" alt="title"> 
 
@@ -80,7 +82,7 @@ AUROC (Area Under Receiver Operating Characteristic) Curve
   
 # Reference
 
- - 1. https://glassboxmedicine.com/2019/02/23/measuring-performance-auc-auroc/
+ 1. https://glassboxmedicine.com/2019/02/23/measuring-performance-auc-auroc/
 
- - 2. https://towardsai.net/p/data-science/how-to-evaluate-you-model-using-the-confusion-matrix
+ 2. https://towardsai.net/p/data-science/how-to-evaluate-you-model-using-the-confusion-matrix
 
