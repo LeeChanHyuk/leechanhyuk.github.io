@@ -29,8 +29,6 @@ toc: true
 
  - Object365 pre-trained weight를 사용하여 더 높은 mAP를 달성했다.
 
-  <img src="/assets/image/soft_teacher/front.png" width="600px" height="450px" title="title" alt="title">
-
 # Introduction
 
  - ImageNet은 Deep learning의 인기 열풍에 큰 역할을 했지만, label을 획득하는 작업은 bottle-neck이었다.
@@ -126,8 +124,6 @@ toc: true
     - 각 loss에 참여한 data sample은 미리 규정한 값에 따라 달라지기 때문에, 그 sample의 비율에 맞춰서 나누어 loss에 반영해준다.
     
     <img src="/assets/image/soft_teacher/equation2.png" width="400px" height="300px" title="title" alt="title">
-
-    <img src="/assets/image/soft_teacher/equation3.png" width="400px" height="300px" title="title" alt="title">
 
     - Teacher model에 unlabeled-image가 feed 되고 나서, NMS를 거치고 나서도 background sample이 남아있을 수 있기 때문에, 특정 threshold 보다 높은 sample만 학습에 참여할 수 있다.
 
