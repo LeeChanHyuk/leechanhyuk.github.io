@@ -187,4 +187,26 @@ toc: true
 
     <img src="/assets/image/soft_teacher/equation11.png" width="400px" height="300px" title="title" alt="title">
 
-    
+# Experiments
+
+  - <img src="/assets/image/soft_teacher/table2.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table2.png" width="400px" height="300px" title="title" alt="title">
+  
+  - <img src="/assets/image/soft_teacher/table3.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/figure4.png" width="400px" height="300px" title="title" alt="title">
+  
+  - <img src="/assets/image/soft_teacher/table4.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table5.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table6.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table7.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table8.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table9.png" width="400px" height="300px" title="title" alt="title">
+
+  - <img src="/assets/image/soft_teacher/table10.png" width="400px" height="300px" title="title" alt="title">
