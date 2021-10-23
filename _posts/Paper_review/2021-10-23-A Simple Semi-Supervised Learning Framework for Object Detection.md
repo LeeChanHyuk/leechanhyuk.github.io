@@ -13,7 +13,7 @@ toc: true
 
 **A Simple Semi-Supervised Learning Framework for Object Detection**
 
-<img src="/assets/image/soft_teacher/front.png" width="600px" height="450px" title="title" alt="title">
+<img src="/assets/image/semi_supervised_learning/front.png" width="600px" height="450px" title="title" alt="title">
 
 # 0. Abstract
 
@@ -25,7 +25,7 @@ toc: true
 
   - COCO Dataset 및 VOC07 Dataset을 활용하여 평가하였고, 기존 모델의 AP(Average Precision)을 크게 향상시켰다.
 
-  <img src="/assets/image/soft_teacher/figure1.png" width="600px" height="450px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/figure1.png" width="600px" height="450px" title="title" alt="title">
 
 # 1. Introduction
 
@@ -51,7 +51,7 @@ toc: true
 
   - VOC07의 Trainval을 labeled-dataset으로, VOC12 및 MS-COCO를 unlabeled-dataset으로 활용했다.
 
-  <img src="/assets/image/soft_teacher/figure2.png" width="600px" height="450px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/figure2.png" width="600px" height="450px" title="title" alt="title">
 
   - Curiosity) 기존 Teacher model보다 AP가 높나?
 
@@ -77,7 +77,7 @@ toc: true
 
     - 아래의 식은 기존의 image classification SSL에서 자주 사용되던 K-way classification에 관련된 식이다.
 
-    <img src="/assets/image/soft_teacher/equation1.png" width="450px" height="300px" title="title" alt="title">
+    <img src="/assets/image/semi_supervised_learning/equation1.png" width="450px" height="300px" title="title" alt="title">
 
     - 식 중, x는 image, w(x)는 x input에 대한 weight value, l은 q와 p의 거리 (L2-Distance 혹은 cross-entropy로 측정), p는 prediction value, q는 prediction target, $\theta$는 prediction시 사용된 hyperparameter를 뜻한다.
 
@@ -85,7 +85,7 @@ toc: true
 
     - 해당 loss에서 prediction과 weight는 아래 식으로 규정된다.
     
-    <img src="/assets/image/soft_teacher/equation2.png" width="450px" height="300px" title="title" alt="title">
+    <img src="/assets/image/semi_supervised_learning/equation2.png" width="450px" height="300px" title="title" alt="title">
 
     - 즉, prediction target은 결과 class 중에서 max값을 갖는 class를 사용하고, weight는 threshold보다 높으면 1을 아니면 0을 줘서, threshold 이상의 sample만 사용하겠다는 것이다.
 
@@ -99,7 +99,7 @@ toc: true
 
     - STAC의 훈련 과정은 아래와 같다.
 
-    <img src="/assets/image/soft_teacher/process.png" width="450px" height="300px" title="title" alt="title">
+    <img src="/assets/image/semi_supervised_learning/process.png" width="450px" height="300px" title="title" alt="title">
 
     - ### 3.2.1. Training a teacher model
 
@@ -107,7 +107,7 @@ toc: true
 
       - Supervised-Unsupervised loss를 모두 반영하기 위해서, 아래의 식을 통해서 학습시켰다.
 
-      <img src="/assets/image/soft_teacher/equation3.png" width="450px" height="300px" title="title" alt="title">
+      <img src="/assets/image/semi_supervised_learning/equation3.png" width="450px" height="300px" title="title" alt="title">
 
       - 여기서 i는 mini-batch 내의 anchor를 의미하고, p는 anchor의 class, t는 anchor의 regression value를 의미한다.
 
@@ -121,7 +121,7 @@ toc: true
 
       - Loss는 아래 식과 같다.
 
-      <img src="/assets/image/soft_teacher/equation4.png" width="450px" height="300px" title="title" alt="title">
+      <img src="/assets/image/semi_supervised_learning/equation4.png" width="450px" height="300px" title="title" alt="title">
       
       - 즉, supervised learning에서는 data augmentation 없이, weight 없이 반영 + unsupervised learning에서는 data augmentation + weight를 반영하여 학습하겠다는 것.
 
@@ -135,24 +135,24 @@ toc: true
 
       - 반영한 data augmentation 방법은 아래와 같다.
 
-      <img src="/assets/image/soft_teacher/augmentation.png" width="450px" height="300px" title="title" alt="title">
+      <img src="/assets/image/semi_supervised_learning/augmentation.png" width="450px" height="300px" title="title" alt="title">
 
       - 실제로는, Global color transformation + (Global geometric transformation + Box-level transformation 중 하나) + Cutout을 적용했다.
 
-      <img src="/assets/image/soft_teacher/figure3.png" width="450px" height="300px" title="title" alt="title">
+      <img src="/assets/image/semi_supervised_learning/figure3.png" width="450px" height="300px" title="title" alt="title">
 
 # 4. Experiments
 
-  <img src="/assets/image/soft_teacher/table1.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/table1.png" width="450px" height="300px" title="title" alt="title">
 
-  <img src="/assets/image/soft_teacher/table2.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/table2.png" width="450px" height="300px" title="title" alt="title">
 
-  <img src="/assets/image/soft_teacher/table3.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/table3.png" width="450px" height="300px" title="title" alt="title">
 
-  <img src="/assets/image/soft_teacher/table4.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/table4.png" width="450px" height="300px" title="title" alt="title">
   
-  <img src="/assets/image/soft_teacher/table5.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/table5.png" width="450px" height="300px" title="title" alt="title">
 
-  <img src="/assets/image/soft_teacher/figure4.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/figure4.png" width="450px" height="300px" title="title" alt="title">
 
-  <img src="/assets/image/soft_teacher/figure5.png" width="450px" height="300px" title="title" alt="title">
+  <img src="/assets/image/semi_supervised_learning/figure5.png" width="450px" height="300px" title="title" alt="title">
