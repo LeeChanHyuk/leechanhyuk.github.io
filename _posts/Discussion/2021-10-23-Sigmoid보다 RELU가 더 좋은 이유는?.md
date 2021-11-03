@@ -1,5 +1,5 @@
 ---
-title: "[Discussion] RELU가 sigmoid보다 더 많이 사용되는 이유는?"
+title: "[Discussion] RELU가 sigmoid보다 더 많이 사용되는 이유는"
 date: 2021-10-23 16:59:00
 author: Leechanhyuk
 categories: Discussion
