@@ -91,5 +91,24 @@ toc: true
 
 # 3. Our Approach: Multiple Instance Prediction
 
-  - 
+  - 제안하고자 하는 방법은 아래와 같은 두 가지 발견 사항에 기초하고 있다.
 
+    1. Object들이 많이 겹쳐있는 것들에 관한 고려
+
+    2. 하나의 proposal이 다른 proposal과 겹쳐있으면, 그 object는 다른 object와 겹쳐서 보일 확률이 높다.
+
+  - 따라서, 하나의 object만 prediction하기보다 set-of-object를 prediction 하는 방법을 사용하기로 함.
+
+  <img src="/assets/image/multipleprediction/equation1.png" width="600px" height="450px" title="title" alt="title">
+
+  - $b_i$는 each proposal box, $g_i$는 each ground truth box, $G(b_i)$는 set-of-ground truth instances, $\theta$는 positive sample이 되기 위한 threshold
+
+  <img src="/assets/image/multipleprediction/figure2.png" width="600px" height="450px" title="title" alt="title">
+
+  - figure 2(b)에서는 Highly overlapped boxes를 예시로 들어서, single-instance-detection (figure-2(a)) 및 group-instance-detection (figure-2(b))를 비교해보고 있다.
+
+  - ## 3.1. Instance set prediction
+
+    - 기존의 detection 방식은 각 instance마다 class label과 bounding box coordinate를 예측했다.
+
+    - 반면에 
