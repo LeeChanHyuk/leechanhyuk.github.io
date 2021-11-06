@@ -14,8 +14,8 @@ toc: true
 
 ## 정리사항
 
-  <img src="/assets/image/backpropagation/a1.png" width="450px" height="600px" title="title" alt="title"> 
+  <img src="/assets/image/backpropagation/a1.png" width="600px" height="900px" title="title" alt="title"> 
 
-  <img src="/assets/image/backpropagation/a2.png" width="450px" height="600px" title="title" alt="title"> 
+  <img src="/assets/image/backpropagation/a2.png" width="600px" height="900px" title="title" alt="title"> 
    
    
