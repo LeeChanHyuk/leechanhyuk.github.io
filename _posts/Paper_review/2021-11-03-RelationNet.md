@@ -178,7 +178,7 @@ toc: true
 
     2. 모든 object의 appearance feature를 relation module을 통해 transformation 시킨다.
 
-    3. Relation network의 output을 linear layer와 activation layer (sigmoid)를 거치게 하여, 최종 확률 값을 반환하게 한다.
+    3. Relation network의 output을 linear layer와 activation layer (sigmoid)를 거치게 하여, 최종 확률 값을 반환하게 하고, 그걸 detection score와 곱해서 최종 output의 score를 조절한다.
 
     - ### 4.3.1. Rank feature
 
@@ -226,6 +226,8 @@ toc: true
     <img src="/assets/image/relationnet/table4.png" width="600px" height="450px" title="title" alt="title">
 
     - Table 4는 training 및 testing시 detection threshold 설정이 다를 경우, 성능 하락이 있다는 것을 나타내는 결과값이다.
+
+    - 그냥 mAP는 threshold가 [0.5 ~ 0.9]일 때 평가한 결과를 의미하고, parameter단의 숫자들은 training 시 사용 된 값을 의미한다.
 
     - 제안 네트워크는 영향을 덜 받는다.
 
