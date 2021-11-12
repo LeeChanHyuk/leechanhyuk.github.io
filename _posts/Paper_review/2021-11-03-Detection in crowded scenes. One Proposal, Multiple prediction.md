@@ -1,5 +1,5 @@
 ---
-title: "[Object detection] Detection in Crowded Scenes: One Proposal, Multiple Predictions"
+title: "[Object detection] Detection in Crowded Scenes: One Proposal, Multiple Predictions Review"
 date: 2021-11-03 21:05:00
 author: Leechanhyuk
 categories: Paper_review

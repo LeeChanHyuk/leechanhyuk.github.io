@@ -1,5 +1,5 @@
 ---
-title: "[Object detection] End-to-End Semi-Supervised Object Detection with Soft Teacher"
+title: "[Object detection] End-to-End Semi-Supervised Object Detection with Soft Teacher Review"
 date: 2021-10-13 21:05:00
 author: Leechanhyuk
 categories: Paper_review

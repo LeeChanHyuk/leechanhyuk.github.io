@@ -1,5 +1,5 @@
 ---
-title: "[Object detection] A Simple Semi-Supervised Learning Framework for Object Detection"
+title: "[Object detection] A Simple Semi-Supervised Learning Framework for Object Detection Review"
 date: 2021-10-23 21:05:00
 author: Leechanhyuk
 categories: Paper_review
