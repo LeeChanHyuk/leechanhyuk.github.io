@@ -120,3 +120,19 @@ toc: true
       - [30]은 head pose 및 gaze를 simultaneously하게 detect하는 multi-task method를 사용했다.
 
       - 이러한 End-to-End method는 face 및 eye를 multi-stream CNN으로 추출하고, head pose 및 gaze direction을 parallel architecture로 learning을 진행한다. (error 0.82, 4.02 in the columbiaGaze and MPIIGaze)
+
+  - ## 2.2 Person-Specific Bias
+
+    <img src="/assets/image/gaze_estimation/fig3.png" width="600px" height="450px" title="title" alt="title">
+
+    - [38]에서는 person-specific bias를 optical axis와 visual axis의 차이로 나타냈다. 여기서 optical axis란 fig. 3의 빨간 선으로써, eye-ball의 center $C$와 pupil의 center $P$를 잇는 빨간 선을 의미한다. Visual axis란 fovea와 Target을 잇는 파란 선을 의미한다.
+
+    - **이 때, Visual axis는 $V$, Optical axis는 $O$, person-specific offset은 $K$로 나타낸다.**
+
+    - 이러한 person-specific bias 교정 없이 gaze estimation을 하면, 이는 error를 유발할 수 있다고 했고, 이번 section에서는 이를 다룬 논문들에 관해서 알아본다.
+
+    - ### 2.2.1. Parameters Estimation-Based Method
+
+      - [34, 35]는 두 카메라와 두 광원을 사용하고, 두 안구의 visual axis가 항상 intersect한다는 가정 하에서, 두 안구의 gaze point를 optimization 시켜서 K를 도출해 내는 방식을 사용했다.
+
+      - [36]은 
