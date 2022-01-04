@@ -67,6 +67,58 @@ toc: true
 
       - 앞선 두 contribution인, grounding reformulation 및 semantic-rich pre-training을 통해 human annotations 없이도 COCO 및 LVIS에서 좋은 성능을 이끌어냈고, 13개의 object detection 관련 task에서도 좋은 결과를 이끌어냈다.
 
-      - 또한 Object 365를 통해 10-shot supervised baseline보다 GLIP-L로 1-shot training 한 결과가 비슷한 수치가 도출되었다.
+      - 또한 Object 365를 통해 10-shot supervised baseline보다 GLIP-L로 1-shot training 한 결과가 비슷한 수치가 도출되었다. (1-shot? class 중 하나가 겹친다는 말인가? 보통 stage의 개념이 shot 아닌가?)
 
       - 또한 GLIP 모델 전체가 아닌, 특정 기능을 수행하는 부분만 부분적으로 fine-tuning 한 경우에도 결과가 뛰어났다.
+
+# 2. Related work
+
+  - 기존 object detection을 훈련시키기 위한 데이터 셋들을 크게 만드는데는 많은 비용이 든다.
+
+  - GLIP는 Phrase grounding을 object detection과 접목시켜서 image-text의 massive한 paired data를 활용하여 이를 극복하고자 했다. (이 방법이 해결 방안이 될 수 있는 이유는 크롤링을 적용해서, bounding box 없이도 detector를 훈련시킬 수 있게 한다는건가?)
+
+  - GLIP는 Dynamic Head 기반으로 구현되어 있으며, 어떤 object detector에도 부착 가능하다.
+
+  - 최근에는 visual representation problem을 풀기 위해, language supervision 없이 (?) vision -language 방식을 사용하는 CLIP, ALIGN 모델 등이 Contrastive learning 방식을 이용해서 open-vocabulary image classification을 수행했다.
+
+  - 또한 MDETR은 End-to-End 방식으로 image-text matching problem을 해결했다.
+
+  - 본 논문은 transfer-learning에 집중하고 있고, various task, domain에 적용할 수 있기를 바라지만, zero-shot은 아니다. 이는 우리가 데이터 셋으로부터 rare한 category라도 배제하지 않았기 때문이고, 그 이유는 rare한 sample이 가지는 information이 rich해서 rare한 category prediction에 도움을 줄 것으로 예상되기 때문이다
+
+  - 이런 방식은 open-vocabulary object detection과 유사하지만, 그와 다르게 우리는 실제 transfer-learning 시 고려되어야하는 cost에 더 집중했다.
+
+# 3. Grounded Language Image Pre-training
+
+  - Object detection과 phrase grounding은 image 내 object에서 semantic concept을 도출한다는데 공통점이 있고, 이 점에 착안해서 본 모델을 구성했다.
+
+  - ## 3.1. Unified formulation
+
+    - ### 3.1.1. Background: object detection
+
+      - 전형적인 object detector는 input으로 image를 받고, backbone network를 통해 feature extraction을 수행하고 그 후, box classifier와 bounding box regressor를 사용해서 prediction을 진행한다.
+
+      - 학습에 사용되는 loss는 classification loss $L_{cls}$, localization loss $L_{loc}$로 나뉘며 통합된 loss는 아래 식과 같다.
+
+      <img src="/assets/image/grounded_language/equation1.png" width="600px" height="450px" title="title" alt="title">
+
+      - Two stage detector에서는 region proposal network (RPN)을 이용해서 sample의 background, foreground 여부를 판정하고 최종 anchor를 refine 하는데, 이 때 class에 관한 정보가 사용되지 않으므로 본 논문에서는 localization loss인 $L_{loc}$에 RPN loss를 통합했다.
+
+      - 또한 one-stage detector에서는 $L_{loc}$에서 centerness가 사용되기도 한다. 
+      
+      - *뜬금없이 이 내용이 왜 나오는거지? 본 논문에서 사용한건가? 그리고 anchor-based 방식에서 centerness를 사용하나?*
+
+      - Classifier는 단순한 linear layer로 구성되고, classification loss $L_{cls}$는 아래와 같이 나타낼 수 있다.
+
+      <img src="/assets/image/grounded_language/equation2.png" width="600px" height="450px" title="title" alt="title">
+
+      - $O \in R^{NxD}$: Input image -> backbone network의 output
+
+      - $W \in R^{CxD}$: Weight matrix for box classifier
+
+      - $S_{cls} \in R^{Nxc}$: output classification logits
+
+      - $T \in {{0, 1}}^{Nxc}$: target
+
+      - loss: Two stage에서는 cross-entropy, one stage에서는 focal loss.
+
+
