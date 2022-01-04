@@ -1,5 +1,5 @@
 ---
-title: "[Gaze Estimation] Vision-based Gaze Estimation: A Review"
+title: "[Gaze Estimation] Vision-based Gaze Estimation: A Review (1)"
 date: 2022-01-01 21:05:00
 author: Leechanhyuk
 categories: Paper_review
@@ -135,4 +135,6 @@ toc: true
 
       - [34, 35]는 두 카메라와 두 광원을 사용하고, 두 안구의 visual axis가 항상 intersect한다는 가정 하에서, 두 안구의 gaze point를 optimization 시켜서 K를 도출해 내는 방식을 사용했다.
 
-      - [36]은 
+      - [36]은 active calibration 없이, quadratic programming을 이용해서 inequality-constrained optimization problem을 solve하는 방식을 사용했다.
+
+      - [40]은 gaze representation시, person specific calibration parameters를 추정하기 위해서, full face image와 calibration parameters를 input으로 CNN Network를 사용하여, 결과적으로는 적은 수의 calibration sample만 가지고도 정확도 높은 calibration을 가능하게하고 그 후 gaze estimation을 수행한다.(error 2.7 MPIIGaze dataset)
