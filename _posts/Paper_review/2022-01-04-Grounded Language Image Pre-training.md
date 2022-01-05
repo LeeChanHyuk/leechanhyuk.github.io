@@ -193,6 +193,66 @@ toc: true
 
 # 4. Transfer to Established Benchmarks
 
-  - 
+  - GLIP의 성능을 보여주기 위해 활용한 데이터 셋은, MS-COCO (Object detection), LVIS (Object segmentation with 1000 categories), FLickr30K (Phrase grounding)
+Datasets 총 3가지다.
 
+  - 또한 ablation study처럼 3가지의 핵심적인 기능에 관하여 검증을 진행하였는데, Table 2는 검증 시 configuration을 의미한다.
+
+  <img src="/assets/image/grounded_language/table2.png" width="600px" height="450px" title="title" alt="title">
+
+  <img src="/assets/image/grounded_language/table3.png" width="600px" height="450px" title="title" alt="title">
+
+  - ## GLIP-T (A)
+
+    - Dynamic head based model.
+
+    - Classification loss -> word-region alignment loss
+
+    - Language encoder를 사용한 것으로 볼 때, lately fusion 방식을 사용한 것으로 추정
+
+    - Object 365 dataset으로 pre-training
+
+    - Backbone은 Swin-tiny
+
+  - ## GLIP-T (B)
+
+    - A에서 Deep fusion 방식을 추가
+
+  - ## GLIP-T (C)
+
+    - COCO Dataset을 활용하지 않음
+
+    - Gold grounding ata (human annotated data)를 활용 (Flickr30K, VG Caption, GQA)
+
+  - ## GLIP-T
+
+    - Data set: GLIP-T (C)에서 활용한 데이터 셋 + Object 365 + Cap4M (Web + GLIP-T (C)로 Pseudo labeling)
+
+    - CC (Conceptual Captions with 3M Data) + SBU Dataset을 추가적으로 사용하니 성능이 조금 더 향상됨.
+
+  - ## GLIP-L
+
+    - Backbone: Swin-Large model
+
+    - FourODs + Object 365 + OpenImages + Visual Genome + IMageNetBoxes + Gold ground (GLIP-T (C)) + CC12M + SBU + 24M with generated boxes (NLP Parser model)
+
+  - ## 4.1. Zero-shot and Supervised Transfer on COCO
+
+    - GLIP의 Transfer ability를 검증하기 위해서 COCO Dataset을 활용하여, 조건을 zero-shot transfer 및 fine-tune transfer로 나누어 실험을 진행했다.
+
+    - 추가적으로 GLIP-L Model의 fine-tuning 결과 역시 검증하였다.
+
+    - 또한 Dynamic Head model을 Object 365 dataset으로 훈련시키고, COCO Dataset에 대해서 zero-shot evaluation을 진행했다. (COCO의 모든 Categories는 Object 365에 포함되어 있다.)
+
+    - 결과는 Zero-shot GLIP Model이 supervised model보다 성능이 더 좋았다. (특정 모델에 비해서는)
+
+    - 특히, Fine-tuned GLIP-L model은 COCO에서 60.8 AP, 61.5 AP를 2017 val, 2017 test set에서 다른 bells (EMA, Mix up, label smoothing... ) 없이 달성했다.
+
+    - 이와 같은 결과는 COCO에 모든 Categories를 Object 365가 가지고 있고, deep fusion 방식을 사용했고, 마지막으로 grounding data를 사용했기 때문이라고 언급하고 있다.
+
+    - GLIP-T (A), (B) 및 (C)의 Performance 차이를 볼 때, deep fusion 방식은 2 AP, grounding data는 1.8 AP을 향상시킴을 알 수 있다. (저자는 가장 강력한 contributor가 grounding data라고 하던데..)
+
+    - 반면에 image-text data의 도입으로 향상된 점은 없었기에, rare class에 관한 분석을 위해 LVIS experiments를 수행했다.
+
+  - ## 4.2. Zero-SHot Transfer on LVIS
 
