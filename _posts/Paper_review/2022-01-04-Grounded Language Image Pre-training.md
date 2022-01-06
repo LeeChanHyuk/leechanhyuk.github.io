@@ -41,9 +41,9 @@ toc: true
 
   - 제안하는 방법은 object detection 및 phrase grounding을 통합함으로써, object detection을 phrase grounding으로, phrase grounding을 object detection task로 보는 방법이다.
 
-  ## 1.1 Contribution
+  - ## 1.1 Contribution
 
-    - 1. Unifying detection and grounding by reformulating object detection as phrase grounding
+    1. Unifying detection and grounding by reformulating object detection as phrase grounding
 
       <img src="/assets/image/grounded_language/fig1.png" width="600px" height="450px" title="title" alt="title">
 
@@ -55,7 +55,7 @@ toc: true
 
       - 결과적으로 볼 때, detection 및 grounding side 모두 성능이 향상되었다.
 
-    - 2. Scaling up visual concepts with massive image-text data
+    2. Scaling up visual concepts with massive image-text data
 
       - GLIP 학습을 위해, 27M grounding data(human-annotated fine-grained data (3M) + web crawled data (24M))에 NLP parse를 teacher model로 삼고 pseudo annotations을 진행하여 data를 refine했다.
 
@@ -63,7 +63,7 @@ toc: true
 
       - COCO 2017 val, test에서는 60.8 AP 및 61.5 AP를 이루어냈다.
 
-    - 3. Transfer learning wigh GLIP: one model for all
+    3. Transfer learning wigh GLIP: one model for all
 
       - 앞선 두 contribution인, grounding reformulation 및 semantic-rich pre-training을 통해 human annotations 없이도 COCO 및 LVIS에서 좋은 성능을 이끌어냈고, 13개의 object detection 관련 task에서도 좋은 결과를 이끌어냈다.
 
@@ -171,7 +171,7 @@ toc: true
 
     - 즉, 각 backbone의 output을 받아서, Dynamic module 및 BERT Layer (Pre-trained BERT's top layer)를 거치면서 각 output을 multi-head attention으로 묶는 방식을 통해, 기존 output + fused output을 다음 레이어의 input으로 받는 과정을 되풀이하며 진행한다.
 
-    <img src="/assets/image/grounded_language/equation_additional.png" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/grounded_language/equation_addition.png" width="600px" height="450px" title="title" alt="title">
 
     - 위 식은 일반 transformer와는 다르게 , query, value, output으로 구성되어 있다. 개인적으로는 image와 language사이의 attention을 찾는 것 이기 때문에, image와 language vector가 서로서로 query, key의 역할을 하기 때문에 따로 key라고 하는건지..? (**내용 추가 필요**)
 
@@ -255,4 +255,34 @@ Datasets 총 3가지다.
     - 반면에 image-text data의 도입으로 향상된 점은 없었기에, rare class에 관한 분석을 위해 LVIS experiments를 수행했다.
 
   - ## 4.2. Zero-SHot Transfer on LVIS
+  
+    - Model의 zero-shot performance 검증을 위해 LVIS Dataset 중에서 diverse하고 rare한 object를 사용하여 평가했다. LVIS Dataset 중, 5,000 장의 이미지를 포함한 MiniVal과 full-validation set을 사용하여 검증하였다.
+
+    - Zero-shot evaluation으로도 GLIP-T는 MDETR과 유사한 수준의 성능을, GLIP-0L은 Supervised-RPS를 크게 압도하는 성능을 보여주었다.
+
+    <img src="/assets/image/grounded_language/table4.png" width="600px" height="450px" title="title" alt="title">
+
+    - 결과적으로, Gold-grounding data는 4.2 AP, image-text data는 3.1 AP를 증가시켜서, semantically rich grounding data가 rare object recognition에 중요한 영향을 미치는 것을 확인했다.
+
+  - ## 4.3. Phrase Grounding on Flickr30K Entities
+
+    - Model의 ground entities를 평가하기 위해, Flickr30K (Image-text data with human annotations) datasets을 이용하여 MDETR과 같이 Pre-training을 하고 (??) 평가를 진행했다.
+
+    <img src="/assets/image/grounded_language/table5.png" width="600px" height="450px" title="title" alt="title">
+
+    - GLIP-T (With gold-grounding data)는 MDETR(GoldG+)과 유사한 결과를 냈다. 또한 detection data를 추가하는 것은 image 및 text correlated task 사이의 시너지를 향상시켜준다는 것을 결과로부터 다시 한 번 확인할 수 있었다.
+
+    - GLIP-L은 SOTA보다 2.8 AP 높은 87.1 Recall을 달성했다.
+
+  - ## 4.4. Analysis
+
+    - 이번 section에서는 다른 데이터 셋에 관해 GLIP-T의 Performance를 ablation study 형식으로 파악해보았다.
+
+    <img src="/assets/image/grounded_language/table6.png" width="600px" height="450px" title="title" alt="title">
+
+    - 기본적으로는 detection dataset으로부터 bootstrap하는 방식으로 데이터를 만들었다. 이 때, detection dataset과 grounding data가 기존 pair가 아니더라도 효과가 좋을 수 있을까? 하는 의문점이 드는데, 3가지의 다른 데아터 셋 (bootstrap 방식으로 추출?)을 훈련시켰을 때는, 여전히 grounding data의 포함된 것이 performance가 더 좋았다.
+
+    - 두 번째로, 일반적으로는 image와 categories를 늘리는 방식으로 dataset을 scaling-up 하는데, 이 방식에 비해서 grounding data를 scaling-up 하는 것이 얼마나 효과가 좋을까? 하는 의문점이다.
+
+    - 결과적으로는, image와 categories만을 늘린 dataset으로 GLIP-T를 훈련시키는 것은 performance 증가가 없었고, gold-grounding data 및 image-text를 늘리는 것은 performance가 크게 향상됨을 확인했다.
 
