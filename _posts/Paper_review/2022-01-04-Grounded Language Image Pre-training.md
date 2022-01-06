@@ -145,19 +145,19 @@ toc: true
 
         - 또한 loss는 multi-label cross-entropy를 사용해서 multi-label로 token마다 loss를 구한 후 average하는 방식으로 사용하였다. (**Section 4, 5 확인 필요!**)
 
-  - ### 3.1.3. Equivalence between detection and grounding
+    - ### 3.1.3. Equivalence between detection and grounding
 
-    - 소개했던 reformulation을 이용해서 우리는 어떤 detection model도 전부 grounding model으로 변환할 수 있다.
-    
-    - 또한 Dynamic head object detector에 reformulation을 적용하기 전과 후의 evaluation 결과가 같다는 점에서, 우리는 이론적으로는 detection과 grounding의 training 및 inference 과정이 같다는 것을 확인할 수 있었다고 한다.
+      - 소개했던 reformulation을 이용해서 우리는 어떤 detection model도 전부 grounding model으로 변환할 수 있다.
+      
+      - 또한 Dynamic head object detector에 reformulation을 적용하기 전과 후의 evaluation 결과가 같다는 점에서, 우리는 이론적으로는 detection과 grounding의 training 및 inference 과정이 같다는 것을 확인할 수 있었다고 한다.
 
-    - 이러한 점들은 GLIP model이 zero-shot manner로 arbitrary detection task를 가능하게한다.
+      - 이러한 점들은 GLIP model이 zero-shot manner로 arbitrary detection task를 가능하게한다.
 
-  - ### 3.1.4. Related work
+    - ### 3.1.4. Related work
 
-    - 제안하는 grounding formulation 방식은 MDETR과 매우 유사하고 loss 역시 MDETR의 contrastive loss와 유사하지만, reformulation 및 simple unified loss로 더욱 좋은 결과를 얻었다.
+      - 제안하는 grounding formulation 방식은 MDETR과 매우 유사하고 loss 역시 MDETR의 contrastive loss와 유사하지만, reformulation 및 simple unified loss로 더욱 좋은 결과를 얻었다.
 
-    - 또한 proposed grounding model은 여러 zero-shot detection model들과 유사하지만, GLIP는 detection과 grounding을 통합하는 방식을 사용한다는 점이 다르다. (**zero-shot detection에 관한 조사 및 GLIP와의 명백한 차이점 조사가 필요**)
+      - 또한 proposed grounding model은 여러 zero-shot detection model들과 유사하지만, GLIP는 detection과 grounding을 통합하는 방식을 사용한다는 점이 다르다. (**zero-shot detection에 관한 조사 및 GLIP와의 명백한 차이점 조사가 필요**)
 
   - ## 3.2. Language-Aware Deep Fusion
 
