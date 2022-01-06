@@ -41,7 +41,7 @@ toc: true
 
   - 제안하는 방법은 object detection 및 phrase grounding을 통합함으로써, object detection을 phrase grounding으로, phrase grounding을 object detection task로 보는 방법이다.
 
-  ## 1.1 Contribution
+  - ## 1.1 Contribution
 
     1. Unifying detection and grounding by reformulating object detection as phrase grounding
 
