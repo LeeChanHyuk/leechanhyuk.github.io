@@ -43,7 +43,7 @@ toc: true
 
   ## 1.1 Contribution
 
-    - 1. Unifying detection and grounding by reformulating object detection as phrase grounding
+    1. Unifying detection and grounding by reformulating object detection as phrase grounding
 
       <img src="/assets/image/grounded_language/fig1.png" width="600px" height="450px" title="title" alt="title">
 
@@ -55,7 +55,7 @@ toc: true
 
       - 결과적으로 볼 때, detection 및 grounding side 모두 성능이 향상되었다.
 
-    - 2. Scaling up visual concepts with massive image-text data
+    2. Scaling up visual concepts with massive image-text data
 
       - GLIP 학습을 위해, 27M grounding data(human-annotated fine-grained data (3M) + web crawled data (24M))에 NLP parse를 teacher model로 삼고 pseudo annotations을 진행하여 data를 refine했다.
 
@@ -63,7 +63,7 @@ toc: true
 
       - COCO 2017 val, test에서는 60.8 AP 및 61.5 AP를 이루어냈다.
 
-    - 3. Transfer learning wigh GLIP: one model for all
+    3. Transfer learning wigh GLIP: one model for all
 
       - 앞선 두 contribution인, grounding reformulation 및 semantic-rich pre-training을 통해 human annotations 없이도 COCO 및 LVIS에서 좋은 성능을 이끌어냈고, 13개의 object detection 관련 task에서도 좋은 결과를 이끌어냈다.
 
