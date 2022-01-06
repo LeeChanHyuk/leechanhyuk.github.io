@@ -171,7 +171,7 @@ toc: true
 
     - 즉, 각 backbone의 output을 받아서, Dynamic module 및 BERT Layer (Pre-trained BERT's top layer)를 거치면서 각 output을 multi-head attention으로 묶는 방식을 통해, 기존 output + fused output을 다음 레이어의 input으로 받는 과정을 되풀이하며 진행한다.
 
-    <img src="/assets/image/grounded_language/equation_additional.png" width="600px" height="450px" title="title" alt="title">
+    <img src="/assets/image/grounded_language/equation_addition.png" width="600px" height="450px" title="title" alt="title">
 
     - 위 식은 일반 transformer와는 다르게 , query, value, output으로 구성되어 있다. 개인적으로는 image와 language사이의 attention을 찾는 것 이기 때문에, image와 language vector가 서로서로 query, key의 역할을 하기 때문에 따로 key라고 하는건지..? (**내용 추가 필요**)
 
