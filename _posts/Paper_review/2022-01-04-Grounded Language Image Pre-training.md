@@ -33,13 +33,13 @@ toc: true
 
   - Visual recognition의 기존 model들은 pre-determined sample 위주로 학습하여 generalization 성능이 떨어진다.
 
-  - CLIP은 image-text pair data가 image-level visual representation을 학습하는데 좋다는 것을, 학습 후 image classification 혹은 text-image retrieval task에 transfer learning한 결과가 좋다는 것을 보여줌으로써 입증하였다. 하지만 fine-grained feature가 필요로 되는 task (object detection, segmentation ..)에는 부족함이 있었다. (*CLIP이 어떤 네트워크이고, 현 모델과의 차이점 조사 필요*)
+  - CLIP은 image-text pair data가 image-level visual representation을 학습하는데 좋다는 것을, 학습 후 image classification 혹은 text-image retrieval task에 transfer learning한 결과가 좋다는 것을 보여줌으로써 입증하였다. 하지만 fine-grained feature가 필요로 되는 task (object detection, segmentation ..)에는 부족함이 있었다.
 
   - **본 논문에서는 *Phrase grounding*이 object-level, language-aware, semantic-rich visual representation task에 transfer-learning시에 효과적임을 입증하고자 한다.**
 
   - *Parase grounding: Object - sentence간의 fine-grained correspondence를 확인하는 작업을 의미*
 
-  - 제안하는 방법은 object detection 및 phrase grounding을 통합함으로써, object detection을 phrase grounding으로, phrase grounding을 object detection task로 보는 방법이다.
+  - 제안하는 방법은 object detection 및 phrase grounding을 통합함으로써, object detection을 context-free phrase grounding (즉, 이미지 전체의 맥락 보다는 각 객체에 집중한 phrase grounding) 으로, phrase grounding을 contextualized object detection task (각 object의 phrase로 전체 context를 추론하는 task) 로 보는 방법이다.
 
   - ## 1.1 Contribution
 
@@ -255,7 +255,7 @@ Datasets 총 3가지다.
     - 반면에 image-text data의 도입으로 향상된 점은 없었기에, rare class에 관한 분석을 위해 LVIS experiments를 수행했다.
 
   - ## 4.2. Zero-SHot Transfer on LVIS
-  
+
     - Model의 zero-shot performance 검증을 위해 LVIS Dataset 중에서 diverse하고 rare한 object를 사용하여 평가했다. LVIS Dataset 중, 5,000 장의 이미지를 포함한 MiniVal과 full-validation set을 사용하여 검증하였다.
 
     - Zero-shot evaluation으로도 GLIP-T는 MDETR과 유사한 수준의 성능을, GLIP-0L은 Supervised-RPS를 크게 압도하는 성능을 보여주었다.
