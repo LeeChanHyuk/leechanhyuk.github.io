@@ -286,3 +286,36 @@ Datasets 총 3가지다.
 
     - 결과적으로는, image와 categories만을 늘린 dataset으로 GLIP-T를 훈련시키는 것은 performance 증가가 없었고, gold-grounding data 및 image-text를 늘리는 것은 performance가 크게 향상됨을 확인했다.
 
+# 5. Object detection in the wild
+
+  - GLIP가 Real-world problem에 얼마나 잘 적용될 수 있을지 알기위해서, 13개의 dataset (Target size, ratio 등이 조금씩 다른 dataset들)을 조합해서 'Object detection in the wild' 환경을 만들고 test 해보았다. (Detail한 내용은 Appendix 참조)
+
+  - 결과적으로 두 가지 점을 통해서 GLIP의 Transfer performance가 뛰어나다는 것을 확인했다.
+
+    1. Dataset의 fit한 data를 사용하지 않고도 baseline과 비슷한 performance를 보였다.
+
+    2. 새로운 task에 적용시에, 모델은 그대로 두고 입력 text만 바꾸는 것으로도 좋은 performance를 보였다는 것을 볼 때, new domain transfer strategies를 enable하게 만들었다.
+
+  - ## 5.1. Data Efficiency
+
+    - 실험은 task-specific한 data를 zero-shot (no data provide)부터 X-shot (Provide at least X examples per category)까지 변화시키면서 측정했다.
+
+    - 데이터 셋은 training data 중 category name을 pre-specified name으로 변형하되, hyperparameter는 고정시켜놓고 fine-tuning하는 식으로 진행하였다.
+
+    - figure 3은 SOTA Model인 DyHead-T (pre-trained with Object 365)와 비교한 결과치를 나타낸다.
+
+    <img src="/assets/image/grounded_language/figure3.png" width="600px" height="450px" title="title" alt="title">
+
+    - 또한 각 데이터 셋에 대한 결과는 figure 4 및 appendix에서 나타난다.
+
+    <img src="/assets/image/grounded_language/figure4.png" width="600px" height="450px" title="title" alt="title">
+
+  - ## 5.2. One Model for All Tasks
+
+    - Model이 커질수록 deployment에 관련된 주제는 부각되어 왔고, 따라서 한 모델이 얼마나 task-specific한 parameters 없이도 generalization이 잘 되는지가 중요하게 다뤄져왔다. 따라서 본 section에서는, GLIP를 deployment efficiency metric을 통해 평가했다.
+
+    - ### 5.2.1. Manual prompt tuning
+
+      - GLIP가 Language input에 따라서 큰 영향을 받는 만큼, 사용자가 이미지를 표현하는 어구를 자세하게 표현할 수록 GLIP의 Transfer 성능을 좋게 만들 수 있다.
+
+      - 예를 들어, figure 5를 보면 input으로 object가 flat하고 round하다는 정보를 추가적으로 전달하는 것 만으로도, detection rate이 향상되었음를 확인할 수 있다. 이건 GPT-3과 매우 유사하게, 추가적인 annotated data나 model re-training 없이도 원하는 task를 수행 가능하다는 것을 뜻한다.
