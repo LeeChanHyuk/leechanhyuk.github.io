@@ -319,3 +319,30 @@ Datasets 총 3가지다.
       - GLIP가 Language input에 따라서 큰 영향을 받는 만큼, 사용자가 이미지를 표현하는 어구를 자세하게 표현할 수록 GLIP의 Transfer 성능을 좋게 만들 수 있다.
 
       - 예를 들어, figure 5를 보면 input으로 object가 flat하고 round하다는 정보를 추가적으로 전달하는 것 만으로도, detection rate이 향상되었음를 확인할 수 있다. 이건 GPT-3과 매우 유사하게, 추가적인 annotated data나 model re-training 없이도 원하는 task를 수행 가능하다는 것을 뜻한다.
+
+      <img src="/assets/image/grounded_language/figure5.png" width="600px" height="450px" title="title" alt="title">
+
+    - ### 5.2.2. Prompt tuning
+
+      - 우리는 easy한 deployment를 위해서 최소한의 parameter만 tuning하는 prompt tuning 방식을 사용한다.
+
+      - Detection 관련 연구 중 하나 [56]에서는 box regression 및 classification head만 training 시키는'linear probing'의 효과를 주장했고, GLIP에서도 region 및 prompt embedding 사이의 box-head 및 projection layer를 fine-tuning하는 방식으로 'Linear probing'은 적용될 수 있다.
+
+      - GLIP에서는 'Linear probing'을 위해서 language backbone을 사용해서 prompt embeddings를 얻고, 해당 prompt embeddings를 fine-tuning 하는 방식으로 'Linear probing'을 수행했다. (즉, language model의 input으로 들어가는 prompt만을 task-specific하게 수정해서 GLIP를 훈련시킴으로써 Task-specific한 network를 쉽게 훈련시킬 수 있다는 의미로 보여진다.)
+
+      <img src="/assets/image/grounded_language/figure6.png" width="600px" height="450px" title="title" alt="title">
+
+      - Figure 6은 GLIP의 각 모델들과 Dynamic head model을 각 fine-tuning 및 full-tuning method에 따라 학습시킨 결과를 의미한다.
+
+      - GLIP-T (A) Model은 deep fusion 방식을 사용하지 않았기 때문에 prompt-tuning 및 linear tuning 시 비슷한 결과를 도출하였다. 반면에 GLIP-T 및 GLIP-L은 grounding model을 건드리지 않고, prompt-tuning만 가지고도 full-tuning에 가까운 결과를 얻었다.
+
+      - 흥미롭게도, model과 data의 size가 커지면 커질수록, prompt-tuning 및 full-model tuning 사이의 performance 차는 줄어들었다. (GLIP-T, GLIP-L 비교 시).
+     
+      <img src="/assets/image/grounded_language/table1.png" width="600px" height="450px" title="title" alt="title">
+
+      - Table1에서는 GLIP-L이 prompt-tuning (With COCO)시, 14개의 dataset에서 높은 성능이 도출가능함을 보여준다.
+
+# 6. Conclusion
+
+  - GLIP는 object detection - phrase grounding을 통합한 네트워크로서, 여러 가지 조건의 fine-tuning 만으로 13개의 Object detection downstream task에서 좋은 결과를 보여주었다.
+  
