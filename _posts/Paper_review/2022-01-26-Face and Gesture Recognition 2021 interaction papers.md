@@ -73,7 +73,7 @@ toc: true
 
 # 3. Summary
 
-   - ## 3.2. Body Gesture and Head Movement Analyses in Duadic Parent-Child Interaction as Indicators of Relationship (from MIT Media Lab)
+  - ## 3.2. Body Gesture and Head Movement Analyses in Duadic Parent-Child Interaction as Indicators of Relationship (from MIT Media Lab)
 
     - ### 3.2.1. Introduction
 
