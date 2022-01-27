@@ -75,96 +75,96 @@ toc: true
 
    - ## 3.2. Body Gesture and Head Movement Analyses in Duadic Parent-Child Interaction as Indicators of Relationship (from MIT Media Lab)
 
-      - ### 3.2.1. Introduction
+    - ### 3.2.1. Introduction
 
-        - 많은 연구에서 'Action'은 중요한 cue로써 작용한다.
+      - 많은 연구에서 'Action'은 중요한 cue로써 작용한다.
 
-        - 이전 연구에서는 'Interaction' 연구에서 'Individual'한 개체에 관해서, 그리고 한 가지 측면에 관해서 (i.e.child temperament)만 연구했다.
+      - 이전 연구에서는 'Interaction' 연구에서 'Individual'한 개체에 관해서, 그리고 한 가지 측면에 관해서 (i.e.child temperament)만 연구했다.
 
-        - 본 연구에서는 Dyad에 관해서, 다각적인 분석을 통해 분석했다.
+      - 본 연구에서는 Dyad에 관해서, 다각적인 분석을 통해 분석했다.
+    
+    - ### 3.2.2. Method
+
+      - Dataset에 제시된 자료들에 대한 검증
+
+      - Parent Head, body, Child Head, body 정보 추출
+
+      - 공간을 parent body, child body, parent-child body, parent head, child head, parent-child head으로 6개로 나눈 후 feature extraction 진행.
+
+      - 각 sub-space의 상위 10% feature만 활용해서 평가를 진행함.
+
+  - ## 3.3. Skeleton-based Action Recognition for Human-Robot Interaction using Self-Attention Mechanism (from Technical University of Chemnitz, Germany)
+
+    - ### 3.3.1. Introduction
+
+      - Action recognition은 Robot이 Human을 보조하는데 있어서 필수적인 기술이다.
+
+      - 본 논문에서는, 3D Skeleton data를 이용하여 Action recognition을 수행한다.
+
+      - 기존 방법 중 RNN을 사용한 방법은 Prediction error가 시간이 갈 수록 누적이 되어 Prediction accuracy가 낮아지는 단점이 있었다.
+
+      - 따라서 본 논문에서는, Feed-forward GCN과 Attention network를 접목한 real-time prediction network를 제시한다.
+
+      - 또한 학습 및 평가를 위해 ASM (Actions in SuperMarket) dataset을 제시했다.
       
-      - ### 3.2.2. Method
+      - 그리고 motion과 trajectory feature를 encoding하는 방법을 사용하여, encoding feature 간의 attention을 도출함으로써 feature 간의 correlation을 학습시켰다.
 
-        - Dataset에 제시된 자료들에 대한 검증
+    - ### 3.3.2. Related work
 
-        - Parent Head, body, Child Head, body 정보 추출
+      - #### 3.3.2.1. Human Motion Prediction
 
-        - 공간을 parent body, child body, parent-child body, parent head, child head, parent-child head으로 6개로 나눈 후 feature extraction 진행.
+        - Human motion prediction에 관한 초기 연구 단계에서는 주로 RNN을 사용했고, Error accumulation이 주된 challenge 였다.
 
-        - 각 sub-space의 상위 10% feature만 활용해서 평가를 진행함.
+        - Error accumulation을 해결하기 위해서, feed-forward network나 convolutional sequence-to-sequence network를 사용하였지만, long-term은 잘 예측할 수 없는 등의 문제점이 있었다.
 
-    - ## 3.3. Skeleton-based Action Recognition for Human-Robot Interaction using Self-Attention Mechanism (from Technical University of Chemnitz, Germany)
+        - 또한 Pose를 추정하고 DCT 를 통해서 Transformation 시킨 후에 Graph Convolution Network를 통해서 action을 추정한 연구도 있었다. 하지만 이 또한 Long-term에서는 잘 예측하지 못하는 단점이 있었다.
 
-      - ### 3.3.1. Introduction
+        - 이러한 점들을 극복하기 위해서, 어떤 논문에서는 attention 기반의 network를 통해 단점을 극복했다.
 
-        - Action recognition은 Robot이 Human을 보조하는데 있어서 필수적인 기술이다.
+      - #### 3.3.2.2. Human Action Recognition
 
-        - 본 논문에서는, 3D Skeleton data를 이용하여 Action recognition을 수행한다.
+        - Human Action Recognition을 위한 초기 연구 단계에서는 추정한 Pose를 기반으로 RNN 혹은 LSTM을 사용했다.
 
-        - 기존 방법 중 RNN을 사용한 방법은 Prediction error가 시간이 갈 수록 누적이 되어 Prediction accuracy가 낮아지는 단점이 있었다.
+        - 어떤 연구는 Pose 추정 후, pose를 Pseudo 2D Representation image로 만들어서 CNN으로 다시 Feature를 추출하여 LSTM에 넣는 밥법을 사용했다.
 
-        - 따라서 본 논문에서는, Feed-forward GCN과 Attention network를 접목한 real-time prediction network를 제시한다.
+        - 어떤 연구는 Pre-defined skeleton feature vector를 GCN에 전파함으로써 Action recognition을 수행하고자 하였지만, feature에 관해서 미리 정해둔 만큼, 학습되지 않은 action을 recognition할 수는 없었다.
 
-        - 또한 학습 및 평가를 위해 ASM (Actions in SuperMarket) dataset을 제시했다.
-        
-        - 그리고 motion과 trajectory feature를 encoding하는 방법을 사용하여, encoding feature 간의 attention을 도출함으로써 feature 간의 correlation을 학습시켰다.
+        - 또한 최근에는 action과 skeleton sequence를 two stream으로 나누어서 학습시키거나, Spatial-temporal 한 특징을 나누어서 학습시키고 나중에 합치는 그런 연구들이 있었다.
 
-      - ### 3.3.2. Related work
+      - ### 3.3.3. Method
 
-        - #### 3.3.2.1. Human Motion Prediction
+        - 본 논문에서는 관찰된 Skeleton pose를 기반으로 GCN을 통해 미래의 pose를 예측하여, Action recognition을 수행한다.
 
-          - Human motion prediction에 관한 초기 연구 단계에서는 주로 RNN을 사용했고, Error accumulation이 주된 challenge 였다.
+        - #### 3.3.3.1. Input encodings
 
-          - Error accumulation을 해결하기 위해서, feed-forward network나 convolutional sequence-to-sequence network를 사용하였지만, long-term은 잘 예측할 수 없는 등의 문제점이 있었다.
+          - Skeleton sequence는 {현재 프레임의 Joint1 Position - 이전 프레임의 Joint1 Position, ... } 와 같이 구성된다.
 
-          - 또한 Pose를 추정하고 DCT 를 통해서 Transformation 시킨 후에 Graph Convolution Network를 통해서 action을 추정한 연구도 있었다. 하지만 이 또한 Long-term에서는 잘 예측하지 못하는 단점이 있었다.
+          - Feature encoding 방법은 아래와 같다.
 
-          - 이러한 점들을 극복하기 위해서, 어떤 논문에서는 attention 기반의 network를 통해 단점을 극복했다.
+            - ##### 3.3.3.1.1. Discrete cosine transformation based encoding
 
-        - #### 3.3.2.2. Human Action Recognition
+              - Input sequence를 DCT 적용해서 encoding 했다.
 
-          - Human Action Recognition을 위한 초기 연구 단계에서는 추정한 Pose를 기반으로 RNN 혹은 LSTM을 사용했다.
+            - ##### 3.3.3.1.2. Convolution feature encoding
 
-          - 어떤 연구는 Pose 추정 후, pose를 Pseudo 2D Representation image로 만들어서 CNN으로 다시 Feature를 추출하여 LSTM에 넣는 밥법을 사용했다.
+              - Time-series joint coordinate를 reshape해서 2D Matrix 형태로 만들고, convolution을 적용해서 High-level feature를 추출했다.
 
-          - 어떤 연구는 Pre-defined skeleton feature vector를 GCN에 전파함으로써 Action recognition을 수행하고자 하였지만, feature에 관해서 미리 정해둔 만큼, 학습되지 않은 action을 recognition할 수는 없었다.
+        - #### 3.3.3.2. Graph Convolution Network
 
-          - 또한 최근에는 action과 skeleton sequence를 two stream으로 나누어서 학습시키거나, Spatial-temporal 한 특징을 나누어서 학습시키고 나중에 합치는 그런 연구들이 있었다.
+          - 1. Input을 DCT
 
-        - ### 3.3.3. Method
+          - 2. Adjacency matrix를 활용하는 GCN Network를 Backbone으로 활용
 
-          - 본 논문에서는 관찰된 Skeleton pose를 기반으로 GCN을 통해 미래의 pose를 예측하여, Action recognition을 수행한다.
+          - 3. InvDCT 후 GT와 비교 수행
 
-          - #### 3.3.3.1. Input encodings
+        - #### 3.3.3.3. Recognition Head
 
-            - Skeleton sequence는 {현재 프레임의 Joint1 Position - 이전 프레임의 Joint1 Position, ... } 와 같이 구성된다.
+          - Multi-head attention은 Input component간의 관계성을 학습하는 모듈이다.
 
-            - Feature encoding 방법은 아래와 같다.
+          - ##### 3.3.3.3.1. Transformer encoder model
 
-              - ##### 3.3.3.1.1. Discrete cosine transformation based encoding
+            - GCN의 Output은 Transformer를 거쳐서 classification head (Pool - dense - ReLU - Dropout - dese) layer를 통해 출력을 내보낸다.
 
-                - Input sequence를 DCT 적용해서 encoding 했다.
+          - ##### 3.3.3.3.2. Part based self-attention model
 
-              - ##### 3.3.3.1.2. Convolution feature encoding
-
-                - Time-series joint coordinate를 reshape해서 2D Matrix 형태로 만들고, convolution을 적용해서 High-level feature를 추출했다.
-
-          - #### 3.3.3.2. Graph Convolution Network
-
-            - 1. Input을 DCT
-            
-            - 2. Adjacency matrix를 활용하는 GCN Network를 Backbone으로 활용
-
-            - 3. InvDCT 후 GT와 비교 수행
-
-          - #### 3.3.3.3. Recognition Head
-
-            - Multi-head attention은 Input component간의 관계성을 학습하는 모듈이다.
-
-            - ##### 3.3.3.3.1. Transformer encoder model
-
-              - GCN의 Output은 Transformer를 거쳐서 classification head (Pool - dense - ReLU - Dropout - dese) layer를 통해 출력을 내보낸다.
-
-            - ##### 3.3.3.3.2. Part based self-attention model
-
-              - GCN 후 Output은 left, right arm, torso, left, right leg로 나누어져서 self-attention을 취하게 된다. 이 때, 각 attention은 병렬로 계산되어 합쳐진다.
+            - GCN 후 Output은 left, right arm, torso, left, right leg로 나누어져서 self-attention을 취하게 된다. 이 때, 각 attention은 병렬로 계산되어 합쳐진다.
