@@ -108,6 +108,8 @@ toc: true
 
   - 저자는 이 원인을 CNN의 최적화에서 찾고 있다. (CNN은 CUDA에 최적화 되어 있고, Device level optimization - conv layer의 batch normalization fusion과 같은 것들)
 
+  <img src="/assets/image/mobilevit/table3.png" width="600px" height="450px" title="title" alt="title">
+
 # 5. 총평
 
   - 직관적이고 잘 읽히게 논문을 구성했다.
