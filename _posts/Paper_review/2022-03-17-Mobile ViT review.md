@@ -64,7 +64,15 @@ toc: true
 
         - ## 3.1.4. Computational cost
 
-            - Mobile vit는 Delt보다 계산량 측면에서 덜 효율적이지만, 적은 파라미터 수를 통해 적은 Flops를 가져가고, accuracy도 더 높다.
+            - Mobile ViT는 ViT보다 계산량이 많다.
+
+            - 계산량은 각각 ViT는 $O(N^2d)$이고, mobileViT는 $0(N^2PD)$이다.
+
+            - ViT의 게산량은 Query 및 Key vector의 dot-product 연산에 $N^2d$번, softmax 연산 시 $N^2$번, attention score 및 value vector간의 dot product 연산 시 다시 $N^2d$번으로 총 $2N^2d + N^2$이지만, 빅 오 표기법에 따라 O*N^2d)로 나타낸다.
+
+            - 반면에 Mobile ViT의 연산은 ViT의 연산과 매우 유사하지만, ViT에서는 patch flatten 이후 linear layer를 이용하여 d-channel을 만드는 반면에, mobile ViT에서는 2차원 shape을 그대로 유지하면서 1x1 convolution으로 채널만 d로 만들어준 후 MSA를 진행하여 계산량이 많이 증가한다고 보면 된다.
+
+            - 그럼에도 불구하고 mobile vit는 Delt보다 파라미터 수를 통해 적은 Flops를 가져가고, accuracy도 더 높다.
 
         - ## 3.1.5. Mobile ViT Architecture
 
