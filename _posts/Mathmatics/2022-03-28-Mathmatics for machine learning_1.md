@@ -15,21 +15,21 @@ toc: true
 
 # 1. Norm
 
-    - Norm은 vector의 크기를 나타내는 표현 방법.
+  - Norm은 vector의 크기를 나타내는 표현 방법.
 
-    - $$ \lVert x \rVert $$와 같이 표현.
+  - $$ \lVert x \rVert $$와 같이 표현.
 
-    - 일반적으로 생각할 때, 각 차원에 맞는 Norm은 $\sum_{i=1}^{n} (|x_{i}|^{p})^{\sqrt{1}{p}}$.
+  - 일반적으로 생각할 때, 각 차원에 맞는 Norm은 $\sum_{i=1}^{n} (|x_{i}|^{p})^{\sqrt{1}{p}}$.
 
-    - 아래의 3가지 성질을 가진다.
+  - 아래의 3가지 성질을 가진다.
 
-    - <img src="/assets/image/mathmatics/3/norm1.png" width="450px" height="300px" title="title" alt="title">
+  - <img src="/assets/image/mathmatics/3/norm1.png" width="450px" height="300px" title="title" alt="title">
 
-    - Loss로는 보통 MAE (L1 Norm), MSE (L2 Norm)을 많이 사용한다.
+  - Loss로는 보통 MAE (L1 Norm), MSE (L2 Norm)을 많이 사용한다.
 
-    - L1 Norm은 수렴 속도가 상대적으로 느린데, 특이치에 강하고
+  - L1 Norm은 수렴 속도가 상대적으로 느린데, 특이치에 강하고
 
-    - L2 Norm은 수렴 속도가 상대적으로 빠른데, 특이치에 약하다. (특이치도 제곱해버리니까)
+  - L2 Norm은 수렴 속도가 상대적으로 빠른데, 특이치에 약하다. (특이치도 제곱해버리니까)
 
 # 2. Inner product
 
@@ -79,24 +79,23 @@ toc: true
 
   - Angles
   
-      - $\overrightarrow{x}$ 및 $\overrightarrow{y}$ 간의 내적이 ||x|| ||y|| cos($\theta$) 이기 때문에, 내적을 두 벡터의 크기의 곱으로 나눈 후 arccos을 취하는 방식으로 angle을 도출 가능하다는 것.
+    - $\overrightarrow{x}$ 및 $\overrightarrow{y}$ 간의 내적이 ||x|| ||y|| cos($\theta$) 이기 때문에, 내적을 두 벡터의 크기의 곱으로 나눈 후 arccos을 취하는 방식으로 angle을 도출 가능하다는 것.
 
   - Orthogonality
 
-      - 직교하는 두 벡터는 inner product 값이 0이 된다는 것.
-
+    - 직교하는 두 벡터는 inner product 값이 0이 된다는 것.
 
   - Orthogonormal matrix
 
-      - Matrix의 각 column이 서로 orthogonal하고 크기가 1일 때 orthogonormal하다고 부른다.
+    - Matrix의 각 column이 서로 orthogonal하고 크기가 1일 때 orthogonormal하다고 부른다.
 
-      - 이 성질을 만족하는 행렬을 orthogonal matrix라고 부른다.
+    - 이 성질을 만족하는 행렬을 orthogonal matrix라고 부른다.
 
-      - 이 행렬의 전치 행렬은 이 행렬의 역행렬과 같다.
+    - 이 행렬의 전치 행렬은 이 행렬의 역행렬과 같다.
 
-      - 이 행렬은 vector에 곱해져도 그 크기를 바꾸지 않는다.
+    - 이 행렬은 vector에 곱해져도 그 크기를 바꾸지 않는다.
 
-      - 또한 두 벡터에 모두 orthogonal한 matrix를 곱했을 때 두 벡터 사이의 각도 바뀌지 않는다.
+    - 또한 두 벡터에 모두 orthogonal한 matrix를 곱했을 때 두 벡터 사이의 각도 바뀌지 않는다.
 
-      - 따라서 Rotation과 같은 linear transformation을 할 때, orthogonal matrix가 사용된다.
+    - 따라서 Rotation과 같은 linear transformation을 할 때, orthogonal matrix가 사용된다.
 
