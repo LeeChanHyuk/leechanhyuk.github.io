@@ -17,7 +17,7 @@ toc: true
 
   - Norm은 vector의 크기를 나타내는 표현 방법.
 
-  - $$ \lVert x \rVert $$와 같이 표현.
+  - $\lVert x \rVert$와 같이 표현.
 
   - 일반적으로 생각할 때, 각 차원에 맞는 Norm은 $\sum_{i=1}^{n}(|x_{i}|^{p})^{\sqrt{1}{p}}$.
 
