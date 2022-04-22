@@ -57,9 +57,9 @@ toc: true
 
       - <img src="/assets/image/mathmatics/3/symmetric.png" width="450px" height="300px" title="title" alt="title">
 
-      - 이 때 $x\hat$, $y\hat$ 은 각각 특정 행 벡터 및 열 벡터를 의미하며, 그 차원은 A의 1-axis의 차원과 같다.
+      - 이 때 $\hat{x}$, $\hat{y}$ 은 각각 특정 행 벡터 및 열 벡터를 의미하며, 그 차원은 A의 1-axis의 차원과 같다.
 
-      - 즉, $x\hat$ 은 *1xn*, A는 *nxn*, $y\hat$ 은 *nx1* 이므로, 최종 연산 값은 scalar 값이 나오게 되며, 해당 scalar 값이 양수이고 A가 Symmetric해야 symmetric positive definite matrices가 되는 것이다.
+      - 즉, $\hat{x}$ 은 *1xn*, A는 *nxn*, $\hat{y}$ 은 *nx1* 이므로, 최종 연산 값은 scalar 값이 나오게 되며, 해당 scalar 값이 양수이고 A가 Symmetric해야 symmetric positive definite matrices가 되는 것이다.
 
       - 근데 이게 왜 중요하냐?
 
