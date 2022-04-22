@@ -19,7 +19,7 @@ toc: true
 
   - $\lVert x \rVert$와 같이 표현.
 
-  - 일반적으로 생각할 때, 각 차원에 맞는 Norm은 $\sum_{i=1}^{n}(|x_{i}|^{p})^{\sqrt{1}{p}}$.
+  - 일반적으로 생각할 때, 각 차원에 맞는 Norm은 $$\sum_{i=1}^{n}(|x_{i}|^{p})^{\sqrt{1}{p}}$$.
 
   - 아래의 3가지 성질을 가진다.
 
@@ -79,7 +79,7 @@ toc: true
 
   - Angles
   
-    - $\overrightarrow{x}$ 및 $\overrightarrow{y}$ 간의 내적이 $||x||$ $||y||$ cos($\theta$) 이기 때문에, 내적을 두 벡터의 크기의 곱으로 나눈 후 arccos을 취하는 방식으로 angle을 도출 가능하다는 것.
+    - $\overrightarrow{x}$ 및 $\overrightarrow{y}$ 간의 내적이 $\lVert x \rVert$ $\lVert y \rVert$ cos($\theta$) 이기 때문에, 내적을 두 벡터의 크기의 곱으로 나눈 후 arccos을 취하는 방식으로 angle을 도출 가능하다는 것.
 
   - Orthogonality
 
