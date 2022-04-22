@@ -61,4 +61,20 @@ toc: true
 
   - Linear transfomation이 여러번 반복될 경우, 이는 다중 행렬 곱으로 나타낼 수 있고, 여러 Transformation matrix는 곧, 행렬 곱을 통해서 하나의 Transformation matrix로 나타낼 수 있다.
   
-  - 
+ ## Determinant
+
+  - Determinant는 선형 변환에 의한 영역의 변화를 나타내는 Factor이다.
+
+  - Determinant가 0이라는 것은, 이 행렬과 곱해지는 모든 행렬이 가지는 넓이를 0으로 만드는 것을 의미한다. (Rank를 2로 가정할 때)
+
+ ﻿  - 그렇다면 Determinant가 음수인 것은 어떤걸 의미할까?
+
+  - 그건 바로 영역을 뒤집는 것을 의미한다. 이 때에도 넓이가 변하는 것은 Determinant의 절대값을 의미한다.
+
+  - 3차원에서는 부피를 확장하고 축소하는 것을 의미한다.
+
+  - 행렬식은 Rank가 2인 행렬에서는 ad-bc로 구한다.
+
+  - 그 이유는 ad-bc가 두 벡터가 이루는 평행사변형의 넓이를 나타내기 때문이다.
+
+  - 이 부분이 잘 이해가 가지 않는다면 Youtube에 3blue1brown의 determinant 영상을 찾아보기를 추천한다.
