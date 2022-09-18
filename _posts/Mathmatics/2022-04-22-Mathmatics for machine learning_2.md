@@ -61,4 +61,4 @@ toc: true
 
   - Linear transfomation이 여러번 반복될 경우, 이는 다중 행렬 곱으로 나타낼 수 있고, 여러 Transformation matrix는 곧, 행렬 곱을 통해서 하나의 Transformation matrix로 나타낼 수 있다.
   
-  - 
+  
