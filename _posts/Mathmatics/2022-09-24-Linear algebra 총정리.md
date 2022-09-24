@@ -1,6 +1,6 @@
 ---
-title: "[Linear algebra] 개념 총정리"
-date: 2022-09-24 11:30:06
+title: "[Linear algebra] 개념 정리"
+date: 2022-09-23 11:30:06
 author: Leechanhyuk
 categories: Mathmatics
 tags: Mathmatics Machine_learning
