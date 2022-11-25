@@ -1,6 +1,6 @@
 ---
 title: "[Concept summary] Maximum likelihood estimation"
-date: 2022-11-25 13:30:06
+date: 2022-11-25 14:30:06
 author: Leechanhyuk
 categories: Machine_Learning
 tags: Machine_Learning
