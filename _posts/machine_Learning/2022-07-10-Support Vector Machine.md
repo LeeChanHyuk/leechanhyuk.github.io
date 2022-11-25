@@ -36,5 +36,3 @@ toc: true
   따라서 데이터를 고차원으로 projection하여 데이터를 다양한 방향에서 바라봄으로써, 그에 맞는 고차원 hyperplane을 찾음으로써 데이터 분류시 최적의 hyperplane을 사용가능하니까.
 
   - 이는 우리가 딥러닝에서 레이어를 여러개 쌓는 것과 유사하다. 여러개의 레이어 사이에 비선형 Activation function을 넣음으로써 각 레이어를 다중 차원으로 간주하고, 더 정확한 hyperplane을 찾는 것.
-
-  - SVM은 
