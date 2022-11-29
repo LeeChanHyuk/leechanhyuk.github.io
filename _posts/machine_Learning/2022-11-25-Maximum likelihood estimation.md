@@ -27,7 +27,7 @@ toc: true
   
   - 이상적인 환경에서 모든 입력 데이터가 독립적이라고 가정했을 때는 아래와 같은 식으로 나타낼 수 있다.
 
-  - $L(\theta) = p(X|\theta) = \Pi^{N}_{n=1}(x_{n}|\theta)$
+  - $L(\theta) = p(X|\theta) = \Pi^{N}_{n=1}(x_{n}\| \theta)$
 
   - 우리가 최대값을 찾을 때 변곡점을 찾듯이, 여기서도 미분을 통해서 최대값을 도출할 수 있다.
 
@@ -35,7 +35,7 @@ toc: true
 
   - 따라서 좌우변에 log를 취해주고, -를 곱해줌으로써 미분과 동시에 maximization 문제를 minimization 문제로 변형하여 prediction value와 label 간의 차이를 최소하하는 쪽으로 학습을 진행한다.
 
-  - 즉, $-ln \ L(\theta) = -\Sigma^{N}_{n=1}\ ln\ p(x_{n}|\theta)$ 로 표현할 수 있다.
+  - 즉, $-ln \ L(\theta) = -\Sigma^{N}_{n=1}\ ln\ p(x_{n}\|\theta)$ 로 표현할 수 있다.
 
   - 이를 **negative log likelihood** 라고 한다.
 
