@@ -11,7 +11,7 @@ toc: true
 
 # Likelihood
 
-  - Likelihood란 입력 데이터가 특정 분포로부터 만들어졌을 확률을 뜻한다.
+  - Likelihood란 입력 데이터가 특정 분포에 속할 확률을 뜻한다.
 
   - 머신러닝 관점에서 말하자면, 모델을 학습시킨다는 것은 입력 데이터 $(X)$ 를 처리하기 위해서 해당 데이터를 잘 표현할 수 있는 우리의 모델 $(\theta)$, 즉 확률 분포를 계속해서 수정해나간다는 것이다.
 
@@ -55,12 +55,14 @@ toc: true
 
 # 총 정리
 
-  - 머신러닝에서의 Likelihood란 모델과 같다.
-
   - 입력 데이터를 바탕으로 모델을 튜닝하는 것은, 입력 데이터에 적합된 확률 분포를 찾는 것과 같다.
+
+  - 따라서 다중 입력 데이터의 likelihood가 maximize 되는 방향으로 파라미터를 수정하면, 입력 데이터에 최적화 된 확률 분포 (모델)를 찾을 수 있다.
 
   - 따라서 likelihood를 최대화하는 Maximum likelihood estimation을 수행한다.
 
-  - 하지만 Likelihood를 최대화하는 과정에 미분이 포함되어 있고 minimization 문제로 바꿔주기 위해서 Negative log likelihood로 변형하여 학습이라는 문제를 푼다.
+  - 하지만 Likelihood를 최대화하는 과정에 미분이 포함되어 있는데, 이 때 다중 입력 데이터로부터 추정된 likelihood들이 모두 곱하는 형태로 주어져 있어서 미분을 수행하기가 어렵기 때문에 log를 붙여줘서 곱셈을 덧셈의 형태로 변환한다.
+  
+  - 또한 Maximization 문제를 minimization 문제로 바꿔주기 위해서 Negative log likelihood로 변형하여 학습이라는 문제를 푼다.
 
-  - 이는 Cross-Entropy 혹은 MSE 형태로 변환되어 학습에 관여하게 된다.
+  - 이와 같은 학습 방법은 Cross-Entropy 혹은 MSE 형태로써 학습에 나타나게 된다.
