@@ -33,7 +33,7 @@ toc: true
 
   - 하지만 위 식의 우변은 모든 항들이 곱셈의 형태로 이루어져 있어서 미분이 쉽지가 않다.
 
-  - 따라서 좌우변에 log를 취해주고, -를 곱해줌으로써 미분과 동시에 maximization 문제를 minimization 문제로 변형하여 prediction value와 label 간의 차이를 최소하하는 쪽으로 학습을 진행한다.
+  - 따라서 좌우변에 log를 취해주고, -를 곱해줌으로써 미분과 동시에 maximization 문제를 minimization 문제로 변형하여 prediction value와 label 간의 차이를 최소화하는 쪽으로 학습을 진행한다.
 
   - 즉, $-ln\,L(\theta)$ $=-\Sigma^{N}_{n=1}\ln\,p(x_{n}\|\theta)$ 로 표현할 수 있다.
 
