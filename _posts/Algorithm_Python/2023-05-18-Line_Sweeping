@@ -1,0 +1,117 @@
+---
+title: "[Algorithm] Line sweeping"
+date: 2023-05-18 11:30:06
+author: Leechanhyuk
+categories: Algorithm
+tags: Algorithm
+use_math: true
+cover: "/assets/instacode.png"
+toc: true
+---
+
+# 라인 스위핑 관련 주의할 점
+
+  - 라인 스위핑 (Line sweeping) 이란, 공간 혹은 직선에서 시작점부터 끝점까지 (정렬 후) 순차적으로 처리하는데, 각 위치에 대해서 단 한번만 스캔하고 넘어가는 알고리즘을 의미.
+
+  - 일반적으로는 우선순위 큐 (Priority queue)를 사용해서 원하는 순서로 정렬 후, 순차적으로 처리한다.
+
+  - 문제에 따라서 다르지만 2개 이상의 우선순위 큐를 가지고 처리하는 경우가 많다.
+
+  - 문제에 따라서는 정렬 방법의 가능한 경우의 수가 2개 이상일 때도 있다.
+
+  - 주의할 점은 '뒤에 처리되는 위치에서 미리 처리했던 앞쪽 위치에 관해서 체크할 수 있게 할 것'
+
+  - 또한 '뒤에 처리되는 위치에서 미리 처리된 앞쪽 위치의 값들을 볼 때, 하나 이상의 값을 건너뛰고 보거나 할 일은 거의 없다는 것'
+
+# 관련 문제
+
+  - 보통은 라인 스위핑 관련 문제하면 백준 2170번 선긋기 [문제링크] (https://www.acmicpc.net/problem/2170) 를 자주 말하지만
+
+  - 정렬 가능한 경우의 수가 2개 이상 있는 문제로는 백준 13334번 철로 문제가 있다 [문제링크] (https://www.acmicpc.net/problem/13334)
+
+  - 아래는 개인적인 풀이 코드다.
+
+```cpp
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+struct house
+{
+	int start;
+	int end;
+};
+
+struct compare_minStartHeap
+{
+	bool operator() (house& a, house& b)
+	{
+		if (a.start == b.start)
+			return a.end < b.end;
+		return a.start < b.start;
+	}
+};
+
+struct compare_minEndHeap
+{
+	bool operator() (house& a, house& b)
+	{
+		return a.end < b.end;
+	}
+};
+
+priority_queue<house, vector<house>, compare_minStartHeap> men;
+priority_queue<house, vector<house>, compare_minEndHeap> waiting_men;
+
+int check(int length)
+{
+	int result = 0;
+	while (!men.empty())
+	{
+		house man = men.top();
+		men.pop();
+
+		int start_line = man.start;
+		int end_line = man.start + length;
+
+		waiting_men.push(man);
+		while (!waiting_men.empty())
+		{
+			if (waiting_men.top().end > end_line)
+				waiting_men.pop();
+			else
+				break;
+		}
+		if (waiting_men.size() > result)
+			result = waiting_men.size();
+	}
+	return result;
+}
+
+int main(void)
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int n, start, end, length;
+	cin >> n;
+	house temp;
+	for (register int i = 0; i < n; i++)
+	{
+		cin >> start >> end;
+		if (start > end)
+			temp = { end, start };
+		else
+			temp = { start, end };
+		men.push(temp);
+	}
+	cin >> length;
+	int result = check(length);
+	cout << result;
+	
+	return 0;
+}
+```
+
